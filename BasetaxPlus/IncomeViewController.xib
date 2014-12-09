@@ -6,7 +6,41 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="IncomeViewController">
             <connections>
+                <outlet property="btnAddReceipt" destination="JJW-zS-d6p" id="7l1-FL-jEN"/>
+                <outlet property="btnBusiness" destination="9rE-4B-gXC" id="S4K-Yz-n9a"/>
+                <outlet property="btnCard" destination="66b-8R-JLI" id="Cr9-vC-qNW"/>
+                <outlet property="btnCash" destination="7yo-lv-NlV" id="qGA-zo-HKF"/>
+                <outlet property="btnCheque" destination="T2s-O7-jz9" id="Qer-Pf-r3L"/>
+                <outlet property="btnDate" destination="Smu-UF-sW9" id="sET-aK-IWt"/>
+                <outlet property="btnDateDone" destination="NiD-uL-mRJ" id="k7n-Ia-Z35"/>
+                <outlet property="btnOther" destination="x6s-eh-pqw" id="HGb-eO-7hT"/>
+                <outlet property="btnRecordType" destination="RXF-01-L4Y" id="m4I-tm-8Ph"/>
+                <outlet property="datePicker" destination="5jH-PG-Gsc" id="5uV-4Z-Oac"/>
+                <outlet property="imageReceipt" destination="ECu-D0-Avr" id="8t2-OK-sJV"/>
+                <outlet property="inputBox" destination="m83-YI-Faj" id="JVP-t2-2ju"/>
+                <outlet property="lblNoteDescription" destination="Slu-KN-YCB" id="U4h-r0-nIM"/>
+                <outlet property="lblRecodeType" destination="1UX-pv-ADu" id="7We-iY-HJ5"/>
+                <outlet property="lblRecordSelected" destination="Iod-Yw-p5E" id="v6G-92-caQ"/>
+                <outlet property="lineAmount" destination="YT4-b9-f7P" id="Btf-0A-nug"/>
+                <outlet property="lineBusiness" destination="ebs-Xh-SgP" id="Ccy-6d-xlX"/>
+                <outlet property="lineCis" destination="MI6-sA-x3E" id="L8T-LY-tsx"/>
+                <outlet property="lineCustomer" destination="Vn6-Fo-6dM" id="PFN-pB-pU1"/>
+                <outlet property="lineDate" destination="Mrd-vz-xay" id="KgH-GH-EVn"/>
+                <outlet property="lineVat" destination="u3V-V5-pxJ" id="mLm-J0-LZ0"/>
+                <outlet property="scrollView" destination="X5p-sz-O3C" id="669-mR-mWi"/>
+                <outlet property="tableBusiness" destination="PW4-sT-uSr" id="XzU-Zp-ae8"/>
+                <outlet property="tableRecodeType" destination="Fqo-be-HSb" id="D5B-fp-MV0"/>
+                <outlet property="txtAmount" destination="fTO-85-Vph" id="ffI-88-ogd"/>
+                <outlet property="txtBusiness" destination="sF2-e4-ubd" id="MAg-Yf-ipf"/>
+                <outlet property="txtCis" destination="QbT-pv-0xl" id="UtJ-nt-JC3"/>
+                <outlet property="txtCustomerName" destination="rf6-Re-WBv" id="2I4-5h-KiH"/>
+                <outlet property="txtDate" destination="yB8-KU-BbH" id="FXR-DJ-vra"/>
+                <outlet property="txtInvoiceReference" destination="C4a-p5-xpS" id="ngv-Gx-CHv"/>
+                <outlet property="txtVat" destination="XFX-Ze-A5q" id="Pw8-zl-EO0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewBusiness" destination="gBP-Jq-gd5" id="s7X-eA-5Ui"/>
+                <outlet property="viewDate" destination="zNF-oP-Mfd" id="O7x-ud-RSC"/>
+                <outlet property="viewRecordType" destination="dMF-CL-bfO" id="Tvo-va-Qnv"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -72,7 +106,6 @@
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="6" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hDN-Hf-PRI">
-                            <rect key="frame" x="0.0" y="310" width="320" height="92"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -96,6 +129,9 @@
                             <state key="highlighted">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="btnAddReceipt_Clicked:" destination="-1" eventType="touchUpInside" id="tgD-kO-qhK"/>
+                            </connections>
                         </button>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="tabview.png" translatesAutoresizingMaskIntoConstraints="NO" id="VDz-Af-wrc">
                             <rect key="frame" x="0.0" y="277" width="320" height="31"/>
@@ -103,7 +139,7 @@
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7yo-lv-NlV">
                             <rect key="frame" x="0.0" y="278" width="81" height="30"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                            <state key="normal" image="cash button (select).png">
+                            <state key="normal" image="cash button.png">
                                 <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
@@ -111,51 +147,63 @@
                             <state key="highlighted">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="btnCash_Clicked:" destination="-1" eventType="touchUpInside" id="eph-nO-YNK"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T2s-O7-jz9">
                             <rect key="frame" x="80" y="278" width="81" height="30"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                            <state key="normal" image="cheque button ( select).png">
+                            <state key="normal" image="cheque button.png">
                                 <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <state key="highlighted">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="btnCheque_Clicked:" destination="-1" eventType="touchUpInside" id="YSt-MW-iNF"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="66b-8R-JLI">
                             <rect key="frame" x="160" y="278" width="81" height="30"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                            <state key="normal" image="card button (select).png">
+                            <state key="normal" image="Card-button.png">
                                 <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <state key="highlighted">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="btnCard_Clicked:" destination="-1" eventType="touchUpInside" id="crE-TL-eiD"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x6s-eh-pqw">
                             <rect key="frame" x="240" y="278" width="81" height="30"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                            <state key="normal" image="other button (select).png">
+                            <state key="normal" image="other button.png">
                                 <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <state key="highlighted">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="btnOther_Clicked:" destination="-1" eventType="touchUpInside" id="jJ4-xV-DRu"/>
+                            </connections>
                         </button>
-                        <textField opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Customer Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rf6-Re-WBv">
+                        <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Customer Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rf6-Re-WBv">
                             <rect key="frame" x="121" y="143" width="194" height="31"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <textField opaque="NO" clipsSubviews="YES" tag="301" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="VAT" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XFX-Ze-A5q">
+                        <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="VAT" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XFX-Ze-A5q">
                             <rect key="frame" x="121" y="40" width="194" height="31"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                         </textField>
-                        <textField opaque="NO" clipsSubviews="YES" tag="302" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Amount" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fTO-85-Vph">
+                        <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Amount" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fTO-85-Vph">
                             <rect key="frame" x="121" y="9" width="198" height="31"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
@@ -170,19 +218,25 @@
                             <state key="highlighted">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="btnRecordTypeSelected_Clicked:" destination="-1" eventType="touchUpInside" id="QPG-YC-54E"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9rE-4B-gXC">
                             <rect key="frame" x="119" y="204" width="194" height="31"/>
                             <state key="normal">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="btnBusinessSelected_Clicked:" destination="-1" eventType="touchUpInside" id="q0b-UM-Ft8"/>
+                            </connections>
                         </button>
                         <textField opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Invoice no./Income Ref" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C4a-p5-xpS">
                             <rect key="frame" x="119" y="176" width="194" height="31"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yB8-KU-BbH">
+                        <textField opaque="NO" clipsSubviews="YES" tag="6" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yB8-KU-BbH">
                             <rect key="frame" x="121" y="105" width="189" height="37"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
@@ -197,15 +251,18 @@
                             <state key="highlighted">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="btnDateSelected_Clicked:" destination="-1" eventType="touchUpInside" id="s4c-7N-Cux"/>
+                            </connections>
                         </button>
-                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dMF-CL-bfO">
-                            <rect key="frame" x="30" y="254" width="320" height="135"/>
+                        <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dMF-CL-bfO">
+                            <rect key="frame" x="48" y="265" width="277" height="135"/>
                             <subviews>
-                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="select list bg1.png" translatesAutoresizingMaskIntoConstraints="NO" id="J5d-c1-UB8">
-                                    <rect key="frame" x="1" y="2" width="316" height="110"/>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="bg_dialog_view.png" translatesAutoresizingMaskIntoConstraints="NO" id="J5d-c1-UB8">
+                                    <rect key="frame" x="1" y="2" width="266" height="110"/>
                                 </imageView>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="36" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Fqo-be-HSb">
-                                    <rect key="frame" x="0.0" y="10" width="320" height="100"/>
+                                    <rect key="frame" x="5" y="10" width="250" height="100"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <color key="separatorColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 </tableView>
@@ -218,7 +275,7 @@
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" clipsSubviews="YES" tag="300" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="CIS" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QbT-pv-0xl">
+                        <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="CIS" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QbT-pv-0xl">
                             <rect key="frame" x="121" y="77" width="186" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
@@ -239,11 +296,11 @@
                         <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gBP-Jq-gd5" userLabel="Business View">
                             <rect key="frame" x="10" y="232" width="300" height="120"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="select list bg1.png" translatesAutoresizingMaskIntoConstraints="NO" id="IE2-Ud-AZu">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_dialog_view.png" translatesAutoresizingMaskIntoConstraints="NO" id="IE2-Ud-AZu">
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="120"/>
                                 </imageView>
                                 <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="38" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="PW4-sT-uSr">
-                                    <rect key="frame" x="2" y="10" width="280" height="105"/>
+                                    <rect key="frame" x="5" y="13" width="289" height="100"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -252,29 +309,32 @@
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </view>
                         <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zNF-oP-Mfd">
-                            <rect key="frame" x="40" y="143" width="202" height="225"/>
+                            <rect key="frame" x="40" y="143" width="276" height="193"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="datebg1-300x355-1.png" translatesAutoresizingMaskIntoConstraints="NO" id="2tK-pS-dOA">
-                                    <rect key="frame" x="3" y="0.0" width="268" height="260"/>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="bg_dialog_view.png" translatesAutoresizingMaskIntoConstraints="NO" id="2tK-pS-dOA">
+                                    <rect key="frame" x="4" y="0.0" width="268" height="194"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </imageView>
                                 <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="5jH-PG-Gsc">
-                                    <rect key="frame" x="10" y="38" width="178" height="216"/>
+                                    <rect key="frame" x="9" y="39" width="258" height="121"/>
                                     <date key="date" timeIntervalSinceReferenceDate="389535258.95545101">
                                         <!--2013-05-06 12:14:18 +0000-->
                                     </date>
                                     <locale key="locale" localeIdentifier="en_US"/>
                                 </datePicker>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NiD-uL-mRJ">
-                                    <rect key="frame" x="216" y="12" width="50" height="30"/>
+                                    <rect key="frame" x="220" y="18" width="41" height="21"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                    <state key="normal" image="done.png">
+                                    <state key="normal" image="save button.png">
                                         <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <state key="highlighted">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
+                                    <connections>
+                                        <action selector="btnSaveDate_Clicked:" destination="-1" eventType="touchUpInside" id="Icz-iL-r1d"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -285,24 +345,24 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <point key="canvasLocation" x="140" y="168"/>
         </view>
     </objects>
     <resources>
         <image name="Add photo 2.png" width="105" height="28"/>
+        <image name="Card-button.png" width="367" height="123"/>
         <image name="add image.png" width="105" height="105"/>
         <image name="backbutton.png" width="88" height="88"/>
+        <image name="bg_dialog_view.png" width="293" height="254"/>
         <image name="btn-save.png" width="188" height="94"/>
-        <image name="card button (select).png" width="367" height="123"/>
-        <image name="cash button (select).png" width="367" height="123"/>
+        <image name="cash button.png" width="367" height="123"/>
         <image name="cashon.png" width="80" height="38"/>
-        <image name="cheque button ( select).png" width="367" height="123"/>
-        <image name="datebg1-300x355-1.png" width="640" height="1045"/>
-        <image name="done.png" width="640" height="1045"/>
+        <image name="cheque button.png" width="367" height="123"/>
         <image name="dropdown.png" width="213" height="33"/>
         <image name="input text box.png" width="201" height="203"/>
         <image name="inputline.png" width="200" height="1"/>
-        <image name="other button (select).png" width="367" height="123"/>
-        <image name="select list bg1.png" width="640" height="1045"/>
+        <image name="other button.png" width="367" height="123"/>
+        <image name="save button.png" width="188" height="94"/>
         <image name="tabview.png" width="320" height="38"/>
     </resources>
 </document>

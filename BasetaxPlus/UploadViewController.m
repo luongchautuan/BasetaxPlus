@@ -70,7 +70,9 @@ AppDelegate* appdelegate;
 
 - (IBAction)btnUploadFiles_Clicked:(id)sender
 {
+    UIActionSheet *action_sheet = [[UIActionSheet alloc]initWithTitle:@"Upload options" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Camera",@"Library", nil];
     
+    [action_sheet showInView:[UIApplication sharedApplication].keyWindow];
 }
 
 - (IBAction)btnAddMore_Clicked:(id)sender

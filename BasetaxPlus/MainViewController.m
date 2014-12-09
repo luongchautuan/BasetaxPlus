@@ -49,6 +49,11 @@
     [self.navigationController pushViewController:introDetailViewController animated:YES];
     
 }
+- (IBAction)btnSubmit_Clicked:(id)sender
+{
+    UIAlertView* msg = [[UIAlertView alloc] initWithTitle:@"" message:@"Thank you for submitting your information. Your tax return will be prepared within the next few hours. Please contact to tax@basetax.co.uk" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    [msg show];
+}
 
 /*
 #pragma mark - Navigation
