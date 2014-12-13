@@ -30,6 +30,7 @@
 @property(strong,nonatomic)NSMutableArray *data4;
 
 @property (retain, nonatomic) IBOutlet UIImageView *inputBox;
+@property (retain, nonatomic) IBOutlet UIView *textViewDescription;
 
 @property (retain, nonatomic) IBOutlet UIImageView *lineBusiness;
 @property (retain, nonatomic) IBOutlet UIImageView *lineCustomer;

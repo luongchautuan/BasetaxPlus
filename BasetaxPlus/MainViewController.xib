@@ -22,6 +22,15 @@
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="GE2-XU-txs">
                             <rect key="frame" x="8" y="4" width="49" height="43"/>
                         </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YUC-Wi-7ov">
+                            <rect key="frame" x="248" y="10" width="62" height="30"/>
+                            <state key="normal" backgroundImage="taxyear.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="btnTaxYear_Clicked:" destination="-1" eventType="touchUpInside" id="ctc-Ni-zAy"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.40392156862745099" green="0.68627450980392157" blue="0.070588235294117646" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
@@ -53,7 +62,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="103" height="103"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Step 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lba-f8-Rb9">
-                                            <rect key="frame" x="0.0" y="21" width="103" height="21"/>
+                                            <rect key="frame" x="0.0" y="13" width="103" height="40"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -127,7 +136,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="103" height="103"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Step 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6PP-OR-2Dv">
-                                            <rect key="frame" x="0.0" y="21" width="103" height="21"/>
+                                            <rect key="frame" x="0.0" y="13" width="103" height="40"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -180,14 +189,14 @@
                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tAN-ta-zMp">
                                     <rect key="frame" x="0.0" y="0.0" width="103" height="103"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Step 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yi8-U9-33N">
-                                            <rect key="frame" x="0.0" y="16" width="103" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Step 3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yi8-U9-33N">
+                                            <rect key="frame" x="0.0" y="13" width="103" height="40"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon-step3.png" translatesAutoresizingMaskIntoConstraints="NO" id="3cH-09-N7n">
-                                            <rect key="frame" x="33" y="52" width="37" height="37"/>
+                                            <rect key="frame" x="33" y="59" width="37" height="37"/>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" red="0.98431372549019602" green="0.68235294117647061" blue="0.062745098039215685" alpha="1" colorSpace="calibratedRGB"/>
@@ -274,5 +283,6 @@
         <image name="icon-step3.png" width="157" height="157"/>
         <image name="icon-submit.png" width="49" height="109"/>
         <image name="logo.png" width="194" height="181"/>
+        <image name="taxyear.png" width="81" height="29"/>
     </resources>
 </document>

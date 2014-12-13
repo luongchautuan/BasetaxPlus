@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MBProgressHUD.h"
+#import "UserReponsitory.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -21,6 +22,8 @@
 @property(strong,nonatomic)UIImage *image;
 @property (nonatomic,readwrite) int tidPhoto;
 @property (nonatomic,readwrite) BOOL PhotoClick;
+@property (nonatomic)BOOL isLoginSucessfully;
+@property (nonatomic, retain)UserReponsitory* userReponsitory;
 
 @end
 

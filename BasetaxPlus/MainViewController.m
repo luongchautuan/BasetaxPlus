@@ -10,16 +10,22 @@
 #import "LoginViewController.h"
 #import "IntroDetailViewController.h"
 #import "UploadViewController.h"
+#import "AppDelegate.h"
+#import "TaxYearViewController.h"
 
 @interface MainViewController ()
 
 @end
+
+AppDelegate* appdelegate;
 
 @implementation MainViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    appdelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     
     [self.scrollView setContentSize:CGSizeMake(self.scrollView.frame.size.width, 576)];
 }
@@ -39,8 +45,24 @@
 
 - (IBAction)btnDocumentScanned_Clicked:(id)sender
 {
-    UploadViewController* uploadDocumentsViewController = [[UploadViewController alloc] initWithNibName:@"UploadViewController" bundle:nil];
-    [self.navigationController pushViewController:uploadDocumentsViewController animated:YES];
+    if (appdelegate.isLoginSucessfully)
+    {
+        UploadViewController* uploadDocumentsViewController = [[UploadViewController alloc] initWithNibName:@"UploadViewController" bundle:nil];
+        [self.navigationController pushViewController:uploadDocumentsViewController animated:YES];
+
+    }
+    else
+    {
+        UIAlertView* msg = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"Please login your Details on the Step 2" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [msg show];
+
+    }
+}
+
+- (IBAction)btnTaxYear_Clicked:(id)sender
+{
+    TaxYearViewController* taxYearViewController = [[TaxYearViewController alloc] initWithNibName:@"TaxYearViewController" bundle:nil];
+    [self.navigationController pushViewController:taxYearViewController animated:YES];
 }
 
 - (IBAction)btnYourSummary_Clicked:(id)sender

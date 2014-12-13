@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ExpenseViewController : UIViewController
+@interface ExpenseViewController : UIViewController<UITextViewDelegate,UITextFieldDelegate,UIActionSheetDelegate, UIScrollViewDelegate, UIAlertViewDelegate, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 
 @property (retain, nonatomic) IBOutlet UIButton *btnCash;

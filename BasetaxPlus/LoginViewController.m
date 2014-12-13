@@ -10,6 +10,7 @@
 #import "ASIHTTPRequest.h"
 #import "AppDelegate.h"
 #import "RegisterViewController.h"
+#import "UserReponsitory.h"
 
 @interface LoginViewController ()
 
@@ -154,25 +155,26 @@ AppDelegate* appdelegate;
 
 - (void)requestFinished:(ASIHTTPRequest *)request
 {
-//    if(request.tag == 1)
-//    {
-//        if([request responseStatusCode] == 200)
-//        {
-//            BIUser* user = [[BIUser alloc] init];
-//            user.userName = self.edtUsername.text;
-//            user.password = self.edtPassword.text;
-//            
-//            appdelegate.currentUser = user;
-//            
-//            appdelegate.isLoginSucesss = YES;
-//            
-//            BIDashBoard *pushToVC = [[BIDashBoard alloc] initWithNibName:@"BIDashBoard" bundle:nil];
-//            [self.navigationController pushViewController:pushToVC animated:YES];
-//        }
-//    }
+    if(request.tag == 1)
+    {
+        if([request responseStatusCode] == 200)
+        {
+            appdelegate.userReponsitory = [[UserReponsitory alloc] init];
+            appdelegate.userReponsitory.userName = self.txtUsername.text;
+            appdelegate.userReponsitory.password = self.txtPassword.text;
+            
+            appdelegate.isLoginSucessfully = YES;
+            
+            [self.navigationController popViewControllerAnimated:YES];
+            
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"" message:@"Login Successfully" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
+        }
+    }
 }
 
 - (void)requestFailed:(ASIHTTPRequest *)request
+
 {
    
     [appdelegate.activityIndicatorView hide:YES];

@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UploadViewController">
             <connections>
+                <outlet property="scrollView" destination="otS-iP-ZBn" id="XHt-eF-UyY"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="viewAddMore" destination="JM6-qj-IEh" id="Wnx-7m-9yJ"/>
                 <outlet property="viewAddMoreMain" destination="5MV-SM-SqR" id="UdD-iH-Mbp"/>
@@ -16,47 +17,6 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KmP-Lv-75H">
-                    <rect key="frame" x="0.0" y="20" width="320" height="50"/>
-                    <subviews>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Upload Documents" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gNl-Cx-TmA">
-                            <rect key="frame" x="0.0" y="14" width="320" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQE-1y-QIm">
-                            <rect key="frame" x="8" y="10" width="29" height="30"/>
-                            <state key="normal" backgroundImage="backbutton.png">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="btnBack_Clicked:" destination="-1" eventType="touchUpInside" id="XdM-0K-DyJ"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7e7-Ev-El0">
-                            <rect key="frame" x="282" y="10" width="30" height="30"/>
-                            <state key="normal" backgroundImage="btn-add.png">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="btnAddMore_Clicked:" destination="-1" eventType="touchUpInside" id="oCK-Lz-v6j"/>
-                            </connections>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" red="0.4039215686" green="0.68627450980000004" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
-                    <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="-20"/>
-                </view>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9OY-NY-khV">
-                    <rect key="frame" x="85" y="266" width="150" height="35"/>
-                    <state key="normal" title="Upload files" backgroundImage="btn-background.png">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="btnUploadFiles_Clicked:" destination="-1" eventType="touchUpInside" id="bhx-Lt-xhd"/>
-                    </connections>
-                </button>
                 <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JM6-qj-IEh">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <subviews>
@@ -93,6 +53,50 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
                 </view>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KmP-Lv-75H">
+                    <rect key="frame" x="0.0" y="20" width="320" height="50"/>
+                    <subviews>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Upload Documents" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gNl-Cx-TmA">
+                            <rect key="frame" x="0.0" y="14" width="320" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQE-1y-QIm">
+                            <rect key="frame" x="8" y="10" width="29" height="30"/>
+                            <state key="normal" backgroundImage="backbutton.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="btnBack_Clicked:" destination="-1" eventType="touchUpInside" id="XdM-0K-DyJ"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7e7-Ev-El0">
+                            <rect key="frame" x="282" y="10" width="30" height="30"/>
+                            <state key="normal" backgroundImage="btn-add.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="btnAddMore_Clicked:" destination="-1" eventType="touchUpInside" id="oCK-Lz-v6j"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.4039215686" green="0.68627450980000004" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="-20"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9OY-NY-khV">
+                    <rect key="frame" x="85" y="400" width="150" height="35"/>
+                    <state key="normal" title="Upload files" backgroundImage="btn-background.png">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="btnUploadFiles_Clicked:" destination="-1" eventType="touchUpInside" id="bhx-Lt-xhd"/>
+                    </connections>
+                </button>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otS-iP-ZBn">
+                    <rect key="frame" x="0.0" y="87" width="320" height="242"/>
+                </scrollView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

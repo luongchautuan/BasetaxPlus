@@ -106,469 +106,454 @@ int businessID;
     isEdit = NO;
     
     cashBool =TRUE ;
-    paymentId=1;
-
-
+    paymentId = 1;
 
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
-//    ASIHTTPRequest *request = [[ASIHTTPRequest alloc] initWithURL:[NSURL URLWithString:@"https://ec2-46-137-84-201.eu-west-1.compute.amazonaws.com:8443/wTaxmapp/resources/user"]];
-//    
-//    [request addBasicAuthenticationHeaderWithUsername:[[NSUserDefaults standardUserDefaults]valueForKey:@"Username"]andPassword:[[NSUserDefaults standardUserDefaults]valueForKey:@"Pass"]];
-//    [request setValidatesSecureCertificate:NO];
-//    
-//    [request startSynchronous];
-//    
-//    
-//    NSString *responseString = [[NSString alloc] initWithData:[request responseData] encoding:NSUTF8StringEncoding];
-//    
-//    SBJsonParser *json = [SBJsonParser new];
-//    feeds = [json objectWithString:responseString];
-//    
-//    vatinProfile=[feeds valueForKey:@"vatRegistered"];
-//    cisinProfile=[feeds valueForKey:@"cisRegistered"];
-//    
-//    
-//    if (([cisinProfile intValue]==1) &&([vatinProfile intValue]==1))
-//    {
-//        NSLog(@"1-1");
-//        self.inputBox.frame=CGRectMake(113,4,205,229);
-//        [UIView beginAnimations:@"" context:nil];
-//        [UIView setAnimationDuration:0.5];
-//        self.inputBox.frame=CGRectMake(113,4,205,231);
-//        [UIView commitAnimations];
-//        
-//        
-//        self.txtAmount.frame=CGRectMake(122,5,205,31);
-//        [UIView beginAnimations:@"" context:nil];
-//        [UIView setAnimationDuration:0.5];
-//        self.txtAmount.frame=CGRectMake(122,5,205,31);
-//        [UIView commitAnimations];
-//        
-//        self.lineAmount.frame=CGRectMake(113,37,203,1);
-//        [UIView beginAnimations:@"" context:nil];
-//        [UIView setAnimationDuration:0.5];
-//        self.lineAmount.frame=CGRectMake(113,37,203,1);
-//        [UIView commitAnimations];
-//        
-//        self.txtVat.frame=CGRectMake(123,39,205,31);
-//        [UIView beginAnimations:@"" context:nil];
-//        [UIView setAnimationDuration:0.5];
-//        self.txtVat.frame=CGRectMake(123,39,205,31);
-//        [UIView commitAnimations];
-//        
-//        self.lineVat.frame=CGRectMake(113,71,203,1);
-//        [UIView beginAnimations:@"" context:nil];
-//        [UIView setAnimationDuration:0.5];
-//        self.lineVat.frame=CGRectMake(113,71,203,1);
-//        [UIView commitAnimations];
-//        
-//        self.txtCis.frame=CGRectMake(122,73,205,31);
-//        [UIView beginAnimations:@"" context:nil];
-//        [UIView setAnimationDuration:0.5];
-//        self.txtCis.frame=CGRectMake(122,73,205,31);
-//        [UIView commitAnimations];
-//        
-//        self.lineCis.frame=CGRectMake(113,105,203,1);
-//        [UIView beginAnimations:@"" context:nil];
-//        [UIView setAnimationDuration:0.5];
-//        self.lineCis.frame=CGRectMake(113,105,203,1);
-//        [UIView commitAnimations];
-//        
-//        self.txtDate.frame=CGRectMake(123,106,201,31);
-//        [UIView beginAnimations:@"" context:nil];
-//        [UIView setAnimationDuration:0.5];
-//        self.txtDate.frame=CGRectMake(123,106,201,31);
-//        [UIView commitAnimations];
-//        
-//        NSDateFormatter *dateformate=[[NSDateFormatter alloc]init];
-//        
-//        [dateformate setDateFormat:@"dd-MM-YYYY"];
-//        
-//        NSString *date_String=[dateformate stringFromDate:[NSDate date]];
-//        
-//        //        NSLog(@"Current Date: %@", date_String);
-//        self.txtDate.text = date_String;
-//        
-//        
-//        self.btnDate.frame=CGRectMake(122,106,205,31);
-//        [UIView beginAnimations:@"" context:nil];
-//        [UIView setAnimationDuration:0.5];
-//        self.btnDate.frame=CGRectMake(122,106,205,31);
-//        [UIView commitAnimations];
-//        
-//        self.lineDate.frame=CGRectMake(113,138,203,1);
-//        [UIView beginAnimations:@"" context:nil];
-//        [UIView setAnimationDuration:0.5];
-//        self.lineDate.frame=CGRectMake(113,138,203,1);
-//        [UIView commitAnimations];
-//        
-//        self.txtCustomerName.frame=CGRectMake(123,140,201,31);
-//        [UIView beginAnimations:@"" context:nil];
-//        [UIView setAnimationDuration:0.5];
-//        self.txtCustomerName.frame=CGRectMake(123,140,201,31);
-//        [UIView commitAnimations];
-//        
-//        self.lineCustomer.frame=CGRectMake(113,170,203,1);
-//        [UIView beginAnimations:@"" context:nil];
-//        [UIView setAnimationDuration:0.5];
-//        self.lineCustomer.frame=CGRectMake(113,170,203,1);
-//        [UIView commitAnimations];
-//        
-//        
-//        self.txtInvoiceReference.frame=CGRectMake(123,172,201,31);
-//        [UIView beginAnimations:@"" context:nil];
-//        [UIView setAnimationDuration:0.5];
-//        self.txtInvoiceReference.frame=CGRectMake(123,172,201,31);
-//        [UIView commitAnimations];
-//        
-//        
-//        self.txtVat.hidden=NO;
-//        self.txtCis.hidden=NO;
-//        self.lineCis.hidden=NO;
-//        self.lineVat.hidden=NO;
-//        
-//    }
-//    
-//    
-//    if (([cisinProfile intValue]==0) &&([vatinProfile intValue]==0))
-//    {
-//        NSLog(@"0-0");
-//        self.inputBox.frame=CGRectMake(113,4,205,186);
-//        [UIView beginAnimations:@"" context:nil];
-//        [UIView setAnimationDuration:0.5];
-//        self.inputBox.frame=CGRectMake(113,4,205,186);
-//        [UIView commitAnimations];
-//        
-//        
-//        self.txtAmount.frame=CGRectMake(122,8,205,31);
-//        [UIView beginAnimations:@"" context:nil];
-//        [UIView setAnimationDuration:0.5];
-//        self.txtAmount.frame=CGRectMake(122,8,205,31);
-//        [UIView commitAnimations];
-//        
-//        self.lineAmount.frame=CGRectMake(113,41,203,1);
-//        [UIView beginAnimations:@"" context:nil];
-//        [UIView setAnimationDuration:0.5];
-//        self.lineAmount.frame=CGRectMake(113,41,203,1);
-//        [UIView commitAnimations];
-//        
-//        self.txtDate.frame=CGRectMake(122,45,205,31);
-//        [UIView beginAnimations:@"" context:nil];
-//        [UIView setAnimationDuration:0.5];
-//        self.txtDate.frame=CGRectMake(122,45,205,31);
-//        [UIView commitAnimations];
-//        
-//        NSDateFormatter *dateformate=[[NSDateFormatter alloc]init];
-//        
-//        [dateformate setDateFormat:@"dd-MM-YYYY"];
-//        
-//        NSString *date_String=[dateformate stringFromDate:[NSDate date]];
-//        
-//        //        NSLog(@"Current Date: %@", date_String);
-//        self.txtDate.text = date_String;
-//        
-//        self.btnDate.frame=CGRectMake(122,45,205,31);
-//        [UIView beginAnimations:@"" context:nil];
-//        [UIView setAnimationDuration:0.5];
-//        self.btnDate.frame=CGRectMake(122,45,205,31);
-//        [UIView commitAnimations];
-//        
-//        self.lineDate.frame=CGRectMake(113,80,203,1);
-//        [UIView beginAnimations:@"" context:nil];
-//        [UIView setAnimationDuration:0.5];
-//        self.lineDate.frame=CGRectMake(113,80,203,1);
-//        [UIView commitAnimations];
-//        
-//        self.txtCustomerName.frame=CGRectMake(123,85,201,31);
-//        [UIView beginAnimations:@"" context:nil];
-//        [UIView setAnimationDuration:0.5];
-//        self.txtCustomerName.frame=CGRectMake(123,85,201,31);
-//        [UIView commitAnimations];
-//        
-//        self.lineCustomer.frame=CGRectMake(113,118,203,1);
-//        [UIView beginAnimations:@"" context:nil];
-//        [UIView setAnimationDuration:0.5];
-//        self.lineCustomer.frame=CGRectMake(113,118,203,1);
-//        [UIView commitAnimations];
-//        
-//        self.txtInvoiceReference.frame=CGRectMake(123,124,201,31);
-//        [UIView beginAnimations:@"" context:nil];
-//        [UIView setAnimationDuration:0.5];
-//        self.txtInvoiceReference.frame=CGRectMake(123,124,201,31);
-//        [UIView commitAnimations];
-//        
-//        //Begin add method Business name
-//        
-//        
-//        self.lineBusiness.frame=CGRectMake(113,156,203,1);
-//        [UIView beginAnimations:@"" context:nil];
-//        [UIView setAnimationDuration:0.5];
-//        self.lineBusiness.frame=CGRectMake(113,156,203,1);
-//        [UIView commitAnimations];
-//        
-//        self.txtBusiness.frame=CGRectMake(123,155,201,31);
-//        [UIView beginAnimations:@"" context:nil];
-//        [UIView setAnimationDuration:0.5];
-//        self.txtBusiness.frame=CGRectMake(123,155,201,31);
-//        [UIView commitAnimations];
-//        
-//        self.btnBusiness.frame = CGRectMake(123,155,201,31);
-//        [UIView beginAnimations:@"" context:nil];
-//        [UIView setAnimationDuration:0.5];
-//        self.btnBusiness.frame=CGRectMake(123,155,201,31);
-//        [UIView commitAnimations];
-//        
-//        //End
-//        
-//        self.txtVat.hidden=YES;
-//        self.txtCis.hidden=YES;
-//        self.lineVat.hidden=YES;
-//        self.lineCis.hidden=YES;
-//    }
-//    
-//    
-//    
-//    if (([cisinProfile intValue]==0) &&([vatinProfile intValue]==1))
-//    {
-//        NSLog(@"0-1");
-//        self.inputBox.frame=CGRectMake(113,4,205,221);
-//        [UIView beginAnimations:@"" context:nil];
-//        [UIView setAnimationDuration:0.5];
-//        self.inputBox.frame=CGRectMake(113,4,205,221);
-//        [UIView commitAnimations];
-//        
-//        
-//        self.txtAmount.frame=CGRectMake(122,8,205,31);
-//        [UIView beginAnimations:@"" context:nil];
-//        [UIView setAnimationDuration:0.5];
-//        self.txtAmount.frame=CGRectMake(122,8,205,31);
-//        [UIView commitAnimations];
-//        
-//        self.lineAmount.frame=CGRectMake(113,41,203,1);
-//        [UIView beginAnimations:@"" context:nil];
-//        [UIView setAnimationDuration:0.5];
-//        self.lineAmount.frame=CGRectMake(113,41,203,1);
-//        [UIView commitAnimations];
-//        
-//        self.txtVat.frame=CGRectMake(122,45,205,31);
-//        [UIView beginAnimations:@"" context:nil];
-//        [UIView setAnimationDuration:0.5];
-//        self.txtVat.frame=CGRectMake(122,45,205,31);
-//        [UIView commitAnimations];
-//        
-//        self.lineVat.frame=CGRectMake(113,77,203,1);
-//        [UIView beginAnimations:@"" context:nil];
-//        [UIView setAnimationDuration:0.5];
-//        self.lineVat.frame=CGRectMake(113,77,203,1);
-//        [UIView commitAnimations];
-//        
-//        self.txtDate.frame=CGRectMake(123,81,201,31);
-//        [UIView beginAnimations:@"" context:nil];
-//        [UIView setAnimationDuration:0.5];
-//        self.txtDate.frame=CGRectMake(123,81,201,31);
-//        [UIView commitAnimations];
-//        
-//        //Set current date.
-//        NSDateFormatter *dateformate=[[NSDateFormatter alloc]init];
-//        
-//        [dateformate setDateFormat:@"dd-MM-YYYY"];
-//        
-//        NSString *date_String=[dateformate stringFromDate:[NSDate date]];
-//        
-//        //        NSLog(@"Current Date: %@", date_String);
-//        self.txtDate.text = date_String;
-//        
-//        
-//        self.btnDate.frame=CGRectMake(122,80,205,31);
-//        [UIView beginAnimations:@"" context:nil];
-//        [UIView setAnimationDuration:0.5];
-//        self.btnDate.frame=CGRectMake(122,80,205,31);
-//        [UIView commitAnimations];
-//        
-//        self.lineDate.frame=CGRectMake(113,115,203,1);
-//        [UIView beginAnimations:@"" context:nil];
-//        [UIView setAnimationDuration:0.5];
-//        self.lineDate.frame=CGRectMake(113,115,203,1);
-//        [UIView commitAnimations];
-//        
-//        self.txtCustomerName.frame=CGRectMake(123,120,201,31);
-//        [UIView beginAnimations:@"" context:nil];
-//        [UIView setAnimationDuration:0.5];
-//        self.txtCustomerName.frame=CGRectMake(123,120,201,31);
-//        [UIView commitAnimations];
-//        
-//        self.lineCustomer.frame=CGRectMake(113,153,203,1);
-//        [UIView beginAnimations:@"" context:nil];
-//        [UIView setAnimationDuration:0.5];
-//        self.lineCustomer.frame=CGRectMake(113,153,203,1);
-//        [UIView commitAnimations];
-//        
-//        
-//        self.txtInvoiceReference.frame=CGRectMake(123,159,201,31);
-//        [UIView beginAnimations:@"" context:nil];
-//        [UIView setAnimationDuration:0.5];
-//        self.txtInvoiceReference.frame=CGRectMake(123,159,201,31);
-//        [UIView commitAnimations];
-//        
-//        //Begin add method Business name
-//        
-//        self.viewBusiness.frame=CGRectMake(10,232,300,120);
-//        [UIView beginAnimations:@"" context:nil];
-//        [UIView setAnimationDuration:0.5];
-//        self.viewBusiness.frame=CGRectMake(10,232,300,120);
-//        [UIView commitAnimations];
-//        
-//        
-//        
-//        self.lineBusiness.frame=CGRectMake(113,190,203,1);
-//        [UIView beginAnimations:@"" context:nil];
-//        [UIView setAnimationDuration:0.5];
-//        self.lineBusiness.frame=CGRectMake(113,190,203,1);
-//        [UIView commitAnimations];
-//        
-//        self.txtBusiness.frame=CGRectMake(123,193,201,31);
-//        [UIView beginAnimations:@"" context:nil];
-//        [UIView setAnimationDuration:0.5];
-//        self.txtBusiness.frame=CGRectMake(123,193,201,31);
-//        [UIView commitAnimations];
-//        
-//        self.btnBusiness.frame = CGRectMake(123,193,201,31);
-//        [UIView beginAnimations:@"" context:nil];
-//        [UIView setAnimationDuration:0.5];
-//        self.btnBusiness.frame=CGRectMake(123,193,201,31);
-//        [UIView commitAnimations];
-//        
-//        //End
-//        
-//        
-//        self.txtCis.hidden=YES;
-//        self.lineCis.hidden=YES;
-//        self.txtVat.hidden=NO;
-//        self.lineVat.hidden=NO;
-//        
-//    }
-//    
-//    
-//    
-//    if (([cisinProfile intValue]==1) &&([vatinProfile intValue]==0))
-//    {
-//        NSLog(@"1-0");
-//        self.inputBox.frame=CGRectMake(113,4,205,221);
-//        [UIView beginAnimations:@"" context:nil];
-//        [UIView setAnimationDuration:0.5];
-//        self.inputBox.frame=CGRectMake(113,4,205,221);
-//        [UIView commitAnimations];
-//        
-//        
-//        self.txtAmount.frame=CGRectMake(122,8,205,31);
-//        [UIView beginAnimations:@"" context:nil];
-//        [UIView setAnimationDuration:0.5];
-//        self.txtAmount.frame=CGRectMake(122,8,205,31);
-//        [UIView commitAnimations];
-//        
-//        self.lineAmount.frame=CGRectMake(113,41,203,1);
-//        [UIView beginAnimations:@"" context:nil];
-//        [UIView setAnimationDuration:0.5];
-//        self.lineAmount.frame=CGRectMake(113,41,203,1);
-//        [UIView commitAnimations];
-//        
-//        self.txtCis.frame=CGRectMake(122,45,205,31);
-//        [UIView beginAnimations:@"" context:nil];
-//        [UIView setAnimationDuration:0.5];
-//        self.txtCis.frame=CGRectMake(122,45,205,31);
-//        [UIView commitAnimations];
-//        
-//        self.lineCis.frame=CGRectMake(113,77,203,1);
-//        [UIView beginAnimations:@"" context:nil];
-//        [UIView setAnimationDuration:0.5];
-//        self.lineCis.frame=CGRectMake(113,77,203,1);
-//        [UIView commitAnimations];
-//        
-//        self.txtDate.frame=CGRectMake(123,81,201,31);
-//        [UIView beginAnimations:@"" context:nil];
-//        [UIView setAnimationDuration:0.5];
-//        self.txtDate.frame=CGRectMake(123,81,201,31);
-//        [UIView commitAnimations];
-//        
-//        NSDateFormatter *dateformate=[[NSDateFormatter alloc]init];
-//        
-//        [dateformate setDateFormat:@"dd-MM-YYYY"];
-//        
-//        NSString *date_String=[dateformate stringFromDate:[NSDate date]];
-//        
-//        //        NSLog(@"Current Date: %@", date_String);
-//        self.txtDate.text = date_String;
-//        
-//        
-//        self.btnDate.frame=CGRectMake(122,80,205,31);
-//        [UIView beginAnimations:@"" context:nil];
-//        [UIView setAnimationDuration:0.5];
-//         self.btnDate.frame=CGRectMake(122,80,205,31);
-//        [UIView commitAnimations];
-//        
-//        self.lineDate.frame=CGRectMake(113,115,203,1);
-//        [UIView beginAnimations:@"" context:nil];
-//        [UIView setAnimationDuration:0.5];
-//        self.lineDate.frame=CGRectMake(113,115,203,1);
-//        [UIView commitAnimations];
-//        
-//        self.txtCustomerName.frame=CGRectMake(123,120,201,31);
-//        [UIView beginAnimations:@"" context:nil];
-//        [UIView setAnimationDuration:0.5];
-//        self.txtCustomerName.frame=CGRectMake(123,120,201,31);
-//        [UIView commitAnimations];
-//        
-//        self.lineCustomer.frame=CGRectMake(113,153,203,1);
-//        [UIView beginAnimations:@"" context:nil];
-//        [UIView setAnimationDuration:0.5];
-//        self.lineCustomer.frame=CGRectMake(113,153,203,1);
-//        [UIView commitAnimations];
-//        
-//        
-//        self.txtInvoiceReference.frame=CGRectMake(123,159,201,31);
-//        [UIView beginAnimations:@"" context:nil];
-//        [UIView setAnimationDuration:0.5];
-//        self.txtInvoiceReference.frame=CGRectMake(123,159,201,31);
-//        [UIView commitAnimations];
-//        
-//        //Begin add method Business name
-//        
-//        self.viewBusiness.frame=CGRectMake(10,232,300,120);
-//        [UIView beginAnimations:@"" context:nil];
-//        [UIView setAnimationDuration:0.5];
-//        self.viewBusiness.frame=CGRectMake(10,232,300,120);
-//        [UIView commitAnimations];
-//        
-//        
-//        
-//        self.lineBusiness.frame=CGRectMake(113,190,203,1);
-//        [UIView beginAnimations:@"" context:nil];
-//        [UIView setAnimationDuration:0.5];
-//        self.lineBusiness.frame=CGRectMake(113,190,203,1);
-//        [UIView commitAnimations];
-//        
-//        self.txtBusiness.frame=CGRectMake(123,193,201,31);
-//        [UIView beginAnimations:@"" context:nil];
-//        [UIView setAnimationDuration:0.5];
-//        self.txtBusiness.frame=CGRectMake(123,193,201,31);
-//        [UIView commitAnimations];
-//        
-//        self.btnBusiness.frame = CGRectMake(123,193,201,31);
-//        [UIView beginAnimations:@"" context:nil];
-//        [UIView setAnimationDuration:0.5];
-//        self.btnBusiness.frame=CGRectMake(123,193,201,31);
-//        [UIView commitAnimations];
-//        
-//        //End
-//        
-//        self.txtVat.hidden=YES;
-//        self.lineVat.hidden=YES;
-//        self.txtCis.hidden=NO;
-//        self.lineCis.hidden=NO;
-//    }
+    ASIHTTPRequest *request = [[ASIHTTPRequest alloc] initWithURL:[NSURL URLWithString:@"https://ec2-46-137-84-201.eu-west-1.compute.amazonaws.com:8443/wTaxmapp/resources/user"]];
+    
+    [request addBasicAuthenticationHeaderWithUsername:[[NSUserDefaults standardUserDefaults]valueForKey:@"Username"]andPassword:[[NSUserDefaults standardUserDefaults]valueForKey:@"Pass"]];
+    [request setValidatesSecureCertificate:NO];
+    
+    [request startSynchronous];
+    
+    NSString *responseString = [[NSString alloc] initWithData:[request responseData] encoding:NSUTF8StringEncoding];
+    
+    SBJsonParser *json = [SBJsonParser new];
+    feeds = [json objectWithString:responseString];
+    
+    vatinProfile = [feeds valueForKey:@"vatRegistered"];
+    cisinProfile = [feeds valueForKey:@"cisRegistered"];
+
+
+    if (([cisinProfile intValue]==1) &&([vatinProfile intValue]==1))
+    {
+        NSLog(@"1-1");
+        self.inputBox.frame=CGRectMake(113,4,205,229);
+        [UIView beginAnimations:@"" context:nil];
+        [UIView setAnimationDuration:0.5];
+        self.inputBox.frame=CGRectMake(113,4,205,231);
+        [UIView commitAnimations];
+        
+        
+        self.txtAmount.frame=CGRectMake(122,5,205,31);
+        [UIView beginAnimations:@"" context:nil];
+        [UIView setAnimationDuration:0.5];
+        self.txtAmount.frame=CGRectMake(122,5,205,31);
+        [UIView commitAnimations];
+        
+        self.lineAmount.frame=CGRectMake(113,37,203,1);
+        [UIView beginAnimations:@"" context:nil];
+        [UIView setAnimationDuration:0.5];
+        self.lineAmount.frame=CGRectMake(113,37,203,1);
+        [UIView commitAnimations];
+        
+        self.txtVat.frame=CGRectMake(123,39,205,31);
+        [UIView beginAnimations:@"" context:nil];
+        [UIView setAnimationDuration:0.5];
+        self.txtVat.frame=CGRectMake(123,39,205,31);
+        [UIView commitAnimations];
+        
+        self.lineVat.frame=CGRectMake(113,71,203,1);
+        [UIView beginAnimations:@"" context:nil];
+        [UIView setAnimationDuration:0.5];
+        self.lineVat.frame=CGRectMake(113,71,203,1);
+        [UIView commitAnimations];
+        
+        self.txtCis.frame=CGRectMake(122,73,205,31);
+        [UIView beginAnimations:@"" context:nil];
+        [UIView setAnimationDuration:0.5];
+        self.txtCis.frame=CGRectMake(122,73,205,31);
+        [UIView commitAnimations];
+        
+        self.lineCis.frame=CGRectMake(113,105,203,1);
+        [UIView beginAnimations:@"" context:nil];
+        [UIView setAnimationDuration:0.5];
+        self.lineCis.frame=CGRectMake(113,105,203,1);
+        [UIView commitAnimations];
+        
+        self.txtDate.frame=CGRectMake(123,106,201,31);
+        [UIView beginAnimations:@"" context:nil];
+        [UIView setAnimationDuration:0.5];
+        self.txtDate.frame=CGRectMake(123,106,201,31);
+        [UIView commitAnimations];
+        
+        NSDateFormatter *dateformate=[[NSDateFormatter alloc]init];
+        
+        [dateformate setDateFormat:@"dd-MM-YYYY"];
+        
+        NSString *date_String=[dateformate stringFromDate:[NSDate date]];
+        
+        //        NSLog(@"Current Date: %@", date_String);
+        self.txtDate.text = date_String;
+        
+        
+        self.btnDate.frame=CGRectMake(122,106,205,31);
+        [UIView beginAnimations:@"" context:nil];
+        [UIView setAnimationDuration:0.5];
+        self.btnDate.frame=CGRectMake(122,106,205,31);
+        [UIView commitAnimations];
+        
+        self.lineDate.frame=CGRectMake(113,138,203,1);
+        [UIView beginAnimations:@"" context:nil];
+        [UIView setAnimationDuration:0.5];
+        self.lineDate.frame=CGRectMake(113,138,203,1);
+        [UIView commitAnimations];
+        
+        self.txtCustomerName.frame=CGRectMake(123,140,201,31);
+        [UIView beginAnimations:@"" context:nil];
+        [UIView setAnimationDuration:0.5];
+        self.txtCustomerName.frame=CGRectMake(123,140,201,31);
+        [UIView commitAnimations];
+        
+        self.lineCustomer.frame=CGRectMake(113,170,203,1);
+        [UIView beginAnimations:@"" context:nil];
+        [UIView setAnimationDuration:0.5];
+        self.lineCustomer.frame=CGRectMake(113,170,203,1);
+        [UIView commitAnimations];
+        
+        
+        self.txtInvoiceReference.frame=CGRectMake(123,172,201,31);
+        [UIView beginAnimations:@"" context:nil];
+        [UIView setAnimationDuration:0.5];
+        self.txtInvoiceReference.frame=CGRectMake(123,172,201,31);
+        [UIView commitAnimations];
+        
+        
+        self.txtVat.hidden=NO;
+        self.txtCis.hidden=NO;
+        self.lineCis.hidden=NO;
+        self.lineVat.hidden=NO;
+        
+    }
+    
+    int height = 31;
+    
+    if (([cisinProfile intValue]==0) &&([vatinProfile intValue]==0))
+    {
+        NSLog(@"0-0");
+        
+        self.inputBox.frame = CGRectMake(self.inputBox.frame.origin.x , self.inputBox.frame.origin.y, self.inputBox.frame.size.width, self.inputBox.frame.size.height - height);
+        [UIView beginAnimations:@"" context:nil];
+        [UIView setAnimationDuration:0.5];
+        self.inputBox.frame= CGRectMake(self.inputBox.frame.origin.x , self.inputBox.frame.origin.y, self.inputBox.frame.size.width, self.inputBox.frame.size.height - height);
+        [UIView commitAnimations];        
+        
+        self.txtDate.frame = CGRectMake(self.txtVat.frame.origin.x , self.txtVat.frame.origin.y , self.txtDate.frame.size.width ,self.txtDate.frame.size.height );
+        [UIView beginAnimations:@"" context:nil];
+        [UIView setAnimationDuration:0.5];
+        self.txtDate.frame = CGRectMake(self.txtVat.frame.origin.x ,self.txtVat.frame.origin.y , self.txtDate.frame.size.width , self.txtDate.frame.size.height );
+        [UIView commitAnimations];
+        
+        NSDateFormatter *dateformate=[[NSDateFormatter alloc]init];
+        
+        [dateformate setDateFormat:@"dd-MM-YYYY"];
+        
+        NSString *date_String=[dateformate stringFromDate:[NSDate date]];
+        self.txtDate.text = date_String;
+        
+        self.btnDate.frame = CGRectMake(self.txtVat.frame.origin.x , self.txtVat.frame.origin.y, self.btnDate.frame.size.width , self.btnDate.frame.size.height );
+        [UIView beginAnimations:@"" context:nil];
+        [UIView setAnimationDuration:0.5];
+        self.btnDate.frame = CGRectMake(self.txtVat.frame.origin.x , self.txtVat.frame.origin.y, self.btnDate.frame.size.width , self.btnDate.frame.size.height );
+        [UIView commitAnimations];
+        
+        self.lineDate.frame = CGRectMake(self.lineDate.frame.origin.x , self.txtDate.frame.origin.y + self.txtDate.frame.size.height , self.lineDate.frame.size.width,1);
+        [UIView beginAnimations:@"" context:nil];
+        [UIView setAnimationDuration:0.5];
+        self.lineDate.frame = CGRectMake(self.lineDate.frame.origin.x , self.txtDate.frame.origin.y + self.txtDate.frame.size.height , self.lineDate.frame.size.width,1);
+        [UIView commitAnimations];
+        
+        self.txtCustomerName.frame = CGRectMake(self.txtCis.frame.origin.x , self.txtCis.frame.origin.y, self.txtCustomerName.frame.size.width , self.txtCustomerName.frame.size.height );
+        [UIView beginAnimations:@"" context:nil];
+        [UIView setAnimationDuration:0.5];
+        self.txtCustomerName.frame = CGRectMake(self.txtCis.frame.origin.x , self.txtCis.frame.origin.y, self.txtCustomerName.frame.size.width , self.txtCustomerName.frame.size.height );
+        [UIView commitAnimations];
+        
+        self.lineCustomer.frame = CGRectMake(self.lineCustomer.frame.origin.x , self.txtCis.frame.origin.y + self.txtCis.frame.size.height , self.lineCustomer.frame.size.width, 1);
+        [UIView beginAnimations:@"" context:nil];
+        [UIView setAnimationDuration:0.5];
+        self.lineCustomer.frame = CGRectMake(self.lineCustomer.frame.origin.x , self.txtCis.frame.origin.y + self.txtCis.frame.size.height , self.lineCustomer.frame.size.width, 1);
+        [UIView commitAnimations];
+        
+        self.txtInvoiceReference.frame = CGRectMake(self.txtInvoiceReference.frame.origin.x, self.lineCustomer.frame.origin.y + 1, self.txtInvoiceReference.frame.size.width, self.txtInvoiceReference.frame.size.height);
+        [UIView beginAnimations:@"" context:nil];
+        [UIView setAnimationDuration:0.5];
+        self.txtInvoiceReference.frame = CGRectMake(self.txtInvoiceReference.frame.origin.x, self.lineCustomer.frame.origin.y + 1, self.txtInvoiceReference.frame.size.width, self.txtInvoiceReference.frame.size.height);
+        [UIView commitAnimations];
+        
+        //Begin add method Business name
+        
+        self.lineBusiness.frame = CGRectMake(self.lineBusiness.frame.origin.x , self.txtInvoiceReference.frame.origin.y + self.txtInvoiceReference.frame.size.height , self.lineBusiness.frame.size.width, 1);
+        [UIView beginAnimations:@"" context:nil];
+        [UIView setAnimationDuration:0.5];
+        self.lineBusiness.frame = CGRectMake(self.lineBusiness.frame.origin.x , self.txtInvoiceReference.frame.origin.y + self.txtInvoiceReference.frame.size.height , self.lineBusiness.frame.size.width, 1);
+        [UIView commitAnimations];
+        
+        self.txtBusiness.frame = CGRectMake(self.txtBusiness.frame.origin.x, self.lineBusiness.frame.origin.y + 1, self.txtBusiness.frame.size.width, self.txtBusiness.frame.size.height);
+        [UIView beginAnimations:@"" context:nil];
+        [UIView setAnimationDuration:0.5];
+        self.txtBusiness.frame = CGRectMake(self.txtBusiness.frame.origin.x, self.lineBusiness.frame.origin.y + 1, self.txtBusiness.frame.size.width, self.txtBusiness.frame.size.height);
+        [UIView commitAnimations];
+        
+        self.btnBusiness.frame = CGRectMake(self.btnBusiness.frame.origin.x, self.lineBusiness.frame.origin.y + 1, self.btnBusiness.frame.size.width, self.btnBusiness.frame.size.height);
+        [UIView beginAnimations:@"" context:nil];
+        [UIView setAnimationDuration:0.5];
+        self.btnBusiness.frame = CGRectMake(self.btnBusiness.frame.origin.x, self.lineBusiness.frame.origin.y + 1, self.btnBusiness.frame.size.width, self.btnBusiness.frame.size.height);
+        [UIView commitAnimations];
+        
+        self.viewDate.frame = CGRectMake(self.viewDate.frame.origin.x, self.lineDate.frame.origin.y + 5, self.viewDate.frame.size.width, self.viewDate.frame.size.height);
+        self.viewBusiness.frame = CGRectMake(self.viewBusiness.frame.origin.x, self.inputBox.frame.size.height + 5, self.viewBusiness.frame.size.width, self.viewBusiness.frame.size.height);
+        //End
+        
+        self.txtVat.hidden=YES;
+        self.txtCis.hidden=YES;
+        self.lineVat.hidden=YES;
+        self.lineCis.hidden=YES;
+    }
+    
+    
+    
+    if (([cisinProfile intValue]==0) &&([vatinProfile intValue]==1))
+    {
+        NSLog(@"0-1");
+        self.inputBox.frame=CGRectMake(113,4,205,221);
+        [UIView beginAnimations:@"" context:nil];
+        [UIView setAnimationDuration:0.5];
+        self.inputBox.frame=CGRectMake(113,4,205,221);
+        [UIView commitAnimations];
+        
+        
+        self.txtAmount.frame=CGRectMake(122,8,205,31);
+        [UIView beginAnimations:@"" context:nil];
+        [UIView setAnimationDuration:0.5];
+        self.txtAmount.frame=CGRectMake(122,8,205,31);
+        [UIView commitAnimations];
+        
+        self.lineAmount.frame=CGRectMake(113,41,203,1);
+        [UIView beginAnimations:@"" context:nil];
+        [UIView setAnimationDuration:0.5];
+        self.lineAmount.frame=CGRectMake(113,41,203,1);
+        [UIView commitAnimations];
+        
+        self.txtVat.frame=CGRectMake(122,45,205,31);
+        [UIView beginAnimations:@"" context:nil];
+        [UIView setAnimationDuration:0.5];
+        self.txtVat.frame=CGRectMake(122,45,205,31);
+        [UIView commitAnimations];
+        
+        self.lineVat.frame=CGRectMake(113,77,203,1);
+        [UIView beginAnimations:@"" context:nil];
+        [UIView setAnimationDuration:0.5];
+        self.lineVat.frame=CGRectMake(113,77,203,1);
+        [UIView commitAnimations];
+        
+        self.txtDate.frame=CGRectMake(123,81,201,31);
+        [UIView beginAnimations:@"" context:nil];
+        [UIView setAnimationDuration:0.5];
+        self.txtDate.frame=CGRectMake(123,81,201,31);
+        [UIView commitAnimations];
+        
+        //Set current date.
+        NSDateFormatter *dateformate=[[NSDateFormatter alloc]init];
+        
+        [dateformate setDateFormat:@"dd-MM-YYYY"];
+        
+        NSString *date_String=[dateformate stringFromDate:[NSDate date]];
+        
+        //        NSLog(@"Current Date: %@", date_String);
+        self.txtDate.text = date_String;
+        
+        
+        self.btnDate.frame=CGRectMake(122,80,205,31);
+        [UIView beginAnimations:@"" context:nil];
+        [UIView setAnimationDuration:0.5];
+        self.btnDate.frame=CGRectMake(122,80,205,31);
+        [UIView commitAnimations];
+        
+        self.lineDate.frame=CGRectMake(113,115,203,1);
+        [UIView beginAnimations:@"" context:nil];
+        [UIView setAnimationDuration:0.5];
+        self.lineDate.frame=CGRectMake(113,115,203,1);
+        [UIView commitAnimations];
+        
+        self.txtCustomerName.frame=CGRectMake(123,120,201,31);
+        [UIView beginAnimations:@"" context:nil];
+        [UIView setAnimationDuration:0.5];
+        self.txtCustomerName.frame=CGRectMake(123,120,201,31);
+        [UIView commitAnimations];
+        
+        self.lineCustomer.frame=CGRectMake(113,153,203,1);
+        [UIView beginAnimations:@"" context:nil];
+        [UIView setAnimationDuration:0.5];
+        self.lineCustomer.frame=CGRectMake(113,153,203,1);
+        [UIView commitAnimations];
+        
+        
+        self.txtInvoiceReference.frame=CGRectMake(123,159,201,31);
+        [UIView beginAnimations:@"" context:nil];
+        [UIView setAnimationDuration:0.5];
+        self.txtInvoiceReference.frame=CGRectMake(123,159,201,31);
+        [UIView commitAnimations];
+        
+        //Begin add method Business name
+        
+        self.viewBusiness.frame=CGRectMake(10,232,300,120);
+        [UIView beginAnimations:@"" context:nil];
+        [UIView setAnimationDuration:0.5];
+        self.viewBusiness.frame=CGRectMake(10,232,300,120);
+        [UIView commitAnimations];
+        
+        
+        
+        self.lineBusiness.frame=CGRectMake(113,190,203,1);
+        [UIView beginAnimations:@"" context:nil];
+        [UIView setAnimationDuration:0.5];
+        self.lineBusiness.frame=CGRectMake(113,190,203,1);
+        [UIView commitAnimations];
+        
+        self.txtBusiness.frame=CGRectMake(123,193,201,31);
+        [UIView beginAnimations:@"" context:nil];
+        [UIView setAnimationDuration:0.5];
+        self.txtBusiness.frame=CGRectMake(123,193,201,31);
+        [UIView commitAnimations];
+        
+        self.btnBusiness.frame = CGRectMake(123,193,201,31);
+        [UIView beginAnimations:@"" context:nil];
+        [UIView setAnimationDuration:0.5];
+        self.btnBusiness.frame=CGRectMake(123,193,201,31);
+        [UIView commitAnimations];
+        
+        //End
+        
+        
+        self.txtCis.hidden=YES;
+        self.lineCis.hidden=YES;
+        self.txtVat.hidden=NO;
+        self.lineVat.hidden=NO;
+        
+    }
+    
+    
+    
+    if (([cisinProfile intValue]==1) &&([vatinProfile intValue]==0))
+    {
+        NSLog(@"1-0");
+        self.inputBox.frame=CGRectMake(113,4,205,221);
+        [UIView beginAnimations:@"" context:nil];
+        [UIView setAnimationDuration:0.5];
+        self.inputBox.frame=CGRectMake(113,4,205,221);
+        [UIView commitAnimations];
+        
+        
+        self.txtAmount.frame=CGRectMake(122,8,205,31);
+        [UIView beginAnimations:@"" context:nil];
+        [UIView setAnimationDuration:0.5];
+        self.txtAmount.frame=CGRectMake(122,8,205,31);
+        [UIView commitAnimations];
+        
+        self.lineAmount.frame=CGRectMake(113,41,203,1);
+        [UIView beginAnimations:@"" context:nil];
+        [UIView setAnimationDuration:0.5];
+        self.lineAmount.frame=CGRectMake(113,41,203,1);
+        [UIView commitAnimations];
+        
+        self.txtCis.frame=CGRectMake(122,45,205,31);
+        [UIView beginAnimations:@"" context:nil];
+        [UIView setAnimationDuration:0.5];
+        self.txtCis.frame=CGRectMake(122,45,205,31);
+        [UIView commitAnimations];
+        
+        self.lineCis.frame=CGRectMake(113,77,203,1);
+        [UIView beginAnimations:@"" context:nil];
+        [UIView setAnimationDuration:0.5];
+        self.lineCis.frame=CGRectMake(113,77,203,1);
+        [UIView commitAnimations];
+        
+        self.txtDate.frame=CGRectMake(123,81,201,31);
+        [UIView beginAnimations:@"" context:nil];
+        [UIView setAnimationDuration:0.5];
+        self.txtDate.frame=CGRectMake(123,81,201,31);
+        [UIView commitAnimations];
+        
+        NSDateFormatter *dateformate=[[NSDateFormatter alloc]init];
+        
+        [dateformate setDateFormat:@"dd-MM-YYYY"];
+        
+        NSString *date_String=[dateformate stringFromDate:[NSDate date]];
+        
+        //        NSLog(@"Current Date: %@", date_String);
+        self.txtDate.text = date_String;
+        
+        
+        self.btnDate.frame=CGRectMake(122,80,205,31);
+        [UIView beginAnimations:@"" context:nil];
+        [UIView setAnimationDuration:0.5];
+         self.btnDate.frame=CGRectMake(122,80,205,31);
+        [UIView commitAnimations];
+        
+        self.lineDate.frame=CGRectMake(113,115,203,1);
+        [UIView beginAnimations:@"" context:nil];
+        [UIView setAnimationDuration:0.5];
+        self.lineDate.frame=CGRectMake(113,115,203,1);
+        [UIView commitAnimations];
+        
+        self.txtCustomerName.frame=CGRectMake(123,120,201,31);
+        [UIView beginAnimations:@"" context:nil];
+        [UIView setAnimationDuration:0.5];
+        self.txtCustomerName.frame=CGRectMake(123,120,201,31);
+        [UIView commitAnimations];
+        
+        self.lineCustomer.frame=CGRectMake(113,153,203,1);
+        [UIView beginAnimations:@"" context:nil];
+        [UIView setAnimationDuration:0.5];
+        self.lineCustomer.frame=CGRectMake(113,153,203,1);
+        [UIView commitAnimations];
+        
+        
+        self.txtInvoiceReference.frame=CGRectMake(123,159,201,31);
+        [UIView beginAnimations:@"" context:nil];
+        [UIView setAnimationDuration:0.5];
+        self.txtInvoiceReference.frame=CGRectMake(123,159,201,31);
+        [UIView commitAnimations];
+        
+        //Begin add method Business name
+        
+        self.viewBusiness.frame=CGRectMake(10,232,300,120);
+        [UIView beginAnimations:@"" context:nil];
+        [UIView setAnimationDuration:0.5];
+        self.viewBusiness.frame=CGRectMake(10,232,300,120);
+        [UIView commitAnimations];
+        
+        
+        
+        self.lineBusiness.frame=CGRectMake(113,190,203,1);
+        [UIView beginAnimations:@"" context:nil];
+        [UIView setAnimationDuration:0.5];
+        self.lineBusiness.frame=CGRectMake(113,190,203,1);
+        [UIView commitAnimations];
+        
+        self.txtBusiness.frame=CGRectMake(123,193,201,31);
+        [UIView beginAnimations:@"" context:nil];
+        [UIView setAnimationDuration:0.5];
+        self.txtBusiness.frame=CGRectMake(123,193,201,31);
+        [UIView commitAnimations];
+        
+        self.btnBusiness.frame = CGRectMake(123,193,201,31);
+        [UIView beginAnimations:@"" context:nil];
+        [UIView setAnimationDuration:0.5];
+        self.btnBusiness.frame=CGRectMake(123,193,201,31);
+        [UIView commitAnimations];
+        
+        //End
+        
+        self.txtVat.hidden=YES;
+        self.lineVat.hidden=YES;
+        self.txtCis.hidden=NO;
+        self.lineCis.hidden=NO;
+    }
 
 
 }
@@ -681,153 +666,6 @@ int businessID;
     
     if(request.tag==5)
     {
-        responseString = [[NSString alloc] initWithData:[request responseData] encoding:NSUTF8StringEncoding];
-        
-        SBJsonParser *json = [SBJsonParser new];
-        feeds = [json objectWithString:responseString];
-        
-        UserID=[[feeds valueForKeyPath:@"user"] valueForKey:@"id"];
-        TransID=[feeds valueForKey:@"id"];
-        
-        businessID = [[[feeds valueForKeyPath:@"business"] valueForKey:@"id"] intValue];
-        RecordType=[[feeds valueForKeyPath:@"recordType"] valueForKey:@"id"];
-        Name=[feeds valueForKey:@"name"];
-        Amount=[feeds valueForKey:@"amount"];
-        VAT=[feeds valueForKey:@"vat"];
-        CISDeduction=[feeds valueForKey:@"cisDeduction"];
-        PaymentType=[[feeds valueForKeyPath:@"paymentType"] valueForKey:@"id"];
-        ReferenceName=[feeds valueForKey:@"reference"];
-        Description=[feeds valueForKey:@"description"];
-        DateOfTrans=[feeds valueForKey:@"date"];
-        Notes=[feeds valueForKey:@"notes"];
-        
-        record=[RecordType intValue];
-        paymentId=[PaymentType intValue];
-        
-        if([RecordType intValue]==1)
-        {
-            self.lblRecordSelected.text=@"";
-            self.lblRecordSelected.text=@"Sales";
-        }
-        if([RecordType intValue]==2)
-        {
-            self.lblRecordSelected.text=@"";
-            self.lblRecordSelected.text=@"Fees";
-        }
-        if([RecordType intValue]==3)
-        {
-            self.lblRecordSelected.text=@"";
-            self.lblRecordSelected.text=@"Bank interest";
-        }
-        if([RecordType intValue]==4)
-        {
-            self.lblRecordSelected.text=@"";
-            self.lblRecordSelected.text=@"Other business income";
-        }
-        
-        if([PaymentType intValue]==1)
-        {
-            cashBool =TRUE ;
-            [self.btnCash setImage:[UIImage imageNamed:@"cashon.png"] forState:UIControlStateNormal];
-            
-        }
-        
-        if([PaymentType intValue]==2)
-        {
-            chequeBool =TRUE ;
-            [self.btnCheque setImage:[UIImage imageNamed:@"chequeon.png"] forState:UIControlStateNormal];
-            
-        }
-        
-        if([PaymentType intValue]==3)
-        {
-            [self.btnCard setImage:[UIImage imageNamed:@"cardon.png"] forState:UIControlStateNormal];
-            cardBool = FALSE;
-            
-        }
-        
-        if([PaymentType intValue]==4)
-        {
-            [self.btnOther setImage:[UIImage imageNamed:@"otheron.png"] forState:UIControlStateNormal];
-            otherBool = FALSE;
-            
-        }
-        
-        self.lblNoteDescription.hidden=YES;
-        
-        self.txtCustomerName.text = Name;
-        self.txtVat.text=[NSString stringWithFormat:@"%@", VAT];
-        
-        NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-        NSLocale *localeCurrency = [[NSLocale alloc]
-                                    initWithLocaleIdentifier:@"en"];
-        [formatter setLocale:localeCurrency];
-        [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
-        
-        NSString *groupingSeparator = [[NSLocale currentLocale] objectForKey:NSLocaleGroupingSeparator];
-        [formatter setGroupingSeparator:groupingSeparator];
-        [formatter setGroupingSize:3];
-        [formatter setAlwaysShowsDecimalSeparator:NO];
-        [formatter setUsesGroupingSeparator:YES];
-        
-        NSString* amt = [formatter stringFromNumber:[NSNumber numberWithFloat:[Amount floatValue]]];
-        NSString* amountAfterFormat = [[NSString stringWithFormat:@"£ "] stringByAppendingString:amt];
-        
-        self.txtAmount.text = amountAfterFormat;
-        
-        self.txtInvoiceReference.text=ReferenceName;
-        self.txtDate.text=DateOfTrans;
-        self.txtCis.text=[NSString stringWithFormat:@"%@",CISDeduction];
-//        self..text=Description;
-        
-        //photo download
-        
-//        [self DownloadPhoto];
-        
-//        name.userInteractionEnabled=YES;
-//        vat.userInteractionEnabled=YES;
-//        amount.userInteractionEnabled=YES;
-//        reference.userInteractionEnabled=YES;
-//        datetextfield.userInteractionEnabled=YES;
-//        cislb.userInteractionEnabled=YES;
-//        descriptionTextView.userInteractionEnabled=YES;
-//        recordBtn.userInteractionEnabled=YES;
-//        dateBtn.userInteractionEnabled=YES;
-//        cashlb.userInteractionEnabled=YES;
-//        cardlb.userInteractionEnabled=YES;
-//        chequelb.userInteractionEnabled=YES;
-//        otherlb.userInteractionEnabled=YES;
-//        
-//        addPhotoBtn.userInteractionEnabled=YES;
-        
-        first=YES;
-        
-        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:@"MMM dd, yyyy"];
-        
-        NSLocale *locale = [[NSLocale alloc]
-                            initWithLocaleIdentifier:@"en"];
-        [dateFormatter setLocale:locale];
-        
-        
-        NSDate *date  = [dateFormatter dateFromString:self.txtDate.text];
-        
-        [dateFormatter setDateFormat:@"dd-MM-yyyy"];
-        newDate = [dateFormatter stringFromDate:date];
-        self.txtDate.text = newDate;
-        
-        //Get Business By id
-        
-        ASIHTTPRequest *requestBusiness = [[ASIHTTPRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://ec2-46-137-84-201.eu-west-1.compute.amazonaws.com:8443/wTaxmapp/resources/business/%i",businessID]]];
-        
-        [requestBusiness addBasicAuthenticationHeaderWithUsername:[[NSUserDefaults standardUserDefaults]valueForKey:@"Username"]andPassword:[[NSUserDefaults standardUserDefaults]valueForKey:@"Pass"]];
-        
-        [requestBusiness setTag:6];
-        [requestBusiness addRequestHeader:@"Content-Type" value:@"application/json"];
-        
-        [requestBusiness setValidatesSecureCertificate:NO];
-        [requestBusiness setDelegate:self];
-        [requestBusiness startAsynchronous];
         
     }
     
@@ -844,11 +682,6 @@ int businessID;
             [self RequestPhoto];
             
         }
-        //        else
-        //        {
-        //            TabBarController *tabView = [[TabBarController alloc]initWithNibName:@"TabBarController" bundle:nil];
-        //            [self.navigationController pushViewController:tabView animated:YES];
-        //        }
     }
     
     if (request.tag == 9)
@@ -1044,6 +877,7 @@ int businessID;
     [_btnCheque release];
     [_btnCard release];
     [_btnOther release];
+    [_textViewDescription release];
     [super dealloc];
 }
 @end

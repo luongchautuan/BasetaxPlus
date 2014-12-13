@@ -72,6 +72,19 @@
 		6E28D2351A34B948006099E5 /* other button (select).png in Resources */ = {isa = PBXBuildFile; fileRef = 6E28D22D1A34B948006099E5 /* other button (select).png */; };
 		6E28D2361A34B948006099E5 /* other button.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E28D22E1A34B948006099E5 /* other button.png */; };
 		6E28D2381A34BF9D006099E5 /* btn-save.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E28D2371A34BF9D006099E5 /* btn-save.png */; };
+		6E7EC7CA1A38C12600B055F6 /* ELCAlbumPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7EC7B41A38C12600B055F6 /* ELCAlbumPickerController.m */; };
+		6E7EC7CB1A38C12600B055F6 /* ELCAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7EC7B61A38C12600B055F6 /* ELCAsset.m */; };
+		6E7EC7CC1A38C12600B055F6 /* ELCAssetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7EC7B81A38C12600B055F6 /* ELCAssetCell.m */; };
+		6E7EC7CD1A38C12600B055F6 /* ELCAssetTablePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7EC7BC1A38C12600B055F6 /* ELCAssetTablePicker.m */; };
+		6E7EC7CE1A38C12600B055F6 /* ELCConsole.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7EC7BE1A38C12600B055F6 /* ELCConsole.m */; };
+		6E7EC7CF1A38C12600B055F6 /* ELCImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7EC7C01A38C12600B055F6 /* ELCImagePickerController.m */; };
+		6E7EC7D01A38C12600B055F6 /* ELCOverlayImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7EC7C31A38C12600B055F6 /* ELCOverlayImageView.m */; };
+		6E7EC7D11A38C12600B055F6 /* ELCAlbumPickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E7EC7C51A38C12600B055F6 /* ELCAlbumPickerController.xib */; };
+		6E7EC7D21A38C12600B055F6 /* ELCAssetPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E7EC7C61A38C12600B055F6 /* ELCAssetPicker.xib */; };
+		6E7EC7D31A38C12600B055F6 /* ELCAssetTablePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E7EC7C71A38C12600B055F6 /* ELCAssetTablePicker.xib */; };
+		6E7EC7D41A38C12600B055F6 /* Overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E7EC7C81A38C12600B055F6 /* Overlay.png */; };
+		6E7EC7D51A38C12600B055F6 /* Overlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E7EC7C91A38C12600B055F6 /* Overlay@2x.png */; };
+		6EA3814B1A38C7E7006E0719 /* DocumentReponsitory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA3814A1A38C7E7006E0719 /* DocumentReponsitory.m */; };
 		6EA9C68C1A3341F100EBC3DA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA9C68B1A3341F100EBC3DA /* main.m */; };
 		6EA9C68F1A3341F100EBC3DA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA9C68E1A3341F100EBC3DA /* AppDelegate.m */; };
 		6EA9C6921A3341F100EBC3DA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA9C6911A3341F100EBC3DA /* ViewController.m */; };
@@ -152,6 +165,9 @@
 		6EBD438A1A360E4400E98655 /* checkon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EBD43861A360E4400E98655 /* checkon@2x.png */; };
 		6EBD438C1A360EDA00E98655 /* info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EBD438B1A360EDA00E98655 /* info@2x.png */; };
 		6EBD438E1A360F2000E98655 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EBD438D1A360F2000E98655 /* info.png */; };
+		6EC198A51A37728500D816BC /* TaxYearViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC198A31A37728500D816BC /* TaxYearViewController.m */; };
+		6EC198A61A37728500D816BC /* TaxYearViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EC198A41A37728500D816BC /* TaxYearViewController.xib */; };
+		6EC198A81A37778B00D816BC /* taxyear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EC198A71A37778B00D816BC /* taxyear@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -231,6 +247,30 @@
 		6E28D22D1A34B948006099E5 /* other button (select).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "other button (select).png"; sourceTree = "<group>"; };
 		6E28D22E1A34B948006099E5 /* other button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "other button.png"; sourceTree = "<group>"; };
 		6E28D2371A34BF9D006099E5 /* btn-save.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-save.png"; sourceTree = "<group>"; };
+		6E7EC7B31A38C12600B055F6 /* ELCAlbumPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCAlbumPickerController.h; sourceTree = "<group>"; };
+		6E7EC7B41A38C12600B055F6 /* ELCAlbumPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCAlbumPickerController.m; sourceTree = "<group>"; };
+		6E7EC7B51A38C12600B055F6 /* ELCAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCAsset.h; sourceTree = "<group>"; };
+		6E7EC7B61A38C12600B055F6 /* ELCAsset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCAsset.m; sourceTree = "<group>"; };
+		6E7EC7B71A38C12600B055F6 /* ELCAssetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCAssetCell.h; sourceTree = "<group>"; };
+		6E7EC7B81A38C12600B055F6 /* ELCAssetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCAssetCell.m; sourceTree = "<group>"; };
+		6E7EC7B91A38C12600B055F6 /* ELCAssetPickerFilterDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCAssetPickerFilterDelegate.h; sourceTree = "<group>"; };
+		6E7EC7BA1A38C12600B055F6 /* ELCAssetSelectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCAssetSelectionDelegate.h; sourceTree = "<group>"; };
+		6E7EC7BB1A38C12600B055F6 /* ELCAssetTablePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCAssetTablePicker.h; sourceTree = "<group>"; };
+		6E7EC7BC1A38C12600B055F6 /* ELCAssetTablePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCAssetTablePicker.m; sourceTree = "<group>"; };
+		6E7EC7BD1A38C12600B055F6 /* ELCConsole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCConsole.h; sourceTree = "<group>"; };
+		6E7EC7BE1A38C12600B055F6 /* ELCConsole.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCConsole.m; sourceTree = "<group>"; };
+		6E7EC7BF1A38C12600B055F6 /* ELCImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCImagePickerController.h; sourceTree = "<group>"; };
+		6E7EC7C01A38C12600B055F6 /* ELCImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCImagePickerController.m; sourceTree = "<group>"; };
+		6E7EC7C11A38C12600B055F6 /* ELCImagePickerHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCImagePickerHeader.h; sourceTree = "<group>"; };
+		6E7EC7C21A38C12600B055F6 /* ELCOverlayImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCOverlayImageView.h; sourceTree = "<group>"; };
+		6E7EC7C31A38C12600B055F6 /* ELCOverlayImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCOverlayImageView.m; sourceTree = "<group>"; };
+		6E7EC7C51A38C12600B055F6 /* ELCAlbumPickerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ELCAlbumPickerController.xib; sourceTree = "<group>"; };
+		6E7EC7C61A38C12600B055F6 /* ELCAssetPicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ELCAssetPicker.xib; sourceTree = "<group>"; };
+		6E7EC7C71A38C12600B055F6 /* ELCAssetTablePicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ELCAssetTablePicker.xib; sourceTree = "<group>"; };
+		6E7EC7C81A38C12600B055F6 /* Overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Overlay.png; sourceTree = "<group>"; };
+		6E7EC7C91A38C12600B055F6 /* Overlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Overlay@2x.png"; sourceTree = "<group>"; };
+		6EA381491A38C7E7006E0719 /* DocumentReponsitory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentReponsitory.h; sourceTree = "<group>"; };
+		6EA3814A1A38C7E7006E0719 /* DocumentReponsitory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentReponsitory.m; sourceTree = "<group>"; };
 		6EA9C6861A3341F100EBC3DA /* BasetaxPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BasetaxPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EA9C68A1A3341F100EBC3DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6EA9C68B1A3341F100EBC3DA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -369,6 +409,10 @@
 		6EBD43861A360E4400E98655 /* checkon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkon@2x.png"; sourceTree = "<group>"; };
 		6EBD438B1A360EDA00E98655 /* info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "info@2x.png"; sourceTree = "<group>"; };
 		6EBD438D1A360F2000E98655 /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
+		6EC198A21A37728500D816BC /* TaxYearViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaxYearViewController.h; sourceTree = "<group>"; };
+		6EC198A31A37728500D816BC /* TaxYearViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaxYearViewController.m; sourceTree = "<group>"; };
+		6EC198A41A37728500D816BC /* TaxYearViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaxYearViewController.xib; sourceTree = "<group>"; };
+		6EC198A71A37778B00D816BC /* taxyear@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "taxyear@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -401,6 +445,8 @@
 			children = (
 				6E28D1B31A34002A006099E5 /* UserReponsitory.h */,
 				6E28D1B41A34002A006099E5 /* UserReponsitory.m */,
+				6EA381491A38C7E7006E0719 /* DocumentReponsitory.h */,
+				6EA3814A1A38C7E7006E0719 /* DocumentReponsitory.m */,
 			);
 			name = Reponsitory;
 			sourceTree = "<group>";
@@ -456,6 +502,43 @@
 			name = "Income Image";
 			sourceTree = "<group>";
 		};
+		6E7EC7B21A38C12600B055F6 /* ELCImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				6E7EC7B31A38C12600B055F6 /* ELCAlbumPickerController.h */,
+				6E7EC7B41A38C12600B055F6 /* ELCAlbumPickerController.m */,
+				6E7EC7B51A38C12600B055F6 /* ELCAsset.h */,
+				6E7EC7B61A38C12600B055F6 /* ELCAsset.m */,
+				6E7EC7B71A38C12600B055F6 /* ELCAssetCell.h */,
+				6E7EC7B81A38C12600B055F6 /* ELCAssetCell.m */,
+				6E7EC7B91A38C12600B055F6 /* ELCAssetPickerFilterDelegate.h */,
+				6E7EC7BA1A38C12600B055F6 /* ELCAssetSelectionDelegate.h */,
+				6E7EC7BB1A38C12600B055F6 /* ELCAssetTablePicker.h */,
+				6E7EC7BC1A38C12600B055F6 /* ELCAssetTablePicker.m */,
+				6E7EC7BD1A38C12600B055F6 /* ELCConsole.h */,
+				6E7EC7BE1A38C12600B055F6 /* ELCConsole.m */,
+				6E7EC7BF1A38C12600B055F6 /* ELCImagePickerController.h */,
+				6E7EC7C01A38C12600B055F6 /* ELCImagePickerController.m */,
+				6E7EC7C11A38C12600B055F6 /* ELCImagePickerHeader.h */,
+				6E7EC7C21A38C12600B055F6 /* ELCOverlayImageView.h */,
+				6E7EC7C31A38C12600B055F6 /* ELCOverlayImageView.m */,
+				6E7EC7C41A38C12600B055F6 /* Resources */,
+			);
+			path = ELCImagePicker;
+			sourceTree = "<group>";
+		};
+		6E7EC7C41A38C12600B055F6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6E7EC7C51A38C12600B055F6 /* ELCAlbumPickerController.xib */,
+				6E7EC7C61A38C12600B055F6 /* ELCAssetPicker.xib */,
+				6E7EC7C71A38C12600B055F6 /* ELCAssetTablePicker.xib */,
+				6E7EC7C81A38C12600B055F6 /* Overlay.png */,
+				6E7EC7C91A38C12600B055F6 /* Overlay@2x.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		6EA9C67D1A3341F100EBC3DA = {
 			isa = PBXGroup;
 			children = (
@@ -484,6 +567,8 @@
 		6EA9C6881A3341F100EBC3DA /* BasetaxPlus */ = {
 			isa = PBXGroup;
 			children = (
+				6E7EC7B21A38C12600B055F6 /* ELCImagePicker */,
+				6EC198A11A37726100D816BC /* Tax Year View */,
 				6EBD435C1A35E21F00E98655 /* SBJson */,
 				6E28D1B21A33FFF6006099E5 /* Reponsitory */,
 				6EA9C75D1A3382E000EBC3DA /* MBProgressHUD.h */,
@@ -609,6 +694,7 @@
 		6EA9C6D91A334FB200EBC3DA /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				6EC198A71A37778B00D816BC /* taxyear@2x.png */,
 				6EBD43821A3608B900E98655 /* Expense Image */,
 				6E28D2371A34BF9D006099E5 /* btn-save.png */,
 				6E28D2271A34B948006099E5 /* card button (select).png */,
@@ -806,6 +892,16 @@
 			name = "Expense Image";
 			sourceTree = "<group>";
 		};
+		6EC198A11A37726100D816BC /* Tax Year View */ = {
+			isa = PBXGroup;
+			children = (
+				6EC198A21A37728500D816BC /* TaxYearViewController.h */,
+				6EC198A31A37728500D816BC /* TaxYearViewController.m */,
+				6EC198A41A37728500D816BC /* TaxYearViewController.xib */,
+			);
+			name = "Tax Year View";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -888,7 +984,9 @@
 				6EA9C6E91A336F9F00EBC3DA /* bg_edt_login@2x.png in Resources */,
 				6E28D2321A34B948006099E5 /* cash button.png in Resources */,
 				6E28D2331A34B948006099E5 /* cheque button ( select).png in Resources */,
+				6EC198A61A37728500D816BC /* TaxYearViewController.xib in Resources */,
 				6E28D1FE1A3444E3006099E5 /* Add income.png in Resources */,
+				6E7EC7D11A38C12600B055F6 /* ELCAlbumPickerController.xib in Resources */,
 				6EBD43881A360E4400E98655 /* checkoff@x.png in Resources */,
 				6E28D1F81A3444E3006099E5 /* Add income bg new@x.png in Resources */,
 				6E28D2011A3444E3006099E5 /* Add photo.png in Resources */,
@@ -901,6 +999,7 @@
 				6E28D2111A3444E3006099E5 /* divider.png in Resources */,
 				6E28D2261A348A58006099E5 /* save button.png in Resources */,
 				6E28D2311A34B948006099E5 /* cash button (select).png in Resources */,
+				6EC198A81A37778B00D816BC /* taxyear@2x.png in Resources */,
 				6E28D2381A34BF9D006099E5 /* btn-save.png in Resources */,
 				6E28D20A1A3444E3006099E5 /* cash@2x.png in Resources */,
 				6E28D2171A3444E3006099E5 /* other.png in Resources */,
@@ -935,6 +1034,7 @@
 				6E28D2351A34B948006099E5 /* other button (select).png in Resources */,
 				6E28D1BE1A340918006099E5 /* icon-step3.png in Resources */,
 				6EA9C6B81A33427F00EBC3DA /* RegisterViewController.xib in Resources */,
+				6E7EC7D31A38C12600B055F6 /* ELCAssetTablePicker.xib in Resources */,
 				6E28D2341A34B948006099E5 /* cheque button.png in Resources */,
 				6E28D1F31A3444E3006099E5 /* Add photo 2.png in Resources */,
 				6E28D2121A3444E3006099E5 /* divider@2x.png in Resources */,
@@ -951,12 +1051,14 @@
 				6EA9C6CC1A33434000EBC3DA /* IntroDetailViewController.xib in Resources */,
 				6E28D2201A344AA6006099E5 /* main screen dialogue bg.png in Resources */,
 				6E28D20C1A3444E3006099E5 /* cashon@2x.png in Resources */,
+				6E7EC7D21A38C12600B055F6 /* ELCAssetPicker.xib in Resources */,
 				6EA9C6951A3341F100EBC3DA /* Main.storyboard in Resources */,
 				6E28D1F61A3444E3006099E5 /* add image@2x.png in Resources */,
 				6E28D2021A3444E3006099E5 /* Add photo@2x.png in Resources */,
 				6E28D2221A344E2C006099E5 /* btn-background.png in Resources */,
 				6E28D20E1A3444E3006099E5 /* cheque@2x.png in Resources */,
 				6EA9C69A1A3341F100EBC3DA /* LaunchScreen.xib in Resources */,
+				6E7EC7D51A38C12600B055F6 /* Overlay@2x.png in Resources */,
 				6E28D1B71A3401D1006099E5 /* btn-add.png in Resources */,
 				6EA9C7611A33EEDD00EBC3DA /* backbutton.png in Resources */,
 				6E28D21B1A3444E3006099E5 /* tabview.png in Resources */,
@@ -968,6 +1070,7 @@
 				6E28D1F41A3444E3006099E5 /* Add photo@2x 2.png in Resources */,
 				6E28D2031A3444E3006099E5 /* cancel.png in Resources */,
 				6E28D2041A3444E3006099E5 /* cancel@2x.png in Resources */,
+				6E7EC7D41A38C12600B055F6 /* Overlay.png in Resources */,
 				6E28D21E1A344757006099E5 /* dropdown.png in Resources */,
 				6EBD43891A360E4400E98655 /* checkon.png in Resources */,
 				6E28D1BF1A340918006099E5 /* icon-submit.png in Resources */,
@@ -991,8 +1094,10 @@
 				6EA9C6C51A33431200EBC3DA /* UploadViewController.m in Sources */,
 				6EA9C7311A33780500EBC3DA /* ASIAuthenticationDialog.m in Sources */,
 				6EA9C73A1A33780500EBC3DA /* ASICloudFilesContainer.m in Sources */,
+				6EC198A51A37728500D816BC /* TaxYearViewController.m in Sources */,
 				6EA9C73F1A33780500EBC3DA /* ASICloudFilesRequest.m in Sources */,
 				6EA9C7341A33780500EBC3DA /* ASIDownloadCache.m in Sources */,
+				6E7EC7CA1A38C12600B055F6 /* ELCAlbumPickerController.m in Sources */,
 				6EA9C73C1A33780500EBC3DA /* ASICloudFilesContainerXMLParserDelegate.m in Sources */,
 				6EA9C7351A33780500EBC3DA /* ASIFormDataRequest.m in Sources */,
 				6EA9C75F1A3382E000EBC3DA /* MBProgressHUD.m in Sources */,
@@ -1004,12 +1109,15 @@
 				6EA9C7421A33780500EBC3DA /* ASIS3BucketObject.m in Sources */,
 				6E28D1B51A34002A006099E5 /* UserReponsitory.m in Sources */,
 				6EA9C6BF1A3342DB00EBC3DA /* MainViewController.m in Sources */,
+				6E7EC7CF1A38C12600B055F6 /* ELCImagePickerController.m in Sources */,
+				6E7EC7CD1A38C12600B055F6 /* ELCAssetTablePicker.m in Sources */,
 				6EBD43811A35E24500E98655 /* SBJsonWriter.m in Sources */,
 				6EBD437F1A35E24500E98655 /* SBJsonTokeniser.m in Sources */,
 				6EA9C7461A33780500EBC3DA /* ASIS3ServiceRequest.m in Sources */,
 				6EA9C7471A33780500EBC3DA /* NSObject+RMArchivable.m in Sources */,
 				6EBD437C1A35E24500E98655 /* SBJsonStreamWriter.m in Sources */,
 				6EA9C6CB1A33434000EBC3DA /* IntroDetailViewController.m in Sources */,
+				6E7EC7D01A38C12600B055F6 /* ELCOverlayImageView.m in Sources */,
 				6EA9C7361A33780500EBC3DA /* ASIHTTPRequest.m in Sources */,
 				6EBD437A1A35E24500E98655 /* SBJsonStreamParserAdapter.m in Sources */,
 				6EBD43801A35E24500E98655 /* SBJsonUTF8Stream.m in Sources */,
@@ -1023,18 +1131,22 @@
 				6EA9C7391A33780500EBC3DA /* ASICloudFilesCDNRequest.m in Sources */,
 				6EA9C7451A33780500EBC3DA /* ASIS3Request.m in Sources */,
 				6EA9C73B1A33780500EBC3DA /* ASICloudFilesContainerRequest.m in Sources */,
+				6E7EC7CB1A38C12600B055F6 /* ELCAsset.m in Sources */,
 				6EBD43771A35E24500E98655 /* SBJsonParser.m in Sources */,
 				6EA9C68C1A3341F100EBC3DA /* main.m in Sources */,
+				6E7EC7CE1A38C12600B055F6 /* ELCConsole.m in Sources */,
 				6EA9C6D11A33437A00EBC3DA /* IncomeViewController.m in Sources */,
 				6EBD437B1A35E24500E98655 /* SBJsonStreamParserState.m in Sources */,
 				6EA9C7371A33780500EBC3DA /* ASIInputStream.m in Sources */,
 				6EA9C7331A33780500EBC3DA /* ASIDataDecompressor.m in Sources */,
 				6EA9C7301A33780500EBC3DA /* ASIWebPageRequest.m in Sources */,
+				6EA3814B1A38C7E7006E0719 /* DocumentReponsitory.m in Sources */,
 				6EA9C7411A33780500EBC3DA /* ASIS3Bucket.m in Sources */,
 				6EA9C7401A33780500EBC3DA /* Reachability.m in Sources */,
 				6EA9C6D71A3343AD00EBC3DA /* ExpenseViewController.m in Sources */,
 				6EA9C74A1A33780500EBC3DA /* RMMapper.m in Sources */,
 				6EBD43781A35E24500E98655 /* SBJsonStreamParser.m in Sources */,
+				6E7EC7CC1A38C12600B055F6 /* ELCAssetCell.m in Sources */,
 				6EBD43761A35E24500E98655 /* NSObject+SBJson.m in Sources */,
 				6EBD437E1A35E24500E98655 /* SBJsonStreamWriterState.m in Sources */,
 				6EA9C7431A33780500EBC3DA /* ASIS3BucketRequest.m in Sources */,
