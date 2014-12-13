@@ -30,6 +30,7 @@
     [self.window setRootViewController:navController];
     [self.window makeKeyAndVisible];
     
+    //TEst
     return YES;
 }
 
