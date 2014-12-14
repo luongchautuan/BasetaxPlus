@@ -33,13 +33,18 @@ AppDelegate* appdelegate;
     UITapGestureRecognizer *tapGeusture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapHandler:)];
     tapGeusture.numberOfTapsRequired = 1;
     [self.viewAddMore addGestureRecognizer:tapGeusture];
-    
-    CGRect frame = CGRectMake(100, 300, 150, 150);
+    self.progressBarCount = 0;
+
+    CGRect frame = CGRectMake(50, 300, 75, 75);
     self.progressbar = [self progressViewWithFrame:frame];
     self.progressbar.progressTotal = 100;
-    self.progressbar.progressCounter = 10;
+    self.progressbar.progressCounter = self.progressBarCount + 1;
     self.progressbar.theme.sliceDividerHidden = YES;
     [self.view addSubview:self.progressbar];
+    
+    if (self.documents.count <= 0) {
+        self.progressbar.hidden = YES;
+    }
 
 }
 
@@ -55,7 +60,7 @@ AppDelegate* appdelegate;
     MDRadialProgressView *view = [[MDRadialProgressView alloc] initWithFrame:frame];
     
     // Only required in this demo to align vertically the progress views.
-    view.center = CGPointMake(self.view.center.x + 80, view.center.y);
+    view.center = CGPointMake(self.view.center.x, view.center.y + 50);
     
     return view;
 }
@@ -129,6 +134,11 @@ AppDelegate* appdelegate;
     [UIView setAnimationDuration:0.5];
     self.viewAddMoreMain.frame=CGRectMake(24 ,65, 288, 130);
     [UIView commitAnimations];
+}
+
+- (IBAction)btnStartUploadFile_Clicked:(id)sender
+{
+    
 }
 
 #pragma mark ELCImagePickerControllerDelegate Methods
@@ -222,6 +232,10 @@ AppDelegate* appdelegate;
     
     [_scrollView setPagingEnabled:YES];
     [_scrollView setContentSize:CGSizeMake(workingFrame.origin.x, workingFrame.size.height)];
+    
+    if (self.documents.count > 0) {
+        self.progressbar.hidden = NO;
+    }
 }
 
 - (void)elcImagePickerControllerDidCancel:(ELCImagePickerController *)picker
@@ -244,6 +258,8 @@ AppDelegate* appdelegate;
     [_viewAddMore release];
     [_viewAddMoreMain release];
     [_scrollView release];
+    [_btnStartUploadFiles release];
+    [_btnSelectFileToUpload release];
     [super dealloc];
 }
 @end

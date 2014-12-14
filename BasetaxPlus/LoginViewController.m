@@ -146,19 +146,7 @@ AppDelegate* appdelegate;
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    [textField resignFirstResponder];
-    
-    if(textField == self.txtUsername)
-    {
-        [self.scrollView setContentOffset:CGPointMake(0, -20)];
-    }
-    
-    if(textField == self.txtPassword)
-    {
-        [self.scrollView setContentOffset:CGPointMake(0, -20)];
-    }
-    
-    return YES;
+
 }
 
 

@@ -20,4 +20,8 @@
 @property (nonatomic, retain)NSMutableArray* documents;
 @property (nonatomic, retain)MDRadialProgressView* progressbar;
 
+@property (nonatomic) int progressBarCount;
+@property (retain, nonatomic) IBOutlet UIButton *btnStartUploadFiles;
+
+@property (retain, nonatomic) IBOutlet UIButton *btnSelectFileToUpload;
 @end
