@@ -114,7 +114,7 @@ AppDelegate* appdelegate;
 {
     [self.txtPassword resignFirstResponder];
     [self.txtUsername resignFirstResponder];
-    [self.scrollView setContentOffset:CGPointMake(0, 0)];
+    [self.scrollView setContentOffset:CGPointMake(0, -20)];
 }
 
 #pragma mark - Text Field delegates...
@@ -123,7 +123,19 @@ AppDelegate* appdelegate;
 {
     if (textField.tag==0)
     {
-        [self.scrollView setContentOffset:CGPointMake(0,50)];
+        if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+        {
+            CGSize result = [[UIScreen mainScreen] bounds].size;
+            
+            NSLog(@"Result Height: %f", result.height);
+            if(result.height == 480)
+            {
+                [self.scrollView setContentOffset:CGPointMake(0,170)];
+            }
+            else
+                [self.scrollView setContentOffset:CGPointMake(0,50)];
+        }
+        
     }
     
     if (textField.tag==1)
@@ -136,16 +148,15 @@ AppDelegate* appdelegate;
 {
     [textField resignFirstResponder];
     
-    if(textField== self.txtUsername)
+    if(textField == self.txtUsername)
     {
-        [self.scrollView setContentOffset:CGPointMake(0, 0)];
+        [self.scrollView setContentOffset:CGPointMake(0, -20)];
     }
     
     if(textField == self.txtPassword)
     {
-        [self.scrollView setContentOffset:CGPointMake(0, 0)];
+        [self.scrollView setContentOffset:CGPointMake(0, -20)];
     }
-    
     
     return YES;
 }
@@ -174,9 +185,7 @@ AppDelegate* appdelegate;
 }
 
 - (void)requestFailed:(ASIHTTPRequest *)request
-
 {
-   
     [appdelegate.activityIndicatorView hide:YES];
     
     UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Authentication failed" message:@"Username and password mismatched" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];

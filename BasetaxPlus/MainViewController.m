@@ -53,7 +53,7 @@ AppDelegate* appdelegate;
     }
     else
     {
-        UIAlertView* msg = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"Please login your Details on the Step 2" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        UIAlertView* msg = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"Please login to upload document" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Login", nil];
         [msg show];
 
     }
@@ -77,6 +77,14 @@ AppDelegate* appdelegate;
     [msg show];
 }
 
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1) {
+        LoginViewController* loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+        [self.navigationController pushViewController:loginViewController animated:YES];
+    }
+
+}
 /*
 #pragma mark - Navigation
 

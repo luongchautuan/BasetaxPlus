@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "ELCImagePickerHeader.h"
+#import "MDRadialProgressView.h"
+#import "MDRadialProgressTheme.h"
+#import "MDRadialProgressLabel.h"
 
 @interface UploadViewController : UIViewController<UITextViewDelegate,UITextFieldDelegate,UIActionSheetDelegate, UIScrollViewDelegate, UIAlertViewDelegate, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, ELCImagePickerControllerDelegate>
 
@@ -15,5 +18,6 @@
 @property (retain, nonatomic) IBOutlet UIView *viewAddMoreMain;
 @property (retain, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, retain)NSMutableArray* documents;
+@property (nonatomic, retain)MDRadialProgressView* progressbar;
 
 @end
