@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MainViewController : UIViewController
+@interface MainViewController : UIViewController<UIAlertViewDelegate>
 
 @property (retain, nonatomic) IBOutlet UILabel *lblTaxRebate;
 @property (retain, nonatomic) IBOutlet UIScrollView *scrollView;

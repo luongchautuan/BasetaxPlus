@@ -56,6 +56,18 @@ AppDelegate* appdelegate;
     
     self.txtPasscode.leftView = paddingView2;
     self.txtPasscode.leftViewMode = UITextFieldViewModeAlways;
+    
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+    {
+        CGSize result = [[UIScreen mainScreen] bounds].size;
+        
+        NSLog(@"Result Height: %f", result.height);
+        if(result.height == 480)
+        {
+            [self.scrollView setContentSize:CGSizeMake(self.scrollView.frame.size.width, self.scrollView.frame.size.height + 100)];
+        }
+    }
+
 }
 
 - (IBAction)onRegister:(id)sender
@@ -164,28 +176,63 @@ AppDelegate* appdelegate;
     [self.txtEmail resignFirstResponder];
     [self.txtPasscode resignFirstResponder];
     
-    [self.scrollView setContentOffset:CGPointMake(0, 0)];
+    [self.scrollView setContentOffset:CGPointMake(0, -20)];
 }
 
 #pragma mark - Text Field delegates...
 
 -(void)textFieldDidBeginEditing:(UITextField *)textField
 {
-    if (textField.tag==0)
+    CGSize result;
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
     {
-        [self.scrollView setContentOffset:CGPointMake(0,50)];
+        result = [[UIScreen mainScreen] bounds].size;
     }
+
     
-    if (textField.tag==1)
+    if (textField.tag == 0)
     {
-        [self.scrollView setContentOffset:CGPointMake(0,100)];
+        if (result.height == 480)
+        {
+            [self.scrollView setContentOffset:CGPointMake(0,150)];
+        }
+        else
+            [self.scrollView setContentOffset:CGPointMake(0,50)];
+        
+    }
+    if (textField.tag == 1)
+    {
+        if (result.height == 480)
+        {
+            [self.scrollView setContentOffset:CGPointMake(0,150)];
+        }
+        else
+            [self.scrollView setContentOffset:CGPointMake(0,100)];
+    }
+    if (textField.tag == 2)
+    {
+        if (result.height == 480)
+        {
+            [self.scrollView setContentOffset:CGPointMake(0,150)];
+        }
+        else
+            [self.scrollView setContentOffset:CGPointMake(0,100)];
+    }
+    if (textField.tag == 3)
+    {
+        if (result.height == 480)
+        {
+            [self.scrollView setContentOffset:CGPointMake(0,250)];
+        }
+        else
+            [self.scrollView setContentOffset:CGPointMake(0,100)];
     }
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
-    [self.scrollView setContentOffset:CGPointMake(0, 0)];
+    [self.scrollView setContentOffset:CGPointMake(0, -20)];
     
     return YES;
 }

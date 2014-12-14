@@ -48,7 +48,7 @@ BOOL isShowViewDate;
     [self.txtTelephone resignFirstResponder];
     [self.txtUniqueTaxpyer resignFirstResponder];
     
-     [self.scrollVIew setFrame:CGRectMake(0, 70, self.view.frame.size.width, self.view.frame.size.height)];
+     [self.scrollVIew setFrame:CGRectMake(0, -20, self.view.frame.size.width, self.view.frame.size.height)];
     
 }
 

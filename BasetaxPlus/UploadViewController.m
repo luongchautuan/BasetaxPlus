@@ -14,6 +14,7 @@
 #import "ExpenseViewController.h"
 #import "DocumentReponsitory.h"
 
+
 @interface UploadViewController ()
 
 @end
@@ -32,12 +33,45 @@ AppDelegate* appdelegate;
     UITapGestureRecognizer *tapGeusture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapHandler:)];
     tapGeusture.numberOfTapsRequired = 1;
     [self.viewAddMore addGestureRecognizer:tapGeusture];
+    
+    CGRect frame = CGRectMake(100, 300, 150, 150);
+    self.progressbar = [self progressViewWithFrame:frame];
+    self.progressbar.progressTotal = 100;
+    self.progressbar.progressCounter = 10;
+    self.progressbar.theme.sliceDividerHidden = YES;
+    [self.view addSubview:self.progressbar];
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - ProgressBar
+
+- (MDRadialProgressView *)progressViewWithFrame:(CGRect)frame
+{
+    MDRadialProgressView *view = [[MDRadialProgressView alloc] initWithFrame:frame];
+    
+    // Only required in this demo to align vertically the progress views.
+    view.center = CGPointMake(self.view.center.x + 80, view.center.y);
+    
+    return view;
+}
+
+- (UILabel *)labelAtY:(CGFloat)y andText:(NSString *)text
+{
+    CGRect frame = CGRectMake(5, y, 180, 50);
+    UILabel *label = [[UILabel alloc] initWithFrame:frame];
+    label.text = text;
+    label.numberOfLines = 0;
+    label.textAlignment = NSTextAlignmentCenter;
+    label.font = [label.font fontWithSize:14];
+    
+    return label;
+}
+
 
 #pragma mark - Tap Handler
 
@@ -138,7 +172,7 @@ AppDelegate* appdelegate;
                 
                 [self.documents addObject:document];
                 
-                UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(40, 30 * (documentIndex + 1), 300, 50)];
+                UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 30 * (documentIndex + 1), 300, 50)];
                 label.backgroundColor = [UIColor clearColor];
                 label.textAlignment = NSTextAlignmentCenter;
                 label.textColor = [UIColor blackColor];

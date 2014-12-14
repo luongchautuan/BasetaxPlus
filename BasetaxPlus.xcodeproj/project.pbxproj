@@ -72,6 +72,11 @@
 		6E28D2351A34B948006099E5 /* other button (select).png in Resources */ = {isa = PBXBuildFile; fileRef = 6E28D22D1A34B948006099E5 /* other button (select).png */; };
 		6E28D2361A34B948006099E5 /* other button.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E28D22E1A34B948006099E5 /* other button.png */; };
 		6E28D2381A34BF9D006099E5 /* btn-save.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E28D2371A34BF9D006099E5 /* btn-save.png */; };
+		6E418DA21A3C2F1900188620 /* MDRadialProgressLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E418D9D1A3C2F1900188620 /* MDRadialProgressLabel.m */; };
+		6E418DA31A3C2F1900188620 /* MDRadialProgressTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E418D9F1A3C2F1900188620 /* MDRadialProgressTheme.m */; };
+		6E418DA41A3C2F1900188620 /* MDRadialProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E418DA11A3C2F1900188620 /* MDRadialProgressView.m */; };
+		6E418DA61A3C2F5300188620 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E418DA51A3C2F5300188620 /* CoreGraphics.framework */; };
+		6E418DA81A3C2F7600188620 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E418DA71A3C2F7600188620 /* QuartzCore.framework */; };
 		6E7EC7CA1A38C12600B055F6 /* ELCAlbumPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7EC7B41A38C12600B055F6 /* ELCAlbumPickerController.m */; };
 		6E7EC7CB1A38C12600B055F6 /* ELCAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7EC7B61A38C12600B055F6 /* ELCAsset.m */; };
 		6E7EC7CC1A38C12600B055F6 /* ELCAssetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7EC7B81A38C12600B055F6 /* ELCAssetCell.m */; };
@@ -247,6 +252,14 @@
 		6E28D22D1A34B948006099E5 /* other button (select).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "other button (select).png"; sourceTree = "<group>"; };
 		6E28D22E1A34B948006099E5 /* other button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "other button.png"; sourceTree = "<group>"; };
 		6E28D2371A34BF9D006099E5 /* btn-save.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-save.png"; sourceTree = "<group>"; };
+		6E418D9C1A3C2F1900188620 /* MDRadialProgressLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDRadialProgressLabel.h; sourceTree = "<group>"; };
+		6E418D9D1A3C2F1900188620 /* MDRadialProgressLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRadialProgressLabel.m; sourceTree = "<group>"; };
+		6E418D9E1A3C2F1900188620 /* MDRadialProgressTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDRadialProgressTheme.h; sourceTree = "<group>"; };
+		6E418D9F1A3C2F1900188620 /* MDRadialProgressTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRadialProgressTheme.m; sourceTree = "<group>"; };
+		6E418DA01A3C2F1900188620 /* MDRadialProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDRadialProgressView.h; sourceTree = "<group>"; };
+		6E418DA11A3C2F1900188620 /* MDRadialProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRadialProgressView.m; sourceTree = "<group>"; };
+		6E418DA51A3C2F5300188620 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		6E418DA71A3C2F7600188620 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		6E7EC7B31A38C12600B055F6 /* ELCAlbumPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCAlbumPickerController.h; sourceTree = "<group>"; };
 		6E7EC7B41A38C12600B055F6 /* ELCAlbumPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCAlbumPickerController.m; sourceTree = "<group>"; };
 		6E7EC7B51A38C12600B055F6 /* ELCAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCAsset.h; sourceTree = "<group>"; };
@@ -420,6 +433,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E418DA81A3C2F7600188620 /* QuartzCore.framework in Frameworks */,
+				6E418DA61A3C2F5300188620 /* CoreGraphics.framework in Frameworks */,
 				6EA9C7581A337FBB00EBC3DA /* libxml2.2.dylib in Frameworks */,
 				6EA9C7591A337FBB00EBC3DA /* libxml2.dylib in Frameworks */,
 				6EA9C7551A337A1900EBC3DA /* Foundation.framework in Frameworks */,
@@ -502,6 +517,19 @@
 			name = "Income Image";
 			sourceTree = "<group>";
 		};
+		6E418D9B1A3C2F1900188620 /* MDRadialProgress */ = {
+			isa = PBXGroup;
+			children = (
+				6E418D9C1A3C2F1900188620 /* MDRadialProgressLabel.h */,
+				6E418D9D1A3C2F1900188620 /* MDRadialProgressLabel.m */,
+				6E418D9E1A3C2F1900188620 /* MDRadialProgressTheme.h */,
+				6E418D9F1A3C2F1900188620 /* MDRadialProgressTheme.m */,
+				6E418DA01A3C2F1900188620 /* MDRadialProgressView.h */,
+				6E418DA11A3C2F1900188620 /* MDRadialProgressView.m */,
+			);
+			path = MDRadialProgress;
+			sourceTree = "<group>";
+		};
 		6E7EC7B21A38C12600B055F6 /* ELCImagePicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -542,6 +570,8 @@
 		6EA9C67D1A3341F100EBC3DA = {
 			isa = PBXGroup;
 			children = (
+				6E418DA71A3C2F7600188620 /* QuartzCore.framework */,
+				6E418DA51A3C2F5300188620 /* CoreGraphics.framework */,
 				6EA9C7561A337FBB00EBC3DA /* libxml2.2.dylib */,
 				6EA9C7571A337FBB00EBC3DA /* libxml2.dylib */,
 				6EA9C7541A337A1900EBC3DA /* Foundation.framework */,
@@ -567,6 +597,7 @@
 		6EA9C6881A3341F100EBC3DA /* BasetaxPlus */ = {
 			isa = PBXGroup;
 			children = (
+				6E418D9B1A3C2F1900188620 /* MDRadialProgress */,
 				6E7EC7B21A38C12600B055F6 /* ELCImagePicker */,
 				6EC198A11A37726100D816BC /* Tax Year View */,
 				6EBD435C1A35E21F00E98655 /* SBJson */,
@@ -1115,6 +1146,7 @@
 				6EBD437F1A35E24500E98655 /* SBJsonTokeniser.m in Sources */,
 				6EA9C7461A33780500EBC3DA /* ASIS3ServiceRequest.m in Sources */,
 				6EA9C7471A33780500EBC3DA /* NSObject+RMArchivable.m in Sources */,
+				6E418DA21A3C2F1900188620 /* MDRadialProgressLabel.m in Sources */,
 				6EBD437C1A35E24500E98655 /* SBJsonStreamWriter.m in Sources */,
 				6EA9C6CB1A33434000EBC3DA /* IntroDetailViewController.m in Sources */,
 				6E7EC7D01A38C12600B055F6 /* ELCOverlayImageView.m in Sources */,
@@ -1122,12 +1154,14 @@
 				6EBD437A1A35E24500E98655 /* SBJsonStreamParserAdapter.m in Sources */,
 				6EBD43801A35E24500E98655 /* SBJsonUTF8Stream.m in Sources */,
 				6EA9C6E31A336D4100EBC3DA /* LoginViewController.m in Sources */,
+				6E418DA41A3C2F1900188620 /* MDRadialProgressView.m in Sources */,
 				6EA9C6921A3341F100EBC3DA /* ViewController.m in Sources */,
 				6EA9C68F1A3341F100EBC3DA /* AppDelegate.m in Sources */,
 				6EA9C73D1A33780500EBC3DA /* ASICloudFilesObject.m in Sources */,
 				6EA9C73E1A33780500EBC3DA /* ASICloudFilesObjectRequest.m in Sources */,
 				6EA9C7321A33780500EBC3DA /* ASIDataCompressor.m in Sources */,
 				6EA9C7481A33780500EBC3DA /* NSObject+RMCopyable.m in Sources */,
+				6E418DA31A3C2F1900188620 /* MDRadialProgressTheme.m in Sources */,
 				6EA9C7391A33780500EBC3DA /* ASICloudFilesCDNRequest.m in Sources */,
 				6EA9C7451A33780500EBC3DA /* ASIS3Request.m in Sources */,
 				6EA9C73B1A33780500EBC3DA /* ASICloudFilesContainerRequest.m in Sources */,
