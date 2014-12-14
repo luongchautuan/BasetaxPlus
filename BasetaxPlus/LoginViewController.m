@@ -78,7 +78,7 @@ AppDelegate* appdelegate;
     
     if([self.txtPassword.text length] <1 ||[self.txtUsername.text length]<1)
     {
-        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Warning" message:@"Please fill all text fields" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:nil message:@"Please fill all text fields" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
         
         [appdelegate.activityIndicatorView hide:YES];
@@ -146,6 +146,18 @@ AppDelegate* appdelegate;
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
+    NSInteger nextTag = textField.tag + 1;
+    // Try to find next responder
+    UIResponder* nextResponder = [textField.superview viewWithTag:nextTag];
+    if (nextResponder) {
+        // Found next responder, so set it.
+        [nextResponder becomeFirstResponder];
+    } else {
+        // Not found, so remove keyboard.
+        [textField resignFirstResponder];
+        [self.scrollView setContentOffset:CGPointMake(0, -20)];
+    }
+    return NO; // We do not want UITextField to insert line-breaks.
 
 }
 

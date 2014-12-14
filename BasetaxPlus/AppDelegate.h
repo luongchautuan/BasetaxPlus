@@ -25,5 +25,7 @@
 @property (nonatomic)BOOL isLoginSucessfully;
 @property (nonatomic, retain)UserReponsitory* userReponsitory;
 
+@property (nonatomic) CGSize result;
+
 @end
 

@@ -9,6 +9,7 @@
 #import "UploadViewController.h"
 #import "AppDelegate.h"
 #import "ASIHTTPRequest.h"
+#import "ASIFormDataRequest.h"
 #import "MainViewController.h"
 #import "IncomeViewController.h"
 #import "ExpenseViewController.h"
@@ -37,8 +38,7 @@ AppDelegate* appdelegate;
 
     CGRect frame = CGRectMake(50, 300, 75, 75);
     self.progressbar = [self progressViewWithFrame:frame];
-    self.progressbar.progressTotal = 100;
-    self.progressbar.progressCounter = self.progressBarCount + 1;
+
     self.progressbar.theme.sliceDividerHidden = YES;
     [self.view addSubview:self.progressbar];
     
@@ -125,6 +125,115 @@ AppDelegate* appdelegate;
 //    [action_sheet showInView:[UIApplication sharedApplication].keyWindow];
 }
 
+#pragma mark - Request delegates...
+
+- (void)requestFinished:(ASIHTTPRequest *)request
+{
+}
+
+- (void)uploadDocuments
+{
+    
+}
+
+-(void)RequestPhoto
+{
+//    NSData *dataTest=[[NSData alloc]init];
+//    
+//    ASIFormDataRequest *dataRequest=[[ASIFormDataRequest alloc]initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://ec2-46-137-84-201.eu-west-1.compute.amazonaws.com:8443/wTaxmapp/resources/transaction/%i/image",appDelegate.TransactionId]]];
+//    
+//    [dataRequest addBasicAuthenticationHeaderWithUsername:[[NSUserDefaults standardUserDefaults]valueForKey:@"Username"]andPassword:[[NSUserDefaults standardUserDefaults]valueForKey:@"Pass"]];
+//    
+//    dataTest = [self compressImage:appDelegate.image];
+//    
+//    [dataRequest setData:dataTest forKey:@"file"];
+//    [dataRequest setValidatesSecureCertificate:NO];
+//    
+//    [dataRequest setRequestMethod:@"POST"];
+//    
+//    [dataRequest setDelegate:self];
+//    [dataRequest setTag:10];
+//    
+//    [dataRequest startAsynchronous];
+    
+}
+
+- (void)requestFailed:(ASIHTTPRequest *)request
+{
+    
+}
+
+-(NSData *)compressImage:(UIImage *)image
+{
+    
+    float actualHeight = image.size.height;
+    
+    float actualWidth = image.size.width;
+    
+    float maxHeight = 600.0;
+    
+    float maxWidth = 800.0;
+    
+    float imgRatio = actualWidth/actualHeight;
+    
+    float maxRatio = maxWidth/maxHeight;
+    
+    float compressionQuality = 0.5;//50 percent compression
+    
+    
+    
+    if (actualHeight > maxHeight || actualWidth > maxWidth){
+        
+        if(imgRatio < maxRatio)
+        {
+            //adjust width according to maxHeight
+            
+            imgRatio = maxHeight / actualHeight;
+            
+            actualWidth = imgRatio * actualWidth;
+            
+            actualHeight = maxHeight;
+            
+        }
+        
+        else if(imgRatio > maxRatio)
+        {
+            //adjust height according to maxWidth
+            
+            imgRatio = maxWidth / actualWidth;
+            
+            actualHeight = imgRatio * actualHeight;
+            
+            actualWidth = maxWidth;
+            
+        }
+        else
+        {
+            actualHeight = maxHeight;
+            actualWidth = maxWidth;
+        }
+        
+        
+    }
+    
+    
+    CGRect rect = CGRectMake(0.0, 0.0, actualWidth, actualHeight);
+    
+    UIGraphicsBeginImageContext(rect.size);
+    
+    [image drawInRect:rect];
+    
+    UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
+    
+    NSData *imageData = UIImageJPEGRepresentation(img, compressionQuality);
+    
+    UIGraphicsEndImageContext();
+    
+    return imageData;
+    
+}
+
+
 - (IBAction)btnAddMore_Clicked:(id)sender
 {
     self.viewAddMore.hidden = NO;
@@ -138,7 +247,16 @@ AppDelegate* appdelegate;
 
 - (IBAction)btnStartUploadFile_Clicked:(id)sender
 {
+    appdelegate.activityIndicatorView = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    appdelegate.activityIndicatorView.mode = MBProgressHUDAnimationFade;
+    appdelegate.activityIndicatorView.labelText = @"Waiting for upload documents";
+
     
+    self.progressbar.progressTotal = self.documents.count;
+    self.progressbar.progressCounter = self.progressBarCount + 1;
+    
+    self.btnSelectFileToUpload.enabled = NO;
+    self.progressbar.hidden = NO;
 }
 
 #pragma mark ELCImagePickerControllerDelegate Methods
@@ -230,11 +348,11 @@ AppDelegate* appdelegate;
     
 //    self.chosenImages = images;
     
-    [_scrollView setPagingEnabled:YES];
-    [_scrollView setContentSize:CGSizeMake(workingFrame.origin.x, workingFrame.size.height)];
+//    [_scrollView setPagingEnabled:YES];
+//    [_scrollView setContentSize:CGSizeMake(workingFrame.origin.x, workingFrame.size.height)];
     
     if (self.documents.count > 0) {
-        self.progressbar.hidden = NO;
+        self.btnStartUploadFiles.enabled = YES;
     }
 }
 

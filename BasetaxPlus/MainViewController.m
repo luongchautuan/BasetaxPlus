@@ -26,8 +26,12 @@ AppDelegate* appdelegate;
     // Do any additional setup after loading the view from its nib.
     
     appdelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-    
-    [self.scrollView setContentSize:CGSizeMake(self.scrollView.frame.size.width, 576)];
+
+    if (appdelegate.result.height == 480) {
+        [self.scrollView setContentSize:CGSizeMake(self.scrollView.frame.size.width, 630)];
+    }
+    else
+        [self.scrollView setContentSize:CGSizeMake(self.scrollView.frame.size.width, 576)];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,18 +49,8 @@ AppDelegate* appdelegate;
 
 - (IBAction)btnDocumentScanned_Clicked:(id)sender
 {
-    if (appdelegate.isLoginSucessfully)
-    {
-        UploadViewController* uploadDocumentsViewController = [[UploadViewController alloc] initWithNibName:@"UploadViewController" bundle:nil];
-        [self.navigationController pushViewController:uploadDocumentsViewController animated:YES];
-
-    }
-    else
-    {
-        UIAlertView* msg = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"Please login to upload document" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Login", nil];
-        [msg show];
-
-    }
+    UploadViewController* uploadDocumentsViewController = [[UploadViewController alloc] initWithNibName:@"UploadViewController" bundle:nil];
+    [self.navigationController pushViewController:uploadDocumentsViewController animated:YES];
 }
 
 - (IBAction)btnTaxYear_Clicked:(id)sender
@@ -73,7 +67,7 @@ AppDelegate* appdelegate;
 }
 - (IBAction)btnSubmit_Clicked:(id)sender
 {
-    UIAlertView* msg = [[UIAlertView alloc] initWithTitle:@"" message:@"Thank you for submitting your information. Your tax return will be prepared within the next few hours. Please contact to tax@basetax.co.uk" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    UIAlertView* msg = [[UIAlertView alloc] initWithTitle:nil message:@"Thank you for submitting your information. Your tax return will be prepared within the next few hours. Please contact to tax@basetax.co.uk" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
     [msg show];
 }
 
