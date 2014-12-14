@@ -30,6 +30,12 @@
     [self.window setRootViewController:navController];
     [self.window makeKeyAndVisible];
     
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+    {
+        self.result = [[UIScreen mainScreen] bounds].size;
+    }
+
+    
     //TEst
     return YES;
 }

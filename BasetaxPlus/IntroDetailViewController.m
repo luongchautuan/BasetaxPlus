@@ -109,9 +109,18 @@ BOOL isShowViewDate;
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-     [self.viewMain setFrame:CGRectMake(0, 70, self.viewMain.frame.size.width, self.viewMain.frame.size.height)];
-    [textField resignFirstResponder];
-    return YES;
+    NSInteger nextTag = textField.tag + 1;
+    // Try to find next responder
+    UIResponder* nextResponder = [textField.superview viewWithTag:nextTag];
+    if (nextResponder) {
+        // Found next responder, so set it.
+        [nextResponder becomeFirstResponder];
+    } else {
+        // Not found, so remove keyboard.
+        [self.viewMain setFrame:CGRectMake(0, 70, self.viewMain.frame.size.width, self.viewMain.frame.size.height)];
+        [textField resignFirstResponder];
+    }
+    return NO; // We do not want UITextField to insert line-breaks.
 }
 
 /*
