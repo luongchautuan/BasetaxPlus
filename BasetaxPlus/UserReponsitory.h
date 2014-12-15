@@ -7,11 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface UserReponsitory : NSObject
 
-@property (nonatomic)NSString* userName;
-@property (nonatomic)NSString* password;
-@property (nonatomic)NSString* userID;
+@property (nonatomic, retain)NSString* userName;
+@property (nonatomic, retain)NSString* password;
+@property (nonatomic, retain)NSString* userID;
+@property (nonatomic, retain)NSString* displayName;
+@property (nonatomic, retain)NSString* email;
+@property (nonatomic, retain)UIImage* imageUser;
 
 @end

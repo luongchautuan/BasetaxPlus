@@ -276,7 +276,7 @@ AppDelegate* appdelegate;
     
     self.documents = [NSMutableArray arrayWithCapacity:[info count]];
     
-    int documentIndex = 0;
+    int documentIndex = 1;
     
     for (NSDictionary *dict in info)
     {
