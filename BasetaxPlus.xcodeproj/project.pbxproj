@@ -92,7 +92,6 @@
 		6EA3814B1A38C7E7006E0719 /* DocumentReponsitory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA3814A1A38C7E7006E0719 /* DocumentReponsitory.m */; };
 		6EA9C68C1A3341F100EBC3DA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA9C68B1A3341F100EBC3DA /* main.m */; };
 		6EA9C68F1A3341F100EBC3DA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA9C68E1A3341F100EBC3DA /* AppDelegate.m */; };
-		6EA9C6921A3341F100EBC3DA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA9C6911A3341F100EBC3DA /* ViewController.m */; };
 		6EA9C6951A3341F100EBC3DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EA9C6931A3341F100EBC3DA /* Main.storyboard */; };
 		6EA9C6971A3341F100EBC3DA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EA9C6961A3341F100EBC3DA /* Images.xcassets */; };
 		6EA9C69A1A3341F100EBC3DA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EA9C6981A3341F100EBC3DA /* LaunchScreen.xib */; };
@@ -173,6 +172,14 @@
 		6EC198A51A37728500D816BC /* TaxYearViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC198A31A37728500D816BC /* TaxYearViewController.m */; };
 		6EC198A61A37728500D816BC /* TaxYearViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EC198A41A37728500D816BC /* TaxYearViewController.xib */; };
 		6EC198A81A37778B00D816BC /* taxyear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EC198A71A37778B00D816BC /* taxyear@2x.png */; };
+		C2A6041D1A3DDE9100A35E3C /* SubmitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A6041B1A3DDE9100A35E3C /* SubmitViewController.m */; };
+		C2A6041E1A3DDE9100A35E3C /* SubmitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A6041C1A3DDE9100A35E3C /* SubmitViewController.xib */; };
+		C2A604291A3DEFA800A35E3C /* BIProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A604271A3DEFA800A35E3C /* BIProfileViewController.m */; };
+		C2A6042A1A3DEFA800A35E3C /* BIProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A604281A3DEFA800A35E3C /* BIProfileViewController.xib */; };
+		C2A6042C1A3DF0E300A35E3C /* button_editProfile.png in Resources */ = {isa = PBXBuildFile; fileRef = C2A6042B1A3DF0E300A35E3C /* button_editProfile.png */; };
+		C2A6042E1A3DF17A00A35E3C /* no_img.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C2A6042D1A3DF17A00A35E3C /* no_img.jpg */; };
+		C2A604301A3DF4D400A35E3C /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2A6042F1A3DF4D400A35E3C /* MessageUI.framework */; };
+		C2A604321A3DFA4C00A35E3C /* addproduct_btn_save.png in Resources */ = {isa = PBXBuildFile; fileRef = C2A604311A3DFA4C00A35E3C /* addproduct_btn_save.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -289,8 +296,6 @@
 		6EA9C68B1A3341F100EBC3DA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6EA9C68D1A3341F100EBC3DA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6EA9C68E1A3341F100EBC3DA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		6EA9C6901A3341F100EBC3DA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		6EA9C6911A3341F100EBC3DA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		6EA9C6941A3341F100EBC3DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6EA9C6961A3341F100EBC3DA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6EA9C6991A3341F100EBC3DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -426,6 +431,16 @@
 		6EC198A31A37728500D816BC /* TaxYearViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaxYearViewController.m; sourceTree = "<group>"; };
 		6EC198A41A37728500D816BC /* TaxYearViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaxYearViewController.xib; sourceTree = "<group>"; };
 		6EC198A71A37778B00D816BC /* taxyear@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "taxyear@2x.png"; sourceTree = "<group>"; };
+		C2A6041A1A3DDE9100A35E3C /* SubmitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubmitViewController.h; sourceTree = "<group>"; };
+		C2A6041B1A3DDE9100A35E3C /* SubmitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubmitViewController.m; sourceTree = "<group>"; };
+		C2A6041C1A3DDE9100A35E3C /* SubmitViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubmitViewController.xib; sourceTree = "<group>"; };
+		C2A604261A3DEFA800A35E3C /* BIProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIProfileViewController.h; sourceTree = "<group>"; };
+		C2A604271A3DEFA800A35E3C /* BIProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIProfileViewController.m; sourceTree = "<group>"; };
+		C2A604281A3DEFA800A35E3C /* BIProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BIProfileViewController.xib; sourceTree = "<group>"; };
+		C2A6042B1A3DF0E300A35E3C /* button_editProfile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_editProfile.png; sourceTree = "<group>"; };
+		C2A6042D1A3DF17A00A35E3C /* no_img.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = no_img.jpg; sourceTree = "<group>"; };
+		C2A6042F1A3DF4D400A35E3C /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		C2A604311A3DFA4C00A35E3C /* addproduct_btn_save.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addproduct_btn_save.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -433,6 +448,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2A604301A3DF4D400A35E3C /* MessageUI.framework in Frameworks */,
 				6E418DA81A3C2F7600188620 /* QuartzCore.framework in Frameworks */,
 				6E418DA61A3C2F5300188620 /* CoreGraphics.framework in Frameworks */,
 				6EA9C7581A337FBB00EBC3DA /* libxml2.2.dylib in Frameworks */,
@@ -570,6 +586,7 @@
 		6EA9C67D1A3341F100EBC3DA = {
 			isa = PBXGroup;
 			children = (
+				C2A6042F1A3DF4D400A35E3C /* MessageUI.framework */,
 				6E418DA71A3C2F7600188620 /* QuartzCore.framework */,
 				6E418DA51A3C2F5300188620 /* CoreGraphics.framework */,
 				6EA9C7561A337FBB00EBC3DA /* libxml2.2.dylib */,
@@ -597,6 +614,8 @@
 		6EA9C6881A3341F100EBC3DA /* BasetaxPlus */ = {
 			isa = PBXGroup;
 			children = (
+				C2A6041F1A3DE65200A35E3C /* Your Details */,
+				C2A604111A3DDE3500A35E3C /* Submit To Basetax */,
 				6E418D9B1A3C2F1900188620 /* MDRadialProgress */,
 				6E7EC7B21A38C12600B055F6 /* ELCImagePicker */,
 				6EC198A11A37726100D816BC /* Tax Year View */,
@@ -616,8 +635,6 @@
 				6EA9C6B91A33428D00EBC3DA /* Login ViewController */,
 				6EA9C68D1A3341F100EBC3DA /* AppDelegate.h */,
 				6EA9C68E1A3341F100EBC3DA /* AppDelegate.m */,
-				6EA9C6901A3341F100EBC3DA /* ViewController.h */,
-				6EA9C6911A3341F100EBC3DA /* ViewController.m */,
 				6EA9C6931A3341F100EBC3DA /* Main.storyboard */,
 				6EA9C6961A3341F100EBC3DA /* Images.xcassets */,
 				6EA9C6981A3341F100EBC3DA /* LaunchScreen.xib */,
@@ -725,6 +742,9 @@
 		6EA9C6D91A334FB200EBC3DA /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				C2A604311A3DFA4C00A35E3C /* addproduct_btn_save.png */,
+				C2A6042D1A3DF17A00A35E3C /* no_img.jpg */,
+				C2A6042B1A3DF0E300A35E3C /* button_editProfile.png */,
 				6EC198A71A37778B00D816BC /* taxyear@2x.png */,
 				6EBD43821A3608B900E98655 /* Expense Image */,
 				6E28D2371A34BF9D006099E5 /* btn-save.png */,
@@ -933,6 +953,26 @@
 			name = "Tax Year View";
 			sourceTree = "<group>";
 		};
+		C2A604111A3DDE3500A35E3C /* Submit To Basetax */ = {
+			isa = PBXGroup;
+			children = (
+				C2A6041A1A3DDE9100A35E3C /* SubmitViewController.h */,
+				C2A6041B1A3DDE9100A35E3C /* SubmitViewController.m */,
+				C2A6041C1A3DDE9100A35E3C /* SubmitViewController.xib */,
+			);
+			name = "Submit To Basetax";
+			sourceTree = "<group>";
+		};
+		C2A6041F1A3DE65200A35E3C /* Your Details */ = {
+			isa = PBXGroup;
+			children = (
+				C2A604261A3DEFA800A35E3C /* BIProfileViewController.h */,
+				C2A604271A3DEFA800A35E3C /* BIProfileViewController.m */,
+				C2A604281A3DEFA800A35E3C /* BIProfileViewController.xib */,
+			);
+			name = "Your Details";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1019,6 +1059,7 @@
 				6E28D1FE1A3444E3006099E5 /* Add income.png in Resources */,
 				6E7EC7D11A38C12600B055F6 /* ELCAlbumPickerController.xib in Resources */,
 				6EBD43881A360E4400E98655 /* checkoff@x.png in Resources */,
+				C2A6042A1A3DEFA800A35E3C /* BIProfileViewController.xib in Resources */,
 				6E28D1F81A3444E3006099E5 /* Add income bg new@x.png in Resources */,
 				6E28D2011A3444E3006099E5 /* Add photo.png in Resources */,
 				6E28D1BD1A340918006099E5 /* icon-arrowLarge in Resources */,
@@ -1028,6 +1069,7 @@
 				6E28D1F51A3444E3006099E5 /* add image.png in Resources */,
 				6E28D20B1A3444E3006099E5 /* cashon.png in Resources */,
 				6E28D2111A3444E3006099E5 /* divider.png in Resources */,
+				C2A6041E1A3DDE9100A35E3C /* SubmitViewController.xib in Resources */,
 				6E28D2261A348A58006099E5 /* save button.png in Resources */,
 				6E28D2311A34B948006099E5 /* cash button (select).png in Resources */,
 				6EC198A81A37778B00D816BC /* taxyear@2x.png in Resources */,
@@ -1055,6 +1097,7 @@
 				6E28D1FB1A3444E3006099E5 /* Add income bg2.png in Resources */,
 				6E28D2191A3444E3006099E5 /* otheron.png in Resources */,
 				6E28D1FA1A3444E3006099E5 /* Add income bg@x.png in Resources */,
+				C2A6042E1A3DF17A00A35E3C /* no_img.jpg in Resources */,
 				6EA9C6D21A33437A00EBC3DA /* IncomeViewController.xib in Resources */,
 				6EA9C6EB1A3371A400EBC3DA /* btn_login@2x.png in Resources */,
 				6E28D1F91A3444E3006099E5 /* Add income bg.png in Resources */,
@@ -1069,6 +1112,7 @@
 				6E28D2341A34B948006099E5 /* cheque button.png in Resources */,
 				6E28D1F31A3444E3006099E5 /* Add photo 2.png in Resources */,
 				6E28D2121A3444E3006099E5 /* divider@2x.png in Resources */,
+				C2A6042C1A3DF0E300A35E3C /* button_editProfile.png in Resources */,
 				6E28D22F1A34B948006099E5 /* card button (select).png in Resources */,
 				6E28D1F21A3444E3006099E5 /* Add income bg2@2xEdited.png in Resources */,
 				6E28D21A1A3444E3006099E5 /* otheron@2x.png in Resources */,
@@ -1103,6 +1147,7 @@
 				6E28D2041A3444E3006099E5 /* cancel@2x.png in Resources */,
 				6E7EC7D41A38C12600B055F6 /* Overlay.png in Resources */,
 				6E28D21E1A344757006099E5 /* dropdown.png in Resources */,
+				C2A604321A3DFA4C00A35E3C /* addproduct_btn_save.png in Resources */,
 				6EBD43891A360E4400E98655 /* checkon.png in Resources */,
 				6E28D1BF1A340918006099E5 /* icon-submit.png in Resources */,
 			);
@@ -1137,6 +1182,7 @@
 				6EA9C6B71A33427F00EBC3DA /* RegisterViewController.m in Sources */,
 				6EA9C7491A33780500EBC3DA /* NSUserDefaults+RMSaveCustomObject.m in Sources */,
 				6EA9C7441A33780500EBC3DA /* ASIS3ObjectRequest.m in Sources */,
+				C2A604291A3DEFA800A35E3C /* BIProfileViewController.m in Sources */,
 				6EA9C7421A33780500EBC3DA /* ASIS3BucketObject.m in Sources */,
 				6E28D1B51A34002A006099E5 /* UserReponsitory.m in Sources */,
 				6EA9C6BF1A3342DB00EBC3DA /* MainViewController.m in Sources */,
@@ -1155,9 +1201,9 @@
 				6EBD43801A35E24500E98655 /* SBJsonUTF8Stream.m in Sources */,
 				6EA9C6E31A336D4100EBC3DA /* LoginViewController.m in Sources */,
 				6E418DA41A3C2F1900188620 /* MDRadialProgressView.m in Sources */,
-				6EA9C6921A3341F100EBC3DA /* ViewController.m in Sources */,
 				6EA9C68F1A3341F100EBC3DA /* AppDelegate.m in Sources */,
 				6EA9C73D1A33780500EBC3DA /* ASICloudFilesObject.m in Sources */,
+				C2A6041D1A3DDE9100A35E3C /* SubmitViewController.m in Sources */,
 				6EA9C73E1A33780500EBC3DA /* ASICloudFilesObjectRequest.m in Sources */,
 				6EA9C7321A33780500EBC3DA /* ASIDataCompressor.m in Sources */,
 				6EA9C7481A33780500EBC3DA /* NSObject+RMCopyable.m in Sources */,

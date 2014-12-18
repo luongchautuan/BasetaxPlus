@@ -12,6 +12,8 @@
 #import "UploadViewController.h"
 #import "AppDelegate.h"
 #import "TaxYearViewController.h"
+#import "SubmitViewController.h"
+#import "BIProfileViewController.h"
 
 @interface MainViewController ()
 
@@ -55,8 +57,17 @@ AppDelegate* appdelegate;
 
 - (IBAction)btnYourDetails_Clicked:(id)sender
 {
-    LoginViewController* loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
-    [self.navigationController pushViewController:loginViewController animated:YES];
+    if(appdelegate.isLoginSucessfully)
+    {
+        BIProfileViewController* profileViewController = [[BIProfileViewController alloc] initWithNibName:@"BIProfileViewController" bundle:nil];
+        [self.navigationController pushViewController:profileViewController animated:YES];
+    }
+    else
+    {
+        LoginViewController* loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+        [self.navigationController pushViewController:loginViewController animated:YES];
+    }
+
 }
 
 - (IBAction)btnDocumentScanned_Clicked:(id)sender
@@ -79,8 +90,9 @@ AppDelegate* appdelegate;
 }
 - (IBAction)btnSubmit_Clicked:(id)sender
 {
-    UIAlertView* msg = [[UIAlertView alloc] initWithTitle:nil message:@"Thank you for submitting your information. Your tax return will be prepared within the next few hours. Please contact to tax@basetax.co.uk" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-    [msg show];
+    SubmitViewController* submitViewController = [[SubmitViewController alloc] initWithNibName:@"SubmitViewController" bundle:nil];
+    [self.navigationController pushViewController:submitViewController animated:YES];
+
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
