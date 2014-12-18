@@ -34,6 +34,18 @@ AppDelegate* appdelegate;
         [self.scrollView setContentSize:CGSizeMake(self.scrollView.frame.size.width, 576)];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    if (appdelegate.year.length <= 0) {
+        self.lblTaxYear.text = @"2013-14";
+    }
+    else
+    {
+        self.lblTaxYear.text = appdelegate.year;
+    }
+    
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -92,6 +104,7 @@ AppDelegate* appdelegate;
 - (void)dealloc {
     [_scrollView release];
     [_lblTaxRebate release];
+    [_lblTaxYear release];
     [super dealloc];
 }
 @end

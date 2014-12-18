@@ -7,6 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController">
             <connections>
                 <outlet property="lblTaxRebate" destination="han-7E-jKz" id="k8e-GZ-noG"/>
+                <outlet property="lblTaxYear" destination="3dP-Th-qCW" id="vfD-Ui-FcY"/>
                 <outlet property="scrollView" destination="cqG-Ay-4P4" id="nFk-ua-NX9"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -267,6 +268,12 @@
                                         <action selector="btnTaxYear_Clicked:" destination="-1" eventType="touchUpInside" id="ctc-Ni-zAy"/>
                                     </connections>
                                 </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2013-2014" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3dP-Th-qCW">
+                                    <rect key="frame" x="116" y="15" width="89" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" red="0.40392156862745099" green="0.68627450980392157" blue="0.070588235294117646" alpha="1" colorSpace="calibratedRGB"/>
                         </view>

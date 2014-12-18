@@ -11,5 +11,6 @@
 @interface MainViewController : UIViewController<UIAlertViewDelegate>
 
 @property (retain, nonatomic) IBOutlet UILabel *lblTaxRebate;
+@property (retain, nonatomic) IBOutlet UILabel *lblTaxYear;
 @property (retain, nonatomic) IBOutlet UIScrollView *scrollView;
 @end
