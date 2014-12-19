@@ -40,6 +40,7 @@ AppDelegate* appdelegate;
 {
     if (appdelegate.year.length <= 0) {
         self.lblTaxYear.text = @"2013-14";
+        appdelegate.IDyear = 1;
     }
     else
     {

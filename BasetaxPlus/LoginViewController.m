@@ -11,6 +11,7 @@
 #import "AppDelegate.h"
 #import "RegisterViewController.h"
 #import "UserReponsitory.h"
+#import "SBJson.h"
 
 @interface LoginViewController ()
 
@@ -175,6 +176,18 @@ AppDelegate* appdelegate;
             appdelegate.userReponsitory.password = self.txtPassword.text;
             
             appdelegate.isLoginSucessfully = YES;
+            
+            NSString* responseString = [[NSString alloc] initWithData:[request responseData] encoding:NSUTF8StringEncoding];
+            NSLog(@"response string in web service-->%@",responseString);
+            SBJsonParser *json = [SBJsonParser new];
+            NSMutableArray *feeds = [json objectWithString:responseString];
+            NSLog(@"Feeds = %@",feeds);
+            NSString *data;
+            data =[feeds valueForKey:@"id"];
+            NSLog(@"user id %@",data);
+            
+            appdelegate.userReponsitory.userID = [NSString stringWithFormat:@"%@", data];
+            
             
             [self.navigationController popViewControllerAnimated:YES];
             

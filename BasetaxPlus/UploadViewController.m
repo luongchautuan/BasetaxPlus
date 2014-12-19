@@ -14,7 +14,8 @@
 #import "IncomeViewController.h"
 #import "ExpenseViewController.h"
 #import "DocumentReponsitory.h"
-
+#import "LoginViewController.h"
+#import "MobileCoreServices/MobileCoreServices.h"
 
 @interface UploadViewController ()
 
@@ -90,14 +91,42 @@ AppDelegate* appdelegate;
 
 - (IBAction)btnAddIncome_Clicked:(id)sender
 {
+    if (!appdelegate.isLoginSucessfully)
+    {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:nil message:@"Please log in or register to add more income" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:@"Cancel", nil];
+        
+        [alert setTag:1];
+        [alert show];
+        [self.viewAddMore setHidden:YES];
+        return;
+
+    }
+    
     [self.viewAddMore setHidden:YES];
     IncomeViewController* incomeViewController = [[IncomeViewController alloc] initWithNibName:@"IncomeViewController" bundle:nil];
     
     [self.navigationController pushViewController:incomeViewController animated:YES];
 }
 
+-(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    NSLog(@"SkipLogin: %ld", (long)buttonIndex);
+    
+    if (buttonIndex != 0)
+    {
+        NSLog(@"Cancel");
+    }
+    else
+    {
+        NSLog(@"LOgin");
+        LoginViewController *loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+        [self.navigationController pushViewController:loginViewController animated:YES];
+    }
+}
+
 - (IBAction)btnAddExpense_Clicked:(id)sender
 {
+    
     [self.viewAddMore setHidden:YES];
     ExpenseViewController* expenseViewController = [[ExpenseViewController alloc] initWithNibName:@"ExpenseViewController" bundle:nil];
     [self.navigationController pushViewController:expenseViewController animated:YES];
@@ -110,19 +139,61 @@ AppDelegate* appdelegate;
 
 - (IBAction)btnUploadFiles_Clicked:(id)sender
 {
-    ELCImagePickerController *elcPicker = [[ELCImagePickerController alloc] initImagePicker];
-    elcPicker.maximumImagesCount = 4; //Set the maximum number of images to select, defaults to 4
-    elcPicker.returnsOriginalImage = NO; //Only return the fullScreenImage, not the fullResolutionImage
-    elcPicker.returnsImage = YES; //Return UIimage if YES. If NO, only return asset location information
-    elcPicker.onOrder = YES; //For multiple image selection, display and return selected order of images
-    elcPicker.imagePickerDelegate = self;
+    UIActionSheet *action_sheet = [[UIActionSheet alloc]initWithTitle:@"Upload options" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Camera",@"Library", nil];
     
-    //Present modally
-    [self presentViewController:elcPicker animated:YES completion:nil];
-//
+    [action_sheet showInView:[UIApplication sharedApplication].keyWindow];
+ //
 //    UIActionSheet *action_sheet = [[UIActionSheet alloc]initWithTitle:@"Upload options" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Camera",@"Library", nil];
 //    
 //    [action_sheet showInView:[UIApplication sharedApplication].keyWindow];
+}
+
+#pragma mark - Action scheet...
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0) {
+        
+        if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+        {
+            UIImagePickerController *ipc=[[UIImagePickerController alloc] init ];
+            
+            ipc=[[UIImagePickerController alloc] init ];
+            
+            ipc.delegate=self;
+            
+            ipc.sourceType=UIImagePickerControllerSourceTypeCamera;
+            
+            ipc.mediaTypes = [NSArray arrayWithObjects: (NSString *) kUTTypeImage, nil];
+            
+            [self presentModalViewController:ipc animated:YES];
+            
+            //            [self.parentViewController presentViewController:ipc animated:YES completion:nil];
+            
+        }
+        else
+        {
+            
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Camera capture is not supported in this device" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            
+            [alert show];
+        }
+    }
+    
+    else if(buttonIndex == 1)
+    {
+        
+        ELCImagePickerController *elcPicker = [[ELCImagePickerController alloc] initImagePicker];
+        elcPicker.maximumImagesCount = 4; //Set the maximum number of images to select, defaults to 4
+        elcPicker.returnsOriginalImage = NO; //Only return the fullScreenImage, not the fullResolutionImage
+        elcPicker.returnsImage = YES; //Return UIimage if YES. If NO, only return asset location information
+        elcPicker.onOrder = YES; //For multiple image selection, display and return selected order of images
+        elcPicker.imagePickerDelegate = self;
+        
+        //Present modally
+        [self presentViewController:elcPicker animated:YES completion:nil];
+
+    }
 }
 
 #pragma mark - Request delegates...
@@ -245,20 +316,6 @@ AppDelegate* appdelegate;
     [UIView commitAnimations];
 }
 
-- (IBAction)btnStartUploadFile_Clicked:(id)sender
-{
-    appdelegate.activityIndicatorView = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    appdelegate.activityIndicatorView.mode = MBProgressHUDAnimationFade;
-    appdelegate.activityIndicatorView.labelText = @"Waiting for upload documents";
-
-    
-    self.progressbar.progressTotal = self.documents.count;
-    self.progressbar.progressCounter = self.progressBarCount + 1;
-    
-    self.btnSelectFileToUpload.enabled = NO;
-    self.progressbar.hidden = NO;
-}
-
 #pragma mark ELCImagePickerControllerDelegate Methods
 
 - (void)elcImagePickerController:(ELCImagePickerController *)picker didFinishPickingMediaWithInfo:(NSArray *)info
@@ -331,7 +388,7 @@ AppDelegate* appdelegate;
                 [imageview setContentMode:UIViewContentModeScaleAspectFit];
                 imageview.frame = workingFrame;
                 
-                [_scrollView addSubview:imageview];
+//                [_scrollView addSubview:imageview];
                 
                 workingFrame.origin.x = workingFrame.origin.x + workingFrame.size.width;
             }
@@ -344,15 +401,6 @@ AppDelegate* appdelegate;
         {
             NSLog(@"Uknown asset type");
         }
-    }
-    
-//    self.chosenImages = images;
-    
-//    [_scrollView setPagingEnabled:YES];
-//    [_scrollView setContentSize:CGSizeMake(workingFrame.origin.x, workingFrame.size.height)];
-    
-    if (self.documents.count > 0) {
-        self.btnStartUploadFiles.enabled = YES;
     }
 }
 
@@ -376,8 +424,8 @@ AppDelegate* appdelegate;
     [_viewAddMore release];
     [_viewAddMoreMain release];
     [_scrollView release];
-    [_btnStartUploadFiles release];
     [_btnSelectFileToUpload release];
+    [_btnAddIncomeMain release];
     [super dealloc];
 }
 @end

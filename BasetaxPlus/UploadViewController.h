@@ -12,7 +12,7 @@
 #import "MDRadialProgressTheme.h"
 #import "MDRadialProgressLabel.h"
 
-@interface UploadViewController : UIViewController<UITextViewDelegate,UITextFieldDelegate,UIActionSheetDelegate, UIScrollViewDelegate, UIAlertViewDelegate, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, ELCImagePickerControllerDelegate>
+@interface UploadViewController : UIViewController<UITextViewDelegate,UITextFieldDelegate,UIActionSheetDelegate, UIScrollViewDelegate, UIAlertViewDelegate, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate, ELCImagePickerControllerDelegate>
 
 @property (retain, nonatomic) IBOutlet UIView *viewAddMore;
 @property (retain, nonatomic) IBOutlet UIView *viewAddMoreMain;
@@ -21,7 +21,8 @@
 @property (nonatomic, retain)MDRadialProgressView* progressbar;
 
 @property (nonatomic) int progressBarCount;
-@property (retain, nonatomic) IBOutlet UIButton *btnStartUploadFiles;
+
+@property (retain, nonatomic) IBOutlet UIButton *btnAddIncomeMain;
 
 @property (retain, nonatomic) IBOutlet UIButton *btnSelectFileToUpload;
 @end

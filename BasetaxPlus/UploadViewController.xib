@@ -6,8 +6,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UploadViewController">
             <connections>
+                <outlet property="btnAddIncomeMain" destination="gei-w7-qAo" id="EXt-Dx-AUu"/>
                 <outlet property="btnSelectFileToUpload" destination="9OY-NY-khV" id="7E4-73-gPq"/>
-                <outlet property="btnStartUploadFiles" destination="gei-w7-qAo" id="V67-Pn-adR"/>
                 <outlet property="scrollView" destination="otS-iP-ZBn" id="XHt-eF-UyY"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="viewAddMore" destination="JM6-qj-IEh" id="Wnx-7m-9yJ"/>
@@ -60,15 +60,15 @@
                         <action selector="btnUploadFiles_Clicked:" destination="-1" eventType="touchUpInside" id="bhx-Lt-xhd"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gei-w7-qAo">
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gei-w7-qAo">
                     <rect key="frame" x="168" y="440" width="129" height="35"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <state key="normal" title="Start" backgroundImage="btn-background.png">
+                    <state key="normal" title="Add Income" backgroundImage="btn-background.png">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="btnStartUploadFile_Clicked:" destination="-1" eventType="touchUpInside" id="IKw-0Y-4ys"/>
+                        <action selector="btnAddIncome_Clicked:" destination="-1" eventType="touchUpInside" id="PlO-iE-iQ4"/>
                     </connections>
                 </button>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otS-iP-ZBn">
