@@ -32,7 +32,8 @@
 @property (retain, nonatomic) IBOutlet UIImageView *lineDate;
 
 @property (retain, nonatomic) IBOutlet UITextField *txtBusiness;
-@property (retain, nonatomic) IBOutlet UIImageView *imageReceipt;
+
+@property (retain, nonatomic) IBOutlet UIImageView *imageView;
 @property (retain, nonatomic) IBOutlet UIButton *btnAddReceipt;
 @property (retain, nonatomic) IBOutlet UITextField *txtAmount;
 @property (retain, nonatomic) IBOutlet UITextField *txtCis;

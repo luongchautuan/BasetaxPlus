@@ -18,7 +18,7 @@
                 <outlet property="btnOther" destination="wvQ-wN-29f" id="7Nz-PG-Isl"/>
                 <outlet property="btnRecordType" destination="dzO-oU-V4V" id="9lm-8o-pho"/>
                 <outlet property="datePicker" destination="ICY-eA-Vfg" id="dEQ-SQ-kb4"/>
-                <outlet property="imageReceipt" destination="F71-Oa-9Sk" id="cCI-qw-xu8"/>
+                <outlet property="imageView" destination="F71-Oa-9Sk" id="b5S-Ld-eL4"/>
                 <outlet property="inputBox" destination="lNy-pv-acG" id="lTt-c4-yfz"/>
                 <outlet property="lblNoteDescription" destination="sKf-4x-5ZL" id="KK3-mM-uL3"/>
                 <outlet property="lblRecodeType" destination="pTU-mA-pEm" id="UgP-YE-Ei9"/>

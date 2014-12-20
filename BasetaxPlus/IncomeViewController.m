@@ -968,6 +968,7 @@ int businessID;
 {
     appdelegate.image = [info objectForKey:UIImagePickerControllerOriginalImage];
     self.imageReceipt.image = appdelegate.image;
+    
     appdelegate.PhotoClick=TRUE;
     
     [self dismissViewControllerAnimated:YES completion:nil];

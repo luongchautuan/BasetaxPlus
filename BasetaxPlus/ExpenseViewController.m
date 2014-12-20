@@ -1134,7 +1134,7 @@ AppDelegate *appDelegate;
 {
     appDelegate.image = [info objectForKey:UIImagePickerControllerOriginalImage];
     
-    self.imageReceipt.image = appDelegate.image;
+    self.imageView.image = appDelegate.image;
     
     appDelegate.PhotoClick = TRUE;
     
@@ -1528,7 +1528,8 @@ AppDelegate *appDelegate;
 }
 */
 
-- (void)dealloc {
+- (void)dealloc
+{
     [_btnCash release];
     [_btnCheque release];
     [_btnCard release];
@@ -1538,6 +1539,7 @@ AppDelegate *appDelegate;
     [_btnInformation release];
     [_viewInformation release];
     [_txtDescription release];
+    [_imageView release];
     [super dealloc];
 }
 @end
