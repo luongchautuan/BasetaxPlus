@@ -126,6 +126,16 @@ AppDelegate* appdelegate;
 
 - (IBAction)btnAddExpense_Clicked:(id)sender
 {
+    if (!appdelegate.isLoginSucessfully)
+    {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:nil message:@"Please log in or register to add more expense" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:@"Cancel", nil];
+        
+        [alert setTag:1];
+        [alert show];
+        [self.viewAddMore setHidden:YES];
+        return;
+        
+    }
     
     [self.viewAddMore setHidden:YES];
     ExpenseViewController* expenseViewController = [[ExpenseViewController alloc] initWithNibName:@"ExpenseViewController" bundle:nil];

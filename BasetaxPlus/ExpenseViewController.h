@@ -16,12 +16,16 @@
 @property (retain, nonatomic) IBOutlet UIButton *btnCard;
 @property (retain, nonatomic) IBOutlet UIButton *btnOther;
 
-
+@property (retain, nonatomic)NSMutableArray* dataRecordType;
+@property (retain, nonatomic)NSString* amountExpense;
+@property (retain, nonatomic)NSMutableArray* m_allBusinessName;
+@property(strong,nonatomic)NSMutableArray* m_allBusinessID;
 
 @property (retain, nonatomic) IBOutlet UIImageView *inputBox;
 
 @property (retain, nonatomic) IBOutlet UIImageView *lineBusiness;
 @property (retain, nonatomic) IBOutlet UIImageView *lineCustomer;
+@property (retain, nonatomic) IBOutlet UITextView *txtDescription;
 
 @property (retain, nonatomic) IBOutlet UIImageView *lineVat;
 @property (retain, nonatomic) IBOutlet UIImageView *lineCis;

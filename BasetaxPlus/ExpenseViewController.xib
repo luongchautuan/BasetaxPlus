@@ -36,6 +36,7 @@
                 <outlet property="txtBusiness" destination="EfU-sM-DIT" id="w7l-PE-BgL"/>
                 <outlet property="txtCis" destination="BFQ-Vw-997" id="tGl-eK-UY2"/>
                 <outlet property="txtDate" destination="X9E-fb-9tl" id="6tT-Ei-k0W"/>
+                <outlet property="txtDescription" destination="uwe-wB-u4L" id="loS-4H-eff"/>
                 <outlet property="txtExpenseReference" destination="HFu-bV-PPK" id="IUv-fo-so4"/>
                 <outlet property="txtProviderShop" destination="98Q-Nu-ltb" id="3vA-b1-1f8"/>
                 <outlet property="txtVat" destination="j7o-X1-dGN" id="gGq-yj-BIW"/>
@@ -135,13 +136,16 @@
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
-                        <textField opaque="NO" clipsSubviews="YES" tag="305" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Amount" minimumFontSize="17" id="pmk-ES-Vcq">
+                        <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Amount" minimumFontSize="17" id="pmk-ES-Vcq">
                             <rect key="frame" x="123" y="5" width="201" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="xYk-qY-N9P"/>
+                            </connections>
                         </textField>
-                        <textField opaque="NO" clipsSubviews="YES" tag="300" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="VAT" minimumFontSize="17" id="j7o-X1-dGN">
+                        <textField opaque="NO" clipsSubviews="YES" tag="300" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Vat" minimumFontSize="17" id="j7o-X1-dGN">
                             <rect key="frame" x="123" y="39" width="201" height="31"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -293,8 +297,8 @@
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view hidden="YES" contentMode="scaleToFill" id="2EC-HW-1b4">
-                            <rect key="frame" x="48" y="265" width="277" height="135"/>
+                        <view hidden="YES" contentMode="scaleToFill" id="2EC-HW-1b4" userLabel="View Record Type">
+                            <rect key="frame" x="46" y="268" width="266" height="135"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_dialog_view.png" id="nlC-xN-veR">
@@ -306,6 +310,10 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <color key="separatorColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                    <connections>
+                                        <outlet property="dataSource" destination="-1" id="t34-ex-SOz"/>
+                                        <outlet property="delegate" destination="-1" id="Nka-d7-jO6"/>
+                                    </connections>
                                 </tableView>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -346,11 +354,15 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <connections>
+                                        <outlet property="dataSource" destination="-1" id="Ohp-kG-YMe"/>
+                                        <outlet property="delegate" destination="-1" id="CoT-gn-up2"/>
+                                    </connections>
                                 </tableView>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </view>
-                        <view hidden="YES" contentMode="scaleToFill" id="H2c-G4-vgo">
+                        <view hidden="YES" contentMode="scaleToFill" id="H2c-G4-vgo" userLabel="View Date">
                             <rect key="frame" x="40" y="143" width="276" height="193"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
