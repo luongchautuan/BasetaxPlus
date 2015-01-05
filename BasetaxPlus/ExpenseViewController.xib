@@ -18,7 +18,7 @@
                 <outlet property="btnOther" destination="wvQ-wN-29f" id="7Nz-PG-Isl"/>
                 <outlet property="btnRecordType" destination="dzO-oU-V4V" id="9lm-8o-pho"/>
                 <outlet property="datePicker" destination="ICY-eA-Vfg" id="dEQ-SQ-kb4"/>
-                <outlet property="imageView" destination="F71-Oa-9Sk" id="b5S-Ld-eL4"/>
+                <outlet property="imageView" destination="Dxe-RA-pEZ" id="je7-p1-uDo"/>
                 <outlet property="inputBox" destination="lNy-pv-acG" id="lTt-c4-yfz"/>
                 <outlet property="lblNoteDescription" destination="sKf-4x-5ZL" id="KK3-mM-uL3"/>
                 <outlet property="lblRecodeType" destination="pTU-mA-pEm" id="UgP-YE-Ei9"/>
@@ -123,6 +123,9 @@
                             <state key="highlighted">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="Check:" destination="-1" eventType="touchUpInside" id="Bcn-0b-bdZ"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5TY-0s-uL2">
                             <rect key="frame" x="145" y="274" width="35" height="25"/>
@@ -145,6 +148,10 @@
                                 <outlet property="delegate" destination="-1" id="xYk-qY-N9P"/>
                             </connections>
                         </textField>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add image.png" id="Dxe-RA-pEZ">
+                            <rect key="frame" x="6" y="6" width="103" height="110"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
                         <textField opaque="NO" clipsSubviews="YES" tag="300" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Vat" minimumFontSize="17" id="j7o-X1-dGN">
                             <rect key="frame" x="123" y="39" width="201" height="31"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -157,10 +164,6 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                         </textField>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="add image.png" id="F71-Oa-9Sk">
-                            <rect key="frame" x="5" y="5" width="105" height="111"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        </imageView>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date" minimumFontSize="17" id="X9E-fb-9tl">
                             <rect key="frame" x="123" y="106" width="201" height="31"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -450,7 +453,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="n6i-p8-hdu">
-                            <rect key="frame" x="260" y="11" width="52" height="28"/>
+                            <rect key="frame" x="260" y="13" width="52" height="26"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" backgroundImage="btn-save.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>

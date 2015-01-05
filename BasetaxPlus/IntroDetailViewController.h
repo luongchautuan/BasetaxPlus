@@ -21,6 +21,9 @@
 @property (retain, nonatomic) IBOutlet UIButton *btnSaveDate;
 @property (retain, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (retain, nonatomic) IBOutlet UIScrollView *scrollVIew;
+@property (retain, nonatomic) IBOutlet UITextField *txtNationalInsurance;
+
+@property(strong,nonatomic)NSMutableArray *feeds;
 
 @property (retain, nonatomic) IBOutlet UIView *viewMain;
 @property (retain, nonatomic) IBOutlet UITextField *txtUniqueTaxpyer;

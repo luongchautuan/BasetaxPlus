@@ -44,17 +44,25 @@ int businessID;
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    
     isShowBusinessView = YES;
     isShowViewDate = YES;
     firsttable = YES;
     isShowViewRecordType = YES;
     self.amountIncome = nil;
     
+    paymentId = 1;
+    record = 1;
+
     appdelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate] ;
+    
+    appdelegate.activityIndicatorView = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    appdelegate.activityIndicatorView.mode = MBProgressHUDAnimationFade;
+    appdelegate.activityIndicatorView.labelText = @"";
     
     ASIHTTPRequest *requestUser = [[ASIHTTPRequest alloc] initWithURL:[NSURL URLWithString:@"https://ec2-46-137-84-201.eu-west-1.compute.amazonaws.com:8443/wTaxmapp/resources/user"]];
     
-    [requestUser addBasicAuthenticationHeaderWithUsername:[[NSUserDefaults standardUserDefaults]valueForKey:@"Username"]andPassword:[[NSUserDefaults standardUserDefaults]valueForKey:@"Pass"]];
+    [requestUser addBasicAuthenticationHeaderWithUsername:appdelegate.userReponsitory.userName andPassword:appdelegate.userReponsitory.password];
     [requestUser setValidatesSecureCertificate:NO];
     
     [requestUser startSynchronous];
@@ -660,6 +668,8 @@ int businessID;
             [self.tableBusiness reloadData];
             
         }
+        
+        [appdelegate.activityIndicatorView hide:YES];
     }
     
     if (request.tag == 6)
@@ -1404,7 +1414,7 @@ int businessID;
     }
     else
     {
-        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Amount and Customer Name are mandatory fields." message:@"" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:nil message:@"Amount and Customer Name are mandatory fields." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
         
         [appdelegate.activityIndicatorView hide:YES];

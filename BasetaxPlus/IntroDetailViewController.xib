@@ -15,6 +15,7 @@
                 <outlet property="txtEmail" destination="1lQ-cd-ZqZ" id="aVI-xv-0eJ"/>
                 <outlet property="txtFirstName" destination="P9n-lw-zqe" id="bnp-sI-yAO"/>
                 <outlet property="txtLastName" destination="N84-PO-aT0" id="KAN-1Z-ihZ"/>
+                <outlet property="txtNationalInsurance" destination="GvI-hO-C4j" id="JwK-Cb-bRb"/>
                 <outlet property="txtPostCode" destination="cKq-AF-mox" id="PNC-ck-Rtx"/>
                 <outlet property="txtTelephone" destination="FX0-vC-4NF" id="fB5-qy-Q4d"/>
                 <outlet property="txtUniqueTaxpyer" destination="0kT-w7-Rwo" id="ofq-B4-Owc"/>
@@ -37,7 +38,7 @@
                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Png-LQ-Fyg">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Introduction yourself" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VBo-aM-EJ2">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Tax Detail" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VBo-aM-EJ2">
                                             <rect key="frame" x="0.0" y="14" width="320" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -53,10 +54,13 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kJ8-3m-axd">
-                                            <rect key="frame" x="260" y="11" width="52" height="28"/>
+                                            <rect key="frame" x="260" y="13" width="52" height="26"/>
                                             <state key="normal" image="btn-save.png">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <action selector="btnSaveIntroductionYourSelf_Clicked:" destination="-1" eventType="touchUpInside" id="VVi-xP-hXd"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" red="0.4039215686" green="0.68627450980000004" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>

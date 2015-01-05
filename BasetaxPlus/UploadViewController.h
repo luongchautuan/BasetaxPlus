@@ -19,7 +19,7 @@
 @property (retain, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, retain)NSMutableArray* documents;
 @property (nonatomic, retain)MDRadialProgressView* progressbar;
-
+@property (nonatomic)int indexDocument;
 @property (nonatomic) int progressBarCount;
 
 @property (retain, nonatomic) IBOutlet UIButton *btnAddIncomeMain;

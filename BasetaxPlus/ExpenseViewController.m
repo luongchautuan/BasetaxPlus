@@ -44,10 +44,21 @@ AppDelegate *appDelegate;
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    
+    appDelegate.activityIndicatorView = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    appDelegate.activityIndicatorView.mode = MBProgressHUDAnimationFade;
+    appDelegate.activityIndicatorView.labelText = @"";
+    
     isShowBusinessView = YES;
     isShowViewDate = YES;
 
     isShowViewRecordType = YES;
+    
+    disallowable=@"false";
+    paymentId = 1;
+    record = 5;
+    Amount = nil;
     
     UITapGestureRecognizer *tapGeusturePaymemt = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapHandler:)];
     tapGeusturePaymemt.numberOfTapsRequired = 1;
@@ -57,7 +68,7 @@ AppDelegate *appDelegate;
     
     ASIHTTPRequest *requestUser = [[ASIHTTPRequest alloc] initWithURL:[NSURL URLWithString:@"https://ec2-46-137-84-201.eu-west-1.compute.amazonaws.com:8443/wTaxmapp/resources/user"]];
     
-    [requestUser addBasicAuthenticationHeaderWithUsername:appDelegate.userReponsitory.userName andPassword:appDelegate.userReponsitory.password];
+    [requestUser addBasicAuthenticationHeaderWithUsername:[[NSUserDefaults standardUserDefaults]valueForKey:@"Username"]andPassword:[[NSUserDefaults standardUserDefaults]valueForKey:@"Pass"]];
     [requestUser setValidatesSecureCertificate:NO];
     
     [requestUser startSynchronous];
@@ -612,12 +623,15 @@ AppDelegate *appDelegate;
 
 - (IBAction)btnSaveExpense_Clicked:(id)sender
 {
+    appDelegate.activityIndicatorView = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    appDelegate.activityIndicatorView.mode = MBProgressHUDAnimationFade;
+    appDelegate.activityIndicatorView.labelText = @"";
     
-    if([self.txtAmount.text length ]>0 && [self.txtCustomerName.text length ]>0)
+    if([self.txtAmount.text length ]>0 && [self.txtProviderShop.text length ]>0)
     {
-        if(!Amount || [Amount isEqual:[NSNull null]])
+        if(!self.amountExpense || [self.amountExpense isEqual:[NSNull null]])
         {
-            Amount = self.txtAmount.text;
+            self.amountExpense = self.txtAmount.text;
         }
         
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -681,13 +695,9 @@ AppDelegate *appDelegate;
         
         [request addBasicAuthenticationHeaderWithUsername:appDelegate.userReponsitory.userName andPassword:appDelegate.userReponsitory.password];
         
-        
         [request setTag:8];
         [request addRequestHeader:@"Content-Type" value:@"application/json"];
         [request addRequestHeader:@"accept" value:@"application/json"];
-        
-        [request setRequestMethod:@"POST"];
-        
         
         if(cashBool ==TRUE)
             paymentId=1;
@@ -699,50 +709,49 @@ AppDelegate *appDelegate;
             paymentId=4;
         
         NSString *uid;
-        uid=[[NSUserDefaults standardUserDefaults]valueForKey:@"User ID"];
+        uid =  appDelegate.userReponsitory.userID;
         
         NSLog(@"disallowable=%@",disallowable);
         
         NSLog(@"AMount To Data: %@", Amount);
         NSString *dataContent;
+        
         if (([cisinProfile intValue]==1) &&([vatinProfile intValue]==1))
         {
-            
-            dataContent =[NSString stringWithFormat:@"{\"user\":{\"id\":\"%@\"},\"recordType\":{\"id\":%i},\"paymentType\":{\"id\":%i},\"taxYear\":{\"id\":%i},\"name\":\"%@\",\"description\":\"%@\",\"reference\":\"%@\",\"amount\":%f,\"vat\":%i,\"cisDeduction\":%i,\"disallowable\":%@,\"date\":\"%@\"}",uid,record,paymentId,yearID,self.txtCustomerName.text,self.txtDescription.text,self.txtExpenseReference.text,[Amount floatValue],[self.txtVat.text intValue],[self.txtCis.text intValue],disallowable,dateConvert];
+            dataContent =[NSString stringWithFormat:@"{\"user\":{\"id\":\"%@\"},\"recordType\":{\"id\":%i},\"paymentType\":{\"id\":%i},\"taxYear\":{\"id\":%i},\"name\":\"%@\",\"description\":\"%@\",\"reference\":\"%@\",\"amount\":%f,\"vat\":%i,\"cisDeduction\":%i,\"disallowable\":%@,\"date\":\"%@\"}",uid,record,paymentId,yearID,self.txtProviderShop.text,self.txtDescription.text,self.txtExpenseReference.text,[self.amountExpense floatValue],[self.txtVat.text intValue],[self.txtCis.text intValue],disallowable,dateConvert];
             
             if (self.txtBusiness.text.length > 0) {
-                dataContent =[NSString stringWithFormat:@"{\"user\":{\"id\":\"%@\"},\"recordType\":{\"id\":%i},\"paymentType\":{\"id\":%i},\"taxYear\":{\"id\":%i},\"taxYear\":{\"id\":%i},\"name\":\"%@\",\"description\":\"%@\",\"reference\":\"%@\",\"amount\":%f,\"vat\":%i,\"cisDeduction\":%i,\"disallowable\":%@,\"date\":\"%@\"}",uid,record,paymentId,yearID, businessID ,self.txtCustomerName.text,self.txtDescription.text,self.txtExpenseReference.text,[Amount floatValue],[self.txtVat.text intValue],[self.txtCis.text intValue],disallowable,dateConvert];
+                dataContent =[NSString stringWithFormat:@"{\"user\":{\"id\":\"%@\"},\"recordType\":{\"id\":%i},\"paymentType\":{\"id\":%i},\"taxYear\":{\"id\":%i},\"taxYear\":{\"id\":%i},\"name\":\"%@\",\"description\":\"%@\",\"reference\":\"%@\",\"amount\":%f,\"vat\":%i,\"cisDeduction\":%i,\"disallowable\":%@,\"date\":\"%@\"}",uid,record,paymentId,yearID, businessID ,self.txtProviderShop.text,self.txtDescription.text,self.txtExpenseReference.text,[self.amountExpense floatValue],[self.txtVat.text intValue],[self.txtCis.text intValue],disallowable,dateConvert];
             }
             
         }
         
         if (([cisinProfile intValue]==0) &&([vatinProfile intValue]==0))
         {
-            
-            dataContent =[NSString stringWithFormat:@"{\"user\":{\"id\":\"%@\"},\"recordType\":{\"id\":%i},\"paymentType\":{\"id\":%i},\"taxYear\":{\"id\":%i},\"name\":\"%@\",\"description\":\"%@\",\"reference\":\"%@\",\"amount\":%f,\"disallowable\":%@,\"date\":\"%@\"}",uid,record,paymentId,yearID,self.txtCustomerName.text,self.txtDescription.text,self.txtExpenseReference.text,[Amount floatValue],disallowable,dateConvert];
+            dataContent =[NSString stringWithFormat:@"{\"user\":{\"id\":\"%@\"},\"recordType\":{\"id\":%i},\"paymentType\":{\"id\":%i},\"taxYear\":{\"id\":%i},\"name\":\"%@\",\"description\":\"%@\",\"reference\":\"%@\",\"amount\":%f,\"disallowable\":%@,\"date\":\"%@\"}",uid,record,paymentId,yearID,self.txtProviderShop.text,self.txtDescription.text,self.txtExpenseReference.text,[self.amountExpense floatValue],disallowable,dateConvert];
             
             if (self.txtBusiness.text.length > 0) {
-                dataContent =[NSString stringWithFormat:@"{\"user\":{\"id\":\"%@\"},\"recordType\":{\"id\":%i},\"paymentType\":{\"id\":%i},\"taxYear\":{\"id\":%i},\"business\":{\"id\":%i},\"name\":\"%@\",\"description\":\"%@\",\"reference\":\"%@\",\"amount\":%f,\"disallowable\":%@,\"date\":\"%@\"}",uid,record,paymentId,yearID,businessID,self.txtCustomerName.text,self.txtDescription.text,self.txtExpenseReference.text,[Amount floatValue],disallowable,dateConvert];
+                dataContent =[NSString stringWithFormat:@"{\"user\":{\"id\":\"%@\"},\"recordType\":{\"id\":%i},\"paymentType\":{\"id\":%i},\"taxYear\":{\"id\":%i},\"business\":{\"id\":%i},\"name\":\"%@\",\"description\":\"%@\",\"reference\":\"%@\",\"amount\":%f,\"disallowable\":%@,\"date\":\"%@\"}",uid,record,paymentId,yearID,businessID,self.txtProviderShop.text,self.txtDescription.text,self.txtExpenseReference.text,[self.amountExpense floatValue],disallowable,dateConvert];
             }
         }
         
         if (([cisinProfile intValue]==0) &&([vatinProfile intValue]==1))
         {
             
-            dataContent =[NSString stringWithFormat:@"{\"user\":{\"id\":\"%@\"},\"recordType\":{\"id\":%i},\"paymentType\":{\"id\":%i},\"taxYear\":{\"id\":%i},\"name\":\"%@\",\"description\":\"%@\",\"reference\":\"%@\",\"amount\":%f,\"vat\":%i,\"disallowable\":%@,\"date\":\"%@\"}",uid,record,paymentId,yearID,self.txtCustomerName.text,self.txtDescription.text,self.txtExpenseReference.text,[Amount floatValue],[self.txtVat.text intValue],disallowable,dateConvert];
+            dataContent =[NSString stringWithFormat:@"{\"user\":{\"id\":\"%@\"},\"recordType\":{\"id\":%i},\"paymentType\":{\"id\":%i},\"taxYear\":{\"id\":%i},\"name\":\"%@\",\"description\":\"%@\",\"reference\":\"%@\",\"amount\":%f,\"vat\":%i,\"disallowable\":%@,\"date\":\"%@\"}",uid,record,paymentId,yearID,self.txtProviderShop.text,self.txtDescription.text,self.txtExpenseReference.text,[self.amountExpense floatValue],[self.txtVat.text intValue],disallowable,dateConvert];
             
             if (self.txtBusiness.text.length > 0) {
-                dataContent =[NSString stringWithFormat:@"{\"user\":{\"id\":\"%@\"},\"recordType\":{\"id\":%i},\"paymentType\":{\"id\":%i},\"taxYear\":{\"id\":%i},\"business\":{\"id\":%i},\"name\":\"%@\",\"description\":\"%@\",\"reference\":\"%@\",\"amount\":%f,\"vat\":%i,\"disallowable\":%@,\"date\":\"%@\"}",uid,record,paymentId,yearID,businessID,self.txtCustomerName.text,self.txtDescription.text,self.txtExpenseReference.text,[Amount floatValue],[self.txtVat.text intValue],disallowable,dateConvert];
+                dataContent =[NSString stringWithFormat:@"{\"user\":{\"id\":\"%@\"},\"recordType\":{\"id\":%i},\"paymentType\":{\"id\":%i},\"taxYear\":{\"id\":%i},\"business\":{\"id\":%i},\"name\":\"%@\",\"description\":\"%@\",\"reference\":\"%@\",\"amount\":%f,\"vat\":%i,\"disallowable\":%@,\"date\":\"%@\"}",uid,record,paymentId,yearID,businessID,self.txtProviderShop.text,self.txtDescription.text,self.txtExpenseReference.text,[self.amountExpense floatValue],[self.txtVat.text intValue],disallowable,dateConvert];
             }
         }
         
         if (([cisinProfile intValue]==1) &&([vatinProfile intValue]==0))
         {
             
-            dataContent =[NSString stringWithFormat:@"{\"user\":{\"id\":\"%@\"},\"recordType\":{\"id\":%i},\"paymentType\":{\"id\":%i},\"taxYear\":{\"id\":%i},\"name\":\"%@\",\"description\":\"%@\",\"reference\":\"%@\",\"amount\":%f,\"cisDeduction\":%i,\"disallowable\":%@,\"date\":\"%@\"}",uid,record,paymentId,yearID,self.txtCustomerName.text,self.txtDescription.text,self.txtExpenseReference.text,[Amount floatValue],[self.txtCis.text intValue],disallowable,dateConvert];
+            dataContent =[NSString stringWithFormat:@"{\"user\":{\"id\":\"%@\"},\"recordType\":{\"id\":%i},\"paymentType\":{\"id\":%i},\"taxYear\":{\"id\":%i},\"name\":\"%@\",\"description\":\"%@\",\"reference\":\"%@\",\"amount\":%f,\"cisDeduction\":%i,\"disallowable\":%@,\"date\":\"%@\"}", uid ,record,paymentId,yearID,self.txtProviderShop.text,self.txtDescription.text,self.txtExpenseReference.text,[self.amountExpense floatValue],[self.txtCis.text intValue],disallowable,dateConvert];
             
             if (self.txtBusiness.text.length > 0) {
-                dataContent =[NSString stringWithFormat:@"{\"user\":{\"id\":\"%@\"},\"recordType\":{\"id\":%i},\"paymentType\":{\"id\":%i},\"taxYear\":{\"id\":%i},\"business\":{\"id\":%i},\"name\":\"%@\",\"description\":\"%@\",\"reference\":\"%@\",\"amount\":%f,\"cisDeduction\":%i,\"disallowable\":%@,\"date\":\"%@\"}",uid,record,paymentId,yearID,businessID,self.txtCustomerName.text,self.txtDescription.text,self.txtExpenseReference.text,[Amount floatValue],[self.txtCis.text intValue],disallowable,dateConvert];
+                dataContent =[NSString stringWithFormat:@"{\"user\":{\"id\":\"%@\"},\"recordType\":{\"id\":%i},\"paymentType\":{\"id\":%i},\"taxYear\":{\"id\":%i},\"business\":{\"id\":%i},\"name\":\"%@\",\"description\":\"%@\",\"reference\":\"%@\",\"amount\":%f,\"cisDeduction\":%i,\"disallowable\":%@,\"date\":\"%@\"}",uid,record,paymentId,yearID,businessID,self.txtProviderShop.text,self.txtDescription.text,self.txtExpenseReference.text,[self.amountExpense floatValue],[self.txtCis.text intValue],disallowable,dateConvert];
             }
             
         }
@@ -766,7 +775,7 @@ AppDelegate *appDelegate;
     }
     
 
-    [self.navigationController popViewControllerAnimated:YES];
+    
 }
 
 - (IBAction)btnAddReceipt_Clicked:(id)sender
@@ -781,6 +790,11 @@ AppDelegate *appDelegate;
 - (IBAction)btnSaveDate_Clicked:(id)sender
 {
     self.viewDate.hidden = YES;
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"dd-MM-YYYY"];
+    newDate = [dateFormat stringFromDate:[self.datePicker date]];
+    self.txtDate.text=newDate;
+
 }
 
 - (IBAction)btnDateSelected_Clicked:(id)sender
@@ -1129,6 +1143,35 @@ AppDelegate *appDelegate;
     [actionSheet removeFromSuperview];
 }
 
+- (IBAction)Check:(id)sender {
+    
+    UIButton *btn1 = sender;
+    if(DisBool)
+    {
+        DisBool = FALSE;
+        [btn1 setImage:[UIImage imageNamed:@"checkoff.png"] forState:UIControlStateNormal];
+        
+        disallowable=@"false";
+        
+        
+    }
+    else
+    {
+        
+        [btn1 setImage:[UIImage imageNamed:@"checkon.png"] forState:UIControlStateNormal];
+        DisBool = TRUE;
+        
+        disallowable=@"true";
+        
+    }
+    
+//    infoView.hidden=YES;
+//    infoBool=YES;
+    
+    self.viewDate.hidden=YES;
+    first=YES;
+}
+
 
 -(void)imagePickerController: (UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
@@ -1151,6 +1194,13 @@ AppDelegate *appDelegate;
         
         NSLog(@"j hfjhjfhj k---?");
         NSLog(@"Response im photo in finish= %i %@",[request responseStatusCode],[ request responseString]);
+        
+        [appDelegate.activityIndicatorView hide:YES];
+        
+        [self.navigationController popViewControllerAnimated:YES];
+        
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:nil message:@"Add Expense Successfully" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
        
     }
     
@@ -1189,13 +1239,13 @@ AppDelegate *appDelegate;
             SBJsonParser *json = [SBJsonParser new];
             feeds = [json objectWithString:responseStr];
             
-            m_allBusinessName = [feeds valueForKeyPath:@"name"];
-            m_allBusinessID = [feeds valueForKeyPath:@"id"];
+            self.m_allBusinessName = [feeds valueForKeyPath:@"name"];
+            self.m_allBusinessID = [feeds valueForKeyPath:@"id"];
             NSLog(@"Feeds Business = %@",[feeds valueForKeyPath:@"description"]);
             
 //            if (!isEdit) {
-                self.txtBusiness.text = [m_allBusinessName objectAtIndex:0];
-                businessID = [[m_allBusinessID objectAtIndex:0] intValue];
+                self.txtBusiness.text = [self.m_allBusinessName objectAtIndex:0];
+                businessID = [[self.m_allBusinessID objectAtIndex:0] intValue];
 //            }
             
             [self.tableBusiness reloadData];
@@ -1390,13 +1440,13 @@ AppDelegate *appDelegate;
         
         return cell;
     }
-    else
-    {
+//    else
+//    {
         cell.textLabel.font = [UIFont systemFontOfSize:16];
         NSLog(@"Name: %ld", (long)indexPath.row);
         cell.textLabel.text = [NSString stringWithFormat:@"%@",[self.m_allBusinessName objectAtIndex:indexPath.row]];
         return cell;
-    }
+//    }
     
 }
 
@@ -1404,7 +1454,7 @@ AppDelegate *appDelegate;
 {
     if (tableView != self.tableBusiness)
     {
-        record = [indexPath row] + 1;
+        record = [indexPath row] + 5;
         
         self.viewRecordType.hidden = YES;
 //        firsttable=YES;

@@ -37,16 +37,17 @@ AppDelegate* appdelegate;
     [self.viewAddMore addGestureRecognizer:tapGeusture];
     self.progressBarCount = 0;
 
-    CGRect frame = CGRectMake(50, 300, 75, 75);
-    self.progressbar = [self progressViewWithFrame:frame];
-
-    self.progressbar.theme.sliceDividerHidden = YES;
-    [self.view addSubview:self.progressbar];
+//    CGRect frame = CGRectMake(50, 300, 75, 75);
+//    self.progressbar = [self progressViewWithFrame:frame];
+//
+//    self.progressbar.theme.sliceDividerHidden = YES;
+//    [self.view addSubview:self.progressbar];
+//    
+//    if (self.documents.count <= 0) {
+//        self.progressbar.hidden = YES;
+//    }
     
-    if (self.documents.count <= 0) {
-        self.progressbar.hidden = YES;
-    }
-
+    self.indexDocument = 0;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -149,9 +150,21 @@ AppDelegate* appdelegate;
 
 - (IBAction)btnUploadFiles_Clicked:(id)sender
 {
-    UIActionSheet *action_sheet = [[UIActionSheet alloc]initWithTitle:@"Upload options" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Camera",@"Library", nil];
-    
-    [action_sheet showInView:[UIApplication sharedApplication].keyWindow];
+    if (!appdelegate.isLoginSucessfully)
+    {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:nil message:@"Please log in or register to add more income" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:@"Cancel", nil];
+        
+        [alert setTag:1];
+        [alert show];
+
+        return;
+    }
+    else
+    {
+        UIActionSheet *action_sheet = [[UIActionSheet alloc]initWithTitle:@"Upload options" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Camera",@"Library", nil];
+        
+        [action_sheet showInView:[UIApplication sharedApplication].keyWindow];
+    }
  //
 //    UIActionSheet *action_sheet = [[UIActionSheet alloc]initWithTitle:@"Upload options" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Camera",@"Library", nil];
 //    
@@ -210,33 +223,44 @@ AppDelegate* appdelegate;
 
 - (void)requestFinished:(ASIHTTPRequest *)request
 {
+    NSString* responseString = [[NSString alloc] initWithData:[request responseData] encoding:NSUTF8StringEncoding];
+    NSLog(@"ReponseString Afer Add Photo: %@", responseString);
+    
+    self.indexDocument ++;
+    
+    [self uploadDocument:self.indexDocument];
 }
 
-- (void)uploadDocuments
+- (void)uploadDocument:(int)index
 {
+    if (self.indexDocument >= self.documents.count)
+    {
+        self.indexDocument = 0;
+        self.documents = [[NSMutableArray alloc] init];
+        
+        UIAlertView* msg = [[UIAlertView alloc] initWithTitle:nil message:@"Upload Documents Success" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [msg show];
+        return;
+    }
     
-}
+    NSData *dataTest = [[NSData alloc]init];
+    
+    ASIFormDataRequest *dataRequest = [[ASIFormDataRequest alloc]initWithURL:[NSURL URLWithString:@"https://ec2-46-137-84-201.eu-west-1.compute.amazonaws.com:8443/wTaxmapp/resources/fileupload"]];
+    
+    [dataRequest addBasicAuthenticationHeaderWithUsername:appdelegate.userReponsitory.userName andPassword:appdelegate.userReponsitory.password];
+    
+    dataTest = [self compressImage:[[self.documents objectAtIndex:index] imageOfDocument]];
+    
+    [dataRequest setData:dataTest forKey:@"file"];
+    [dataRequest setValidatesSecureCertificate:NO];
+    
+    [dataRequest setRequestMethod:@"POST"];
+    
+    [dataRequest setDelegate:self];
+    [dataRequest setTag:10];
+    
+    [dataRequest startAsynchronous];
 
--(void)RequestPhoto
-{
-//    NSData *dataTest=[[NSData alloc]init];
-//    
-//    ASIFormDataRequest *dataRequest=[[ASIFormDataRequest alloc]initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://ec2-46-137-84-201.eu-west-1.compute.amazonaws.com:8443/wTaxmapp/resources/transaction/%i/image",appDelegate.TransactionId]]];
-//    
-//    [dataRequest addBasicAuthenticationHeaderWithUsername:[[NSUserDefaults standardUserDefaults]valueForKey:@"Username"]andPassword:[[NSUserDefaults standardUserDefaults]valueForKey:@"Pass"]];
-//    
-//    dataTest = [self compressImage:appDelegate.image];
-//    
-//    [dataRequest setData:dataTest forKey:@"file"];
-//    [dataRequest setValidatesSecureCertificate:NO];
-//    
-//    [dataRequest setRequestMethod:@"POST"];
-//    
-//    [dataRequest setDelegate:self];
-//    [dataRequest setTag:10];
-//    
-//    [dataRequest startAsynchronous];
-    
 }
 
 - (void)requestFailed:(ASIHTTPRequest *)request
@@ -246,7 +270,6 @@ AppDelegate* appdelegate;
 
 -(NSData *)compressImage:(UIImage *)image
 {
-    
     float actualHeight = image.size.height;
     
     float actualWidth = image.size.width;
@@ -326,6 +349,20 @@ AppDelegate* appdelegate;
     [UIView commitAnimations];
 }
 
+-(void)imagePickerController: (UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    appdelegate.activityIndicatorView = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    appdelegate.activityIndicatorView.mode = MBProgressHUDAnimationFade;
+    appdelegate.activityIndicatorView.labelText = @"Waiting for Upload Documents";
+    
+    DocumentReponsitory* document = [[DocumentReponsitory alloc] init];
+    document.imageOfDocument = [info objectForKey:UIImagePickerControllerOriginalImage];;
+
+    [self.documents addObject:document];
+    
+    [self uploadDocument:self.indexDocument];
+}
+
 #pragma mark ELCImagePickerControllerDelegate Methods
 
 - (void)elcImagePickerController:(ELCImagePickerController *)picker didFinishPickingMediaWithInfo:(NSArray *)info
@@ -375,7 +412,7 @@ AppDelegate* appdelegate;
                 
                 label.text = nameOfDocument;
                 
-                [_scrollView addSubview:label];
+//                [_scrollView addSubview:label];
                 
                 documentIndex = documentIndex + 1;
                 workingFrame.origin.x = workingFrame.origin.x + workingFrame.size.width;
@@ -386,32 +423,13 @@ AppDelegate* appdelegate;
                 NSLog(@"UIImagePickerControllerReferenceURL = %@", dict);
             }
         }
-        else if ([dict objectForKey:UIImagePickerControllerMediaType] == ALAssetTypeVideo)
-        {
-            if ([dict objectForKey:UIImagePickerControllerOriginalImage])
-            {
-                UIImage* image=[dict objectForKey:UIImagePickerControllerOriginalImage];
-                
-                [images addObject:image];
-                
-                UIImageView *imageview = [[UIImageView alloc] initWithImage:image];
-                [imageview setContentMode:UIViewContentModeScaleAspectFit];
-                imageview.frame = workingFrame;
-                
-//                [_scrollView addSubview:imageview];
-                
-                workingFrame.origin.x = workingFrame.origin.x + workingFrame.size.width;
-            }
-            else
-            {
-                NSLog(@"UIImagePickerControllerReferenceURL = %@", dict);
-            }
-        }
-        else
-        {
-            NSLog(@"Uknown asset type");
-        }
     }
+    
+    appdelegate.activityIndicatorView = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    appdelegate.activityIndicatorView.mode = MBProgressHUDAnimationFade;
+    appdelegate.activityIndicatorView.labelText = @"Waiting for Upload Documents";
+    
+    [self uploadDocument:self.indexDocument];
 }
 
 - (void)elcImagePickerControllerDidCancel:(ELCImagePickerController *)picker
