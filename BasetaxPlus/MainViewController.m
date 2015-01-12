@@ -14,6 +14,8 @@
 #import "TaxYearViewController.h"
 #import "SubmitViewController.h"
 #import "BIProfileViewController.h"
+#import "UIViewController+MMDrawerController.h"
+#import "BIProfileViewController.h"
 
 @interface MainViewController ()
 
@@ -34,6 +36,8 @@ AppDelegate* appdelegate;
     }
     else
         [self.scrollView setContentSize:CGSizeMake(self.scrollView.frame.size.width, 576)];
+    
+     [self.mm_drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -49,10 +53,50 @@ AppDelegate* appdelegate;
     
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [self.mm_drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll
+     ];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - Menu Delegate
+
+- (IBAction)showCat:(id)sender
+{
+    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
+}
+
+- (void)selectCategory:(int)ID
+{
+    switch (ID)
+    {
+        case 0:
+        {
+            BIProfileViewController *profileViewController = [[BIProfileViewController alloc] initWithNibName:@"BIProfileViewController" bundle:nil];
+            [self.navigationController pushViewController:profileViewController animated:YES];
+        }
+            break;
+        case 1:
+        {
+            //About Us
+        }
+            
+            break;
+        case 2:
+        {
+            //Contact
+        }
+            break;
+        default:
+            break;
+    }
+}
+
 
 #pragma mark - Button Sender
 
@@ -118,6 +162,7 @@ AppDelegate* appdelegate;
     [_scrollView release];
     [_lblTaxRebate release];
     [_lblTaxYear release];
+    [_btnMenu release];
     [super dealloc];
 }
 @end

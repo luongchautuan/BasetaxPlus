@@ -240,6 +240,8 @@ AppDelegate* appdelegate;
         
         UIAlertView* msg = [[UIAlertView alloc] initWithTitle:nil message:@"Upload Documents Success" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [msg show];
+        
+        [appdelegate.activityIndicatorView hide:YES];
         return;
     }
     

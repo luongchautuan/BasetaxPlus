@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "MainViewController.h"
+#import "MenuViewController.h"
 
 @interface AppDelegate ()
 
@@ -22,13 +23,22 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     MainViewController *mainViewController = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil];
-
+    
+    MenuViewController *menuViewController = [[MenuViewController alloc] initWithNibName:@"MenuViewController" bundle:nil];
+    
+    menuViewController.delegate = mainViewController;
+    
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:mainViewController];
     
-    [navController setNavigationBarHidden:YES];
+    self.drawerController = [[MMDrawerController alloc] initWithCenterViewController:navController leftDrawerViewController:menuViewController];
+    [self.drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
     
-    [self.window setRootViewController:navController];
-    [self.window makeKeyAndVisible];
+    [self.drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
+    
+    self.window.rootViewController = self.drawerController;
+    
+    [navController.navigationBar setHidden:YES];
+
     
     if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
     {

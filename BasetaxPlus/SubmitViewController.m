@@ -27,6 +27,11 @@
 {
      exit(0);
 }
+
+- (IBAction)btnBack_Clicked:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 - (IBAction)btnContactUs_Clicked:(id)sender
 {
     if([MFMailComposeViewController canSendMail])

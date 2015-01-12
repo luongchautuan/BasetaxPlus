@@ -8,6 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MenuViewController : UIViewController
+@protocol MenuViewControllerDelegate <NSObject>
+
+@optional
+- (void)selectCategory:(int)ID;
+
+@end
+
+@interface MenuViewController : UIViewController<UITableViewDataSource, UITableViewDelegate> {
+    NSArray *arrData;
+}
+
+@property (assign) id<MenuViewControllerDelegate> delegate;
+
+@property (retain, nonatomic) IBOutlet UITableView *tableView;
 
 @end
