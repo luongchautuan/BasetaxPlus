@@ -29,5 +29,9 @@
 @property (nonatomic)BOOL isLoginSucesss;
 @property (nonatomic) CGSize result;
 
+@property (nonatomic, retain)NSMutableArray* documents;
+
+@property (nonatomic, retain)NSString* dateSentDocument;
+
 @end
 

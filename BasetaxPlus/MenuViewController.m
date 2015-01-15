@@ -10,6 +10,7 @@
 #import "UIViewController+MMDrawerController.h"
 #import "AppDelegate.h"
 
+
 @interface MenuViewController ()
 
 @end
@@ -22,6 +23,7 @@ AppDelegate* appdelegate;
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     appdelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,11 +35,13 @@ AppDelegate* appdelegate;
 {
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
-    NSDictionary *profile = [[NSDictionary alloc] initWithObjectsAndKeys:@"Profile", @"title", @"", @"detail", @"menu_img_invoice.png", @"icon", nil];
+    NSDictionary *profile = [[NSDictionary alloc] initWithObjectsAndKeys:@"Profile", @"title", @"", @"detail", @"menu_img_customer.png", @"icon", nil];
     NSDictionary *aboutUs = [[NSDictionary alloc] initWithObjectsAndKeys:@"About Us", @"title", @"", @"detail", @"menu_img_customer.png", @"icon", nil];
-    NSDictionary *contact = [[NSDictionary alloc] initWithObjectsAndKeys:@"Contact", @"title", @"", @"detail", @"menu_img_product.png", @"icon", nil];
+    NSDictionary *contact = [[NSDictionary alloc] initWithObjectsAndKeys:@"Contact", @"title", @"", @"detail", @"menu_img_customer.png", @"icon", nil];
     
-    arrData = [NSArray arrayWithObjects:profile, aboutUs, contact, nil];
+    self.arrData = [[NSArray alloc] initWithObjects:profile,aboutUs,contact, nil];
+    
+//    self.arrData = [NSArray arrayWithObjects:profile, aboutUs, contact, nil];
     
     [self.tableView reloadData];
 
@@ -46,24 +50,31 @@ AppDelegate* appdelegate;
 #pragma mark - tableview delegatge
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return arrData.count;
+    return self.arrData.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    if (cell == nil) {
+    
+    if (cell == nil)
+    {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
         cell.backgroundColor = [UIColor clearColor];
         cell.textLabel.textColor = [UIColor whiteColor];
         cell.detailTextLabel.textColor = [UIColor whiteColor];
     }
     
-    if (arrData.count > 0) {
-        NSDictionary *currData = [arrData objectAtIndex:indexPath.row];
+    NSLog(@"Array Data: %lu", (unsigned long)self.arrData.count);
+    
+//    if (self.arrData.count > 0)
+//    {
+        NSDictionary *currData = [self.arrData objectAtIndex:indexPath.row];
+        
         cell.textLabel.text = [NSString stringWithFormat:@"%@", [currData objectForKey:@"title"]];
         cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", [currData objectForKey:@"detail"]];
         cell.imageView.image = [UIImage imageNamed:[currData objectForKey:@"icon"]];
-    }
+//    }
     
     return cell;
 }

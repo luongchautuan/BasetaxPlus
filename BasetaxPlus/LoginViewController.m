@@ -77,7 +77,7 @@ AppDelegate* appdelegate;
     appdelegate.activityIndicatorView.mode = MBProgressHUDAnimationFade;
     appdelegate.activityIndicatorView.labelText = @"";
     
-    if([self.txtPassword.text length] <1 ||[self.txtUsername.text length]<1)
+    if([self.txtPassword.text length] < 1 ||[self.txtUsername.text length] < 1)
     {
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:nil message:@"Please fill all text fields" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
@@ -100,7 +100,8 @@ AppDelegate* appdelegate;
     
 }
 
-- (IBAction)onRegister:(id)sender {
+- (IBAction)onRegister:(id)sender
+{
     RegisterViewController *registerViewController = [[RegisterViewController alloc] initWithNibName:@"RegisterViewController" bundle:nil];
     [self.navigationController pushViewController:registerViewController animated:YES];
 }

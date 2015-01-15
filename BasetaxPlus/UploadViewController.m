@@ -236,12 +236,22 @@ AppDelegate* appdelegate;
     if (self.indexDocument >= self.documents.count)
     {
         self.indexDocument = 0;
+        
         self.documents = [[NSMutableArray alloc] init];
         
         UIAlertView* msg = [[UIAlertView alloc] initWithTitle:nil message:@"Upload Documents Success" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [msg show];
         
+        NSDateFormatter *dateformate = [[NSDateFormatter alloc]init];
+        
+        [dateformate setDateFormat:@"dd/MM/YYYY hh:mm"];
+        
+        NSString *dateStr = [dateformate stringFromDate:[NSDate date]];
+
+        appdelegate.dateSentDocument = dateStr;
+        
         [appdelegate.activityIndicatorView hide:YES];
+        
         return;
     }
     
@@ -426,6 +436,8 @@ AppDelegate* appdelegate;
             }
         }
     }
+    
+    appdelegate.documents = [[NSMutableArray alloc] initWithArray:self.documents];
     
     appdelegate.activityIndicatorView = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     appdelegate.activityIndicatorView.mode = MBProgressHUDAnimationFade;

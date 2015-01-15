@@ -96,6 +96,10 @@
 		6E7EC7D31A38C12600B055F6 /* ELCAssetTablePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E7EC7C71A38C12600B055F6 /* ELCAssetTablePicker.xib */; };
 		6E7EC7D41A38C12600B055F6 /* Overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E7EC7C81A38C12600B055F6 /* Overlay.png */; };
 		6E7EC7D51A38C12600B055F6 /* Overlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E7EC7C91A38C12600B055F6 /* Overlay@2x.png */; };
+		6EA327021A669BC300B3BCFB /* menu_img_customer@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EA327011A669BC300B3BCFB /* menu_img_customer@2x.png */; };
+		6EA327041A669ECA00B3BCFB /* menu-profile-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EA327031A669ECA00B3BCFB /* menu-profile-icon.png */; };
+		6EA3270A1A66BEE900B3BCFB /* AboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA327081A66BEE900B3BCFB /* AboutUsViewController.m */; };
+		6EA3270B1A66BEE900B3BCFB /* AboutUsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EA327091A66BEE900B3BCFB /* AboutUsViewController.xib */; };
 		6EA3814B1A38C7E7006E0719 /* DocumentReponsitory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA3814A1A38C7E7006E0719 /* DocumentReponsitory.m */; };
 		6EA9C68C1A3341F100EBC3DA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA9C68B1A3341F100EBC3DA /* main.m */; };
 		6EA9C68F1A3341F100EBC3DA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA9C68E1A3341F100EBC3DA /* AppDelegate.m */; };
@@ -179,6 +183,11 @@
 		6EC198A51A37728500D816BC /* TaxYearViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC198A31A37728500D816BC /* TaxYearViewController.m */; };
 		6EC198A61A37728500D816BC /* TaxYearViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EC198A41A37728500D816BC /* TaxYearViewController.xib */; };
 		6EC198A81A37778B00D816BC /* taxyear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EC198A71A37778B00D816BC /* taxyear@2x.png */; };
+		6EF694731A644588007F8DF9 /* Base64Transcoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF6946A1A644588007F8DF9 /* Base64Transcoder.m */; };
+		6EF694741A644588007F8DF9 /* HSK_CFUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF6946C1A644588007F8DF9 /* HSK_CFUtilities.m */; };
+		6EF694751A644588007F8DF9 /* NSData+Base64Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF6946E1A644588007F8DF9 /* NSData+Base64Additions.m */; };
+		6EF694761A644588007F8DF9 /* NSStream+SKPSMTPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF694701A644588007F8DF9 /* NSStream+SKPSMTPExtensions.m */; };
+		6EF694771A644588007F8DF9 /* SKPSMTPMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF694721A644588007F8DF9 /* SKPSMTPMessage.m */; };
 		C2A6041D1A3DDE9100A35E3C /* SubmitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A6041B1A3DDE9100A35E3C /* SubmitViewController.m */; };
 		C2A6041E1A3DDE9100A35E3C /* SubmitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A6041C1A3DDE9100A35E3C /* SubmitViewController.xib */; };
 		C2A604291A3DEFA800A35E3C /* BIProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A604271A3DEFA800A35E3C /* BIProfileViewController.m */; };
@@ -309,6 +318,11 @@
 		6E7EC7C71A38C12600B055F6 /* ELCAssetTablePicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ELCAssetTablePicker.xib; sourceTree = "<group>"; };
 		6E7EC7C81A38C12600B055F6 /* Overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Overlay.png; sourceTree = "<group>"; };
 		6E7EC7C91A38C12600B055F6 /* Overlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Overlay@2x.png"; sourceTree = "<group>"; };
+		6EA327011A669BC300B3BCFB /* menu_img_customer@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu_img_customer@2x.png"; sourceTree = "<group>"; };
+		6EA327031A669ECA00B3BCFB /* menu-profile-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-profile-icon.png"; sourceTree = "<group>"; };
+		6EA327071A66BEE800B3BCFB /* AboutUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutUsViewController.h; sourceTree = "<group>"; };
+		6EA327081A66BEE900B3BCFB /* AboutUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutUsViewController.m; sourceTree = "<group>"; };
+		6EA327091A66BEE900B3BCFB /* AboutUsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutUsViewController.xib; sourceTree = "<group>"; };
 		6EA381491A38C7E7006E0719 /* DocumentReponsitory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentReponsitory.h; sourceTree = "<group>"; };
 		6EA3814A1A38C7E7006E0719 /* DocumentReponsitory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentReponsitory.m; sourceTree = "<group>"; };
 		6EA9C6861A3341F100EBC3DA /* BasetaxPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BasetaxPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -451,6 +465,16 @@
 		6EC198A31A37728500D816BC /* TaxYearViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaxYearViewController.m; sourceTree = "<group>"; };
 		6EC198A41A37728500D816BC /* TaxYearViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaxYearViewController.xib; sourceTree = "<group>"; };
 		6EC198A71A37778B00D816BC /* taxyear@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "taxyear@2x.png"; sourceTree = "<group>"; };
+		6EF694691A644588007F8DF9 /* Base64Transcoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64Transcoder.h; sourceTree = "<group>"; };
+		6EF6946A1A644588007F8DF9 /* Base64Transcoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64Transcoder.m; sourceTree = "<group>"; };
+		6EF6946B1A644588007F8DF9 /* HSK_CFUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSK_CFUtilities.h; sourceTree = "<group>"; };
+		6EF6946C1A644588007F8DF9 /* HSK_CFUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSK_CFUtilities.m; sourceTree = "<group>"; };
+		6EF6946D1A644588007F8DF9 /* NSData+Base64Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64Additions.h"; sourceTree = "<group>"; };
+		6EF6946E1A644588007F8DF9 /* NSData+Base64Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64Additions.m"; sourceTree = "<group>"; };
+		6EF6946F1A644588007F8DF9 /* NSStream+SKPSMTPExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSStream+SKPSMTPExtensions.h"; sourceTree = "<group>"; };
+		6EF694701A644588007F8DF9 /* NSStream+SKPSMTPExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSStream+SKPSMTPExtensions.m"; sourceTree = "<group>"; };
+		6EF694711A644588007F8DF9 /* SKPSMTPMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKPSMTPMessage.h; sourceTree = "<group>"; };
+		6EF694721A644588007F8DF9 /* SKPSMTPMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKPSMTPMessage.m; sourceTree = "<group>"; };
 		C2A6041A1A3DDE9100A35E3C /* SubmitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubmitViewController.h; sourceTree = "<group>"; };
 		C2A6041B1A3DDE9100A35E3C /* SubmitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubmitViewController.m; sourceTree = "<group>"; };
 		C2A6041C1A3DDE9100A35E3C /* SubmitViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubmitViewController.xib; sourceTree = "<group>"; };
@@ -629,6 +653,16 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		6EA327051A66BE5C00B3BCFB /* About Us ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6EA327071A66BEE800B3BCFB /* AboutUsViewController.h */,
+				6EA327081A66BEE900B3BCFB /* AboutUsViewController.m */,
+				6EA327091A66BEE900B3BCFB /* AboutUsViewController.xib */,
+			);
+			name = "About Us ViewController";
+			sourceTree = "<group>";
+		};
 		6EA9C67D1A3341F100EBC3DA = {
 			isa = PBXGroup;
 			children = (
@@ -660,6 +694,8 @@
 		6EA9C6881A3341F100EBC3DA /* BasetaxPlus */ = {
 			isa = PBXGroup;
 			children = (
+				6EA327051A66BE5C00B3BCFB /* About Us ViewController */,
+				6EF694681A644588007F8DF9 /* SMTPSend */,
 				6E117DE01A602D100047C460 /* MMDrawerController */,
 				6E117DDA1A602C100047C460 /* Menu ViewController */,
 				C2A6041F1A3DE65200A35E3C /* Your Details */,
@@ -790,6 +826,8 @@
 		6EA9C6D91A334FB200EBC3DA /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				6EA327031A669ECA00B3BCFB /* menu-profile-icon.png */,
+				6EA327011A669BC300B3BCFB /* menu_img_customer@2x.png */,
 				6E117DEE1A620D260047C460 /* icon_cat@2x.png */,
 				C2A604311A3DFA4C00A35E3C /* addproduct_btn_save.png */,
 				C2A6042D1A3DF17A00A35E3C /* no_img.jpg */,
@@ -1002,6 +1040,23 @@
 			name = "Tax Year View";
 			sourceTree = "<group>";
 		};
+		6EF694681A644588007F8DF9 /* SMTPSend */ = {
+			isa = PBXGroup;
+			children = (
+				6EF694691A644588007F8DF9 /* Base64Transcoder.h */,
+				6EF6946A1A644588007F8DF9 /* Base64Transcoder.m */,
+				6EF6946B1A644588007F8DF9 /* HSK_CFUtilities.h */,
+				6EF6946C1A644588007F8DF9 /* HSK_CFUtilities.m */,
+				6EF6946D1A644588007F8DF9 /* NSData+Base64Additions.h */,
+				6EF6946E1A644588007F8DF9 /* NSData+Base64Additions.m */,
+				6EF6946F1A644588007F8DF9 /* NSStream+SKPSMTPExtensions.h */,
+				6EF694701A644588007F8DF9 /* NSStream+SKPSMTPExtensions.m */,
+				6EF694711A644588007F8DF9 /* SKPSMTPMessage.h */,
+				6EF694721A644588007F8DF9 /* SKPSMTPMessage.m */,
+			);
+			path = SMTPSend;
+			sourceTree = "<group>";
+		};
 		C2A604111A3DDE3500A35E3C /* Submit To Basetax */ = {
 			isa = PBXGroup;
 			children = (
@@ -1070,6 +1125,7 @@
 				TargetAttributes = {
 					6EA9C6851A3341F100EBC3DA = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = CCN7EPP75W;
 					};
 					6EA9C69E1A3341F100EBC3DA = {
 						CreatedOnToolsVersion = 6.1;
@@ -1104,6 +1160,7 @@
 				6EA9C6E91A336F9F00EBC3DA /* bg_edt_login@2x.png in Resources */,
 				6E28D2321A34B948006099E5 /* cash button.png in Resources */,
 				6E28D2331A34B948006099E5 /* cheque button ( select).png in Resources */,
+				6EA327041A669ECA00B3BCFB /* menu-profile-icon.png in Resources */,
 				6EC198A61A37728500D816BC /* TaxYearViewController.xib in Resources */,
 				6E28D1FE1A3444E3006099E5 /* Add income.png in Resources */,
 				6E7EC7D11A38C12600B055F6 /* ELCAlbumPickerController.xib in Resources */,
@@ -1169,6 +1226,7 @@
 				6E28D20D1A3444E3006099E5 /* cheque.png in Resources */,
 				6EA9C6D81A3343AD00EBC3DA /* ExpenseViewController.xib in Resources */,
 				6E28D2161A3444E3006099E5 /* inputline@2x.png in Resources */,
+				6EA327021A669BC300B3BCFB /* menu_img_customer@2x.png in Resources */,
 				6E28D1FC1A3444E3006099E5 /* Add income bg2@2x.png in Resources */,
 				6E28D2301A34B948006099E5 /* Card-button.png in Resources */,
 				6E28D21C1A3444E3006099E5 /* tabview@2x.png in Resources */,
@@ -1182,6 +1240,7 @@
 				6E28D2021A3444E3006099E5 /* Add photo@2x.png in Resources */,
 				6E28D2221A344E2C006099E5 /* btn-background.png in Resources */,
 				6E28D20E1A3444E3006099E5 /* cheque@2x.png in Resources */,
+				6EA3270B1A66BEE900B3BCFB /* AboutUsViewController.xib in Resources */,
 				6EA9C69A1A3341F100EBC3DA /* LaunchScreen.xib in Resources */,
 				6E7EC7D51A38C12600B055F6 /* Overlay@2x.png in Resources */,
 				6E28D1B71A3401D1006099E5 /* btn-add.png in Resources */,
@@ -1226,15 +1285,18 @@
 				6EA9C73F1A33780500EBC3DA /* ASICloudFilesRequest.m in Sources */,
 				6EA9C7341A33780500EBC3DA /* ASIDownloadCache.m in Sources */,
 				6E7EC7CA1A38C12600B055F6 /* ELCAlbumPickerController.m in Sources */,
+				6EF694771A644588007F8DF9 /* SKPSMTPMessage.m in Sources */,
 				6E117DEC1A602D100047C460 /* MMDrawerVisualState.m in Sources */,
 				6EA9C73C1A33780500EBC3DA /* ASICloudFilesContainerXMLParserDelegate.m in Sources */,
 				6EA9C7351A33780500EBC3DA /* ASIFormDataRequest.m in Sources */,
 				6EA9C75F1A3382E000EBC3DA /* MBProgressHUD.m in Sources */,
 				6EA9C7381A33780500EBC3DA /* ASINetworkQueue.m in Sources */,
+				6EF694731A644588007F8DF9 /* Base64Transcoder.m in Sources */,
 				6EBD437D1A35E24500E98655 /* SBJsonStreamWriterAccumulator.m in Sources */,
 				6EA9C6B71A33427F00EBC3DA /* RegisterViewController.m in Sources */,
 				6EA9C7491A33780500EBC3DA /* NSUserDefaults+RMSaveCustomObject.m in Sources */,
 				6EA9C7441A33780500EBC3DA /* ASIS3ObjectRequest.m in Sources */,
+				6EF694761A644588007F8DF9 /* NSStream+SKPSMTPExtensions.m in Sources */,
 				C2A604291A3DEFA800A35E3C /* BIProfileViewController.m in Sources */,
 				6EA9C7421A33780500EBC3DA /* ASIS3BucketObject.m in Sources */,
 				6E28D1B51A34002A006099E5 /* UserReponsitory.m in Sources */,
@@ -1265,6 +1327,7 @@
 				6E418DA31A3C2F1900188620 /* MDRadialProgressTheme.m in Sources */,
 				6EA9C7391A33780500EBC3DA /* ASICloudFilesCDNRequest.m in Sources */,
 				6EA9C7451A33780500EBC3DA /* ASIS3Request.m in Sources */,
+				6EA3270A1A66BEE900B3BCFB /* AboutUsViewController.m in Sources */,
 				6EA9C73B1A33780500EBC3DA /* ASICloudFilesContainerRequest.m in Sources */,
 				6E7EC7CB1A38C12600B055F6 /* ELCAsset.m in Sources */,
 				6EBD43771A35E24500E98655 /* SBJsonParser.m in Sources */,
@@ -1279,12 +1342,14 @@
 				6EA9C7411A33780500EBC3DA /* ASIS3Bucket.m in Sources */,
 				6EA9C7401A33780500EBC3DA /* Reachability.m in Sources */,
 				6EA9C6D71A3343AD00EBC3DA /* ExpenseViewController.m in Sources */,
+				6EF694741A644588007F8DF9 /* HSK_CFUtilities.m in Sources */,
 				6EA9C74A1A33780500EBC3DA /* RMMapper.m in Sources */,
 				6EBD43781A35E24500E98655 /* SBJsonStreamParser.m in Sources */,
 				6E117DED1A602D100047C460 /* UIViewController+MMDrawerController.m in Sources */,
 				6E7EC7CC1A38C12600B055F6 /* ELCAssetCell.m in Sources */,
 				6EBD43761A35E24500E98655 /* NSObject+SBJson.m in Sources */,
 				6EBD437E1A35E24500E98655 /* SBJsonStreamWriterState.m in Sources */,
+				6EF694751A644588007F8DF9 /* NSData+Base64Additions.m in Sources */,
 				6EA9C7431A33780500EBC3DA /* ASIS3BucketRequest.m in Sources */,
 				6EBD43791A35E24500E98655 /* SBJsonStreamParserAccumulator.m in Sources */,
 			);
@@ -1345,8 +1410,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Submitmytax Limited (CCN7EPP75W)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Submitmytax Limited (CCN7EPP75W)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1366,7 +1431,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "12edbb9f-616d-49af-9c39-63e43883510c";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1388,8 +1453,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Submitmytax Limited (CCN7EPP75W)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Submitmytax Limited (CCN7EPP75W)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1402,7 +1467,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "12edbb9f-616d-49af-9c39-63e43883510c";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1414,8 +1479,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Kah Tan (6A96HB5DPZ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Kah Tan (6A96HB5DPZ)";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -1424,7 +1489,7 @@
 				INFOPLIST_FILE = BasetaxPlus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "12d5bfd7-107f-411c-b9e0-775e102989a4";
 			};
 			name = Debug;
 		};
@@ -1434,8 +1499,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Kah Tan (6A96HB5DPZ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Kah Tan (6A96HB5DPZ)";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -1444,7 +1509,7 @@
 				INFOPLIST_FILE = BasetaxPlus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "12d5bfd7-107f-411c-b9e0-775e102989a4";
 			};
 			name = Release;
 		};

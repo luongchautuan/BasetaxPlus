@@ -15,12 +15,11 @@
 
 @end
 
-@interface MenuViewController : UIViewController<UITableViewDataSource, UITableViewDelegate> {
-    NSArray *arrData;
-}
+@interface MenuViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 
 @property (assign) id<MenuViewControllerDelegate> delegate;
 
 @property (retain, nonatomic) IBOutlet UITableView *tableView;
 
+@property (nonatomic, retain)NSArray *arrData;
 @end
