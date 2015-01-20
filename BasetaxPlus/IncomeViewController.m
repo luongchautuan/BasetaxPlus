@@ -695,6 +695,7 @@ int businessID;
     {
         NSString  *responseString = [[NSString alloc] initWithData:[request responseData] encoding:NSUTF8StringEncoding];
         
+        NSLog(@"ResponseString: %@", responseString);
         appdelegate.transactionID = [responseString intValue];
         
         appdelegate.tidPhoto = appdelegate.transactionID;
@@ -702,7 +703,18 @@ int businessID;
         if(appdelegate.PhotoClick)
         {
             [self uploadPhoto];
+        }
+        else
+        {
+            NSLog(@"Don't upload photo");
             
+            [appdelegate.activityIndicatorView hide:YES];
+            
+            
+            [self.navigationController popViewControllerAnimated:YES];
+            
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:nil message:@"Add Income Successfully" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
         }
     }
     
@@ -713,7 +725,16 @@ int businessID;
         if(appdelegate.PhotoClick)
         {
             [self uploadPhoto];
+        }
+        else
+        {
+            [appdelegate.activityIndicatorView hide:YES];
             
+            [self.navigationController popViewControllerAnimated:YES];
+            
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:nil message:@"Add Income Successfully" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
+
         }
     }
     
@@ -729,6 +750,8 @@ int businessID;
 
 -(void)uploadPhoto
 {
+    NSLog(@"Upload Photo");
+    
     NSData *dataTest = [[NSData alloc]init];
     
     ASIFormDataRequest *dataRequest = [[ASIFormDataRequest alloc]initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://ec2-46-137-84-201.eu-west-1.compute.amazonaws.com:8443/wTaxmapp/resources/transaction/%i/image",appdelegate.transactionID]]];
@@ -1251,8 +1274,15 @@ int businessID;
 
     
 }
+
 - (IBAction)btnSaveIncome_Clicked:(id)sender
 {
+    [self.txtCustomerName resignFirstResponder];
+    [self.txtAmount resignFirstResponder];
+    [self.txtInvoiceReference resignFirstResponder];
+    [self.txtVat resignFirstResponder];
+    [self.txtCis resignFirstResponder];
+    
     appdelegate.activityIndicatorView = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     appdelegate.activityIndicatorView.mode = MBProgressHUDAnimationFade;
     appdelegate.activityIndicatorView.labelText = @"";
@@ -1488,9 +1518,10 @@ int businessID;
     [self.btnCash setImage:[UIImage imageNamed:@"cash button.png"] forState:UIControlStateNormal];
     [self.btnCheque setImage:[UIImage imageNamed:@"cheque button.png"] forState:UIControlStateNormal];
     [self.btnOther setImage:[UIImage imageNamed:@"other button.png"] forState:UIControlStateNormal];
-    cashBool=FALSE;
-    chequeBool=FALSE;
-    otherBool=FALSE;
+    
+    cashBool = FALSE;
+    chequeBool = FALSE;
+    otherBool = FALSE;
 
 }
 
